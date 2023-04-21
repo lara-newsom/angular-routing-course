@@ -1,0 +1,33 @@
+.pie-item {
+  background-color: rgba(253, 246, 246, 1);
+  display: flex;
+  flex-direction: column;
+  width: 421px;
+}
+
+.add-to-cart {
+  background-color: rgba(255, 208, 201, 1);
+  border: none;
+  padding: 10px;
+  color: black;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.add-to-cart:hover {
+  background-color: rgb(244, 174, 163);
+}
+
+.add-to-cart:focus {
+  background-color: rgb(222, 160, 150);
+}
+
+
+.pie-item div.pie-info {
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}

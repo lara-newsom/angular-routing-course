@@ -1,0 +1,12 @@
+<section class="main-content">
+  <div class="carousel">
+    <div class="carousel-image"><img [src]="images[imageIndex]" alt="larger header image of blueberry pie" /></div>
+    <button class="carousel-button-1" (click)="changeImage(0)"></button>
+    <button class="carousel-button-2" (click)="changeImage(1)"></button>
+    <button class="carousel-button-3" (click)="changeImage(2)"></button>
+  </div>
+  <app-sub-hero-logo>
+    <ng-container title>Pies of the Week</ng-container>
+    <ng-container sub-title>Enjoy a weekly selection of our favorite pies</ng-container>
+  </app-sub-hero-logo>
+</section>
