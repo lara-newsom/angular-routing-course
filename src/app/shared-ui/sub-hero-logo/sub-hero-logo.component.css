@@ -8,7 +8,7 @@
 
 .focused-message .logo {
   align-items: center;
-  background-image: url('../../assets/images/badge-logo.png');
+  background-image: url('../../../assets/images/badge-logo.png');
   display: flex;
   height: 168px;
   justify-content: center;

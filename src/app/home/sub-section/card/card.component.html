@@ -1,8 +1,14 @@
 <div class="pie-item">
   <ng-content select="[image]"></ng-content>
-  <button mat-menu-item class="add-to-cart">Add to Cart</button>
+  <div class="add-to-cart">
+    <button mat-button>Add to Cart</button>
+  </div>
   <div class="pie-info">
-    <ng-content select="[title]"></ng-content>
-    <ng-content select="[price]"></ng-content>
+    <div>
+      <ng-content select="[title]"></ng-content>
+    </div>
+    <div>
+      <ng-content select="[price]"></ng-content>
+    </div>
   </div>
 </div>
