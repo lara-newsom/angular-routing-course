@@ -16,4 +16,8 @@ export class AppComponent implements OnInit{
       }
     });
   }
+
+  onActivate(event: unknown) {
+    console.log('on activate', event)
+  }
 }

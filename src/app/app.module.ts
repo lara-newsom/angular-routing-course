@@ -57,7 +57,7 @@ const ROUTES: Route[] = [
     MatMenuModule,
     MatButtonModule,
     RouterModule.forRoot(ROUTES, {
-      enableTracing: true
+      enableTracing: true,
     }),
   ],
   providers: [],
