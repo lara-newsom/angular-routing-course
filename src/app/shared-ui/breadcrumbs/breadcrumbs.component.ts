@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { PieService } from '../../services/pie.service';
 
 @Component({
+  standalone: true,
+  imports: [],
   selector: 'app-breadcrumbs',
   templateUrl: './breadcrumbs.component.html',
   styleUrls: ['./breadcrumbs.component.css']
