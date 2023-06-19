@@ -1,4 +1,4 @@
-import { Category, Pie } from "./pie";
+import { Category, Pie } from './pie';
 
 export const PIES: Pie[] = [
   {
