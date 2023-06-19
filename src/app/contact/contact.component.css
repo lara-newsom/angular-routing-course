@@ -67,19 +67,6 @@ fieldset {
   text-transform: uppercase;
 }
 
-.form-wrapper input {
-  background-color: white;
-  border: 1px solid rgba(54, 48, 44, 0.3);
-  border-radius: 6px;
-  box-sizing: border-box;
-  display: block;
-  font-size: 30px;
-  height: 54px;
-  margin-bottom: 20px;
-  padding: 0 10px;
-  width: 100%;
-}
-
 .form-wrapper textarea {
   border: 1px solid rgba(54, 48, 44, 0.3);
   box-sizing: border-box;
@@ -102,3 +89,50 @@ fieldset {
   text-transform: uppercase;
   width: 219px;
 }
+
+.form-wrapper,
+.form-wrapper-spinner {
+  width: 55%;
+  min-width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-wrapper-spinner {
+  align-items: center;
+}
+
+.form-wrapper input {
+  background-color: white;
+  border: 1px solid rgba(54, 48, 44, 0.3);
+  border-radius: 6px;
+  box-sizing: border-box;
+  display: block;
+  font-size: 1.2rem;
+  height: 54px;
+  margin-bottom: 20px;
+  padding: 0 10px;
+  width: 100%;
+}
+
+.form-wrapper input[type=submit],
+button {
+  border: 0;
+  color: rgba(54, 48, 44, 1);
+  font-size: 16px;
+  height: 51px;
+  text-transform: uppercase;
+  width: 219px;
+}
+
+.form-wrapper input.ng-invalid.ng-touched:not(form),
+.form-wrapper textarea.ng-invalid.ng-touched:not(form) {
+  border-left: 10px solid red; /* red */
+}
+
+.form-group {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
