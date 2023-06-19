@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ComboCardViewComponent } from './combo-card-view.component';
+import { ProductsViewComponent } from './products-view.component';
 
-describe('ComboCardViewComponent', () => {
-  let component: ComboCardViewComponent;
-  let fixture: ComponentFixture<ComboCardViewComponent>;
+describe('ProductsViewComponent', () => {
+  let component: ProductsViewComponent;
+  let fixture: ComponentFixture<ProductsViewComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ComboCardViewComponent ]
+      declarations: [ ProductsViewComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ComboCardViewComponent);
+    fixture = TestBed.createComponent(ProductsViewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

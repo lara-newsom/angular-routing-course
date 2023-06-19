@@ -10,9 +10,9 @@ import { BreadcrumbsComponent } from '../shared-ui/breadcrumbs/breadcrumbs.compo
     SideMenuComponent,
     BreadcrumbsComponent,
   ],
-  selector: 'app-combo-card-view',
-  templateUrl: './combo-card-view.component.html',
-  styleUrls: ['./combo-card-view.component.css']
+  selector: 'app-products-view',
+  templateUrl: './products-view.component.html',
+  styleUrls: ['./products-view.component.css']
 })
-export class ComboCardViewComponent {
+export class ProductsViewComponent {
 }
