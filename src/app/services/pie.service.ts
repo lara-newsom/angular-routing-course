@@ -9,14 +9,13 @@ import { toSignal } from '@angular/core/rxjs-interop';
   providedIn: 'root'
 })
 export class PieService {
-  private readonly route = inject(ActivatedRoute);
-
   readonly pies$ = of(PIES);
   readonly piesSignal = toSignal(this.pies$, {initialValue: []});
 
   private readonly selectedCategory = new BehaviorSubject<string>(Category.ALL);
   readonly selectedCategory$ = this.selectedCategory.asObservable();
 
+  private readonly route = inject(ActivatedRoute);
   private readonly selectedPie = this.route.queryParamMap.pipe(
     map((params) => {
       return params.get('productId');

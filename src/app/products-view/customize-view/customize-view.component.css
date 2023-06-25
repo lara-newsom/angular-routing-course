@@ -29,36 +29,6 @@
   flex-grow: 1;
 }
 
-.description {
-  width: 40%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  flex-grow: 1;
-}
-
-.description p {
-  font-weight: 200;
-  line-height: 1.8rem;
-  font-size: 1.2rem;
-}
-
-.ingredient {
-  font-weight: 200;
-}
-
-.ingredient::after {
-  content: ', '
-}
-.ingredient:last-of-type::after {
-  content: ''
-}
-
-.description p.price {
-  font-size: 1.4rem;
-  font-weight: 700;
-}
-
 .form-wrapper label {
   color: rgba(54, 48, 44, 1);
   display: block;
@@ -90,6 +60,7 @@
   margin-top: 10px;
   padding: 25px;
 }
+
 .form-wrapper button:disabled {
   background-color: rgb(206, 205, 205);
   box-shadow: none;

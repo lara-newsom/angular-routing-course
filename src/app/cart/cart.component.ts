@@ -34,12 +34,7 @@ export class CartComponent {
   readonly contactService = inject(ContactService);
   destroyed$ = new ReplaySubject<void>(1);
 
-  model: ContactForm = {
-    fullName: '',
-    email: '',
-    phone: '',
-    comment: '',
-  };
+  model: ContactForm = {};
   submitted = false;
   loading = false;
 
@@ -57,12 +52,6 @@ export class CartComponent {
 
   close() {
     this.submitted = false;
-    this.model = {
-      fullName: '',
-      email: '',
-      phone: '',
-      comment: '',
-    }
   }
 
   ngOnDestroy(): void {

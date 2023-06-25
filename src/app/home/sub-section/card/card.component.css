@@ -36,18 +36,6 @@
   font-weight: 800;
 }
 
-.add-to-cart {
-  width: 100%;
-  max-width: 400px;
-  min-width: 200px;
-  text-align: center;
-  background-color: rgb(250, 200, 200);
-  border: none;
-  color: black;
-  cursor: pointer;
-  font-size: 1.2rem;
-}
-
 h4, p {
   text-align: center;
   font-size: 1rem;

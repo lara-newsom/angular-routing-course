@@ -29,8 +29,6 @@ export class CustomizeViewComponent {
   destroyed$ = new ReplaySubject<void>(1);
 
   model: ContactForm = {
-    fullName: '',
-    email: '',
     phone: '',
     comment: '',
   };
@@ -51,8 +49,6 @@ export class CustomizeViewComponent {
   clearForm() {
     this.submitted = false;
     this.model = {
-      fullName: '',
-      email: '',
       phone: '',
       comment: '',
     }

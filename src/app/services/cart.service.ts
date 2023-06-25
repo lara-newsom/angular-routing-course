@@ -7,7 +7,8 @@ import { PieService } from './pie.service';
 })
 export class CartService {
   readonly cartItems = signal<{[key: string]: { quantity: number }}>({
-    '3': { quantity: 3}
+    '3': { quantity: 1 },
+    '10': { quantity: 1 },
   });
   readonly pieService = inject(PieService);
 
