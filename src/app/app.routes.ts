@@ -4,7 +4,6 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { ProductsViewComponent } from './products-view/products-view.component';
-import { productRoutes } from './products-view/products.routes';
 
 export enum ROUTER_TOKENS {
   HOME = 'home',
@@ -15,7 +14,7 @@ export enum ROUTER_TOKENS {
   CART = 'cart',
 }
 
-export const routes: Routes = [
+export const ROUTES: Routes = [
   {
     path: '',
     redirectTo: ROUTER_TOKENS.HOME,
