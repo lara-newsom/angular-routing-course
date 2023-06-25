@@ -10,9 +10,10 @@ import { CartComponent } from './cart/cart.component';
 export enum ROUTER_TOKENS {
   HOME = 'home',
   SHOP = 'shop',
-  DETAIL = 'detail',
   CONTACT = 'contact',
   ABOUT = 'about',
+  CHECKOUT = 'checkout',
+  CART = 'cart',
 }
 
 export const routes: Routes = [
@@ -39,8 +40,8 @@ export const routes: Routes = [
     component: AboutComponent,
   },
   {
-    path: 'checkout',
-    outlet: 'cart',
+    path: ROUTER_TOKENS.CHECKOUT,
+    outlet: ROUTER_TOKENS.CART,
     component: CartComponent,
   },
   {

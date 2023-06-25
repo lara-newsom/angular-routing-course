@@ -10,6 +10,11 @@
   height: auto;
 }
 
+.pie-item button {
+  border: none;
+  padding: 0;
+}
+
 .pie-item div.pie-info {
   width: 100%;
   display: flex;
@@ -33,6 +38,8 @@
 
 .add-to-cart {
   width: 100%;
+  max-width: 400px;
+  min-width: 200px;
   text-align: center;
   background-color: rgb(250, 200, 200);
   border: none;
@@ -41,7 +48,39 @@
   font-size: 1.2rem;
 }
 
-.add-to-cart button {
+h4, p {
+  text-align: center;
+  font-size: 1rem;
+}
+
+img {
+  height: auto;
   width: 100%;
-  padding: 20px;
+  max-width: 400px;
+  min-width: 200px;
+}
+
+.quantity-selector {
+  align-items: center;
+  background-color: rgba(255, 208, 201, 1);
+  box-sizing: border-box;
+  display: flex;
+  height: 40px;
+  justify-content: space-between;
+  padding: 0 10px;
+  width: 100%;
+  max-width: 400px;
+  min-width: 200px;
+}
+
+.quantity-selector button {
+  color: rgba(200, 125, 82, 1);
+  border: 0;
+  font-size: 1.6rem;
+  background-color: rgba(255, 208, 201, 1);
+}
+
+.quantity-selector span {
+  color: rgba(54, 48, 44, 1);
+  font-size: 18px;
 }

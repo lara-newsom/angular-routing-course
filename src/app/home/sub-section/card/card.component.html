@@ -1,14 +1,19 @@
 <div class="pie-item">
-  <ng-content select="[image]"></ng-content>
-  <div class="add-to-cart">
-    <button mat-button>Add to Cart</button>
+  <button
+    [routerLink]="['/' + ROUTER_TOKENS.SHOP, pie.category, PRODUCT_ROUTER_TOKENS.DETAIL]"
+    [queryParams]="{ productId: pie.id }"
+  ><img [src]="pie.image" alt="Delicious Apple Pie" /></button>
+  <div class="quantity-selector">
+    <button (click)="cartService.decrementCartItem(pie)">-</button>
+    <span (click)="cartService.addCartItem(pie)">{{ pie.quantity ? pie.quantity + ' in Cart' : 'Add to Cart'}}</span>
+    <button (click)="cartService.addCartItem(pie)">+</button>
   </div>
   <div class="pie-info">
     <div>
-      <ng-content select="[title]"></ng-content>
+      <h4>{{ pie.title }}</h4>
     </div>
     <div>
-      <ng-content select="[price]"></ng-content>
+      <p>{{ pie.price }}</p>
     </div>
   </div>
 </div>

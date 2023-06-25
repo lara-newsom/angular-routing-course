@@ -4,6 +4,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { RouterOutlet } from '@angular/router';
+import { ROUTER_TOKENS } from './app.routes';
 
 @Component({
   standalone: true,
@@ -19,4 +20,5 @@ import { RouterOutlet } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  readonly ROUTER_TOKENS = ROUTER_TOKENS;
 }

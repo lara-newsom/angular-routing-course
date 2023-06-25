@@ -9,18 +9,19 @@ import { toSignal } from '@angular/core/rxjs-interop';
   providedIn: 'root'
 })
 export class PieService {
-  private readonly selectedCategory = new BehaviorSubject<string>(Category.ALL);
   private readonly route = inject(ActivatedRoute);
+
+  readonly pies$ = of(PIES);
+  readonly piesSignal = toSignal(this.pies$, {initialValue: []});
+
+  private readonly selectedCategory = new BehaviorSubject<string>(Category.ALL);
+  readonly selectedCategory$ = this.selectedCategory.asObservable();
+
   private readonly selectedPie = this.route.queryParamMap.pipe(
     map((params) => {
       return params.get('productId');
     })
   );
-
-  readonly pies$ = of(PIES);
-  readonly piesSignal = toSignal(this.pies$, {initialValue: []});
-
-  readonly selectedCategory$ = this.selectedCategory.asObservable();
 
   readonly filteredPies$ = this.selectedCategory.pipe(
     switchMap((category) => this.pies$.pipe(
@@ -34,6 +35,11 @@ export class PieService {
     ))
   );
   readonly filteredPieSignal = toSignal(this.filteredPies$, {initialValue: []});
+
+  readonly featuredPies$ = this.pies$.pipe(
+    map((pies) => [pies[3], pies[6], pies[17]])
+  );
+  readonly featuredPiesSignal = toSignal(this.featuredPies$, {initialValue: []});
 
   readonly selectedPie$ = this.selectedPie.pipe(switchMap((id) =>
     this.filteredPies$.pipe(

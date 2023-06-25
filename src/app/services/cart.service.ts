@@ -32,7 +32,13 @@ export class CartService {
       ...this.pieService.selectedPieSignal(),
       quantity: this.cartItems()[key]?.quantity || 0
     } as Pie : undefined;
+  });
 
+  readonly featuredPiesPlusQuantity = computed(() => {
+    return this.pieService.featuredPiesSignal().map((pie) => ({
+      ...pie,
+      quantity: this.cartItems()[pie.id]?.quantity || 0
+    }))
   });
 
   readonly subtotal = computed(() => {
@@ -94,5 +100,4 @@ export class CartService {
       this.cartItems.set(updatedCartItems);
     }
   }
-
 }
