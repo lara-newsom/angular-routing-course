@@ -1,4 +1,4 @@
-<div class="detail" *ngIf="selectedPie$ | async as selectedPie">
+<div class="detail" *ngIf="selectedPie() as selectedPie">
   <h3>{{ selectedPie.title }}</h3>
   <div class="image-wrapper">
     <img [src]="selectedPie.image" [alt]="selectedPie.title" />
@@ -9,5 +9,9 @@
     </div>
   </div>
 
-  <button mat-raised-button>Add To Cart</button>
+  <div class="quantity-selector">
+    <button (click)="cartService.decrementCartItem(selectedPie)">-</button>
+    <span (click)="cartService.addCartItem(selectedPie)">{{ selectedPie?.quantity ? selectedPie?.quantity + ' in Cart' : 'Add to Cart'}}</span>
+    <button (click)="cartService.addCartItem(selectedPie)">+</button>
+  </div>
 </div>

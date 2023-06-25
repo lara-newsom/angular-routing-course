@@ -5,6 +5,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { ROUTER_TOKENS } from '../app.routes';
+import { CartService } from '../services/cart.service';
 
 @Component({
   standalone: true,
@@ -23,6 +24,9 @@ export class HeaderComponent {
   readonly ROUTER_TOKENS = ROUTER_TOKENS;
 
   private readonly pieService = inject(PieService);
+  private readonly cartService = inject(CartService);
+
+  readonly totalItems = this.cartService.totalItems;
 
   changeCategory(category: Category){
     this.pieService.setSelectedCategory(category);

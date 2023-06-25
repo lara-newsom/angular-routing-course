@@ -13,14 +13,14 @@
   line-height: 38px;
 }
 
-.detail button {
+/* .detail button {
   color: rgba(54, 48, 44, 1);
   font-size: 1.2rem;
   font-weight: 500;
   padding: 10px 20px;
   max-width: 500px;
   margin-top: 20px;
-}
+} */
 
 .image-wrapper {
   margin-bottom: 20px;
@@ -30,12 +30,13 @@
 }
 
 .image-wrapper img {
-  max-width: 500px;
-  max-height: 500px;
+  max-width: 300px;
+  max-height: 300px;
   min-width: 300px;
   min-height: 300px;
   margin-right: 20px;
   flex-grow: 1;
+  margin-bottom: 20px;
 }
 
 .description {
@@ -66,4 +67,39 @@
 .description p.price {
   font-size: 1.4rem;
   font-weight: 700;
+}
+
+.quantity-selector-wrapper {
+  align-items: center;
+  display: flex;
+}
+
+.quantity-selector-wrapper a {
+  color: rgba(54, 48, 44, 0.5)
+}
+
+.quantity-selector {
+  align-items: center;
+  background-color: rgba(255, 208, 201, 1);
+  border: 2px solid rgba(54, 48, 44, 0.3);
+  border-radius: 10px;
+  box-sizing: border-box;
+  display: flex;
+  height: 40px;
+  justify-content: space-between;
+  margin-right: 20px;
+  padding: 0 10px;
+  width: 75%;
+}
+
+.quantity-selector button {
+  color: rgba(200, 125, 82, 1);
+  border: 0;
+  font-size: 1.6rem;
+  background-color: rgba(255, 208, 201, 1);
+}
+
+.quantity-selector span {
+  color: rgba(54, 48, 44, 1);
+  font-size: 18px;
 }

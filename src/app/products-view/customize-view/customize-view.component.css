@@ -13,15 +13,6 @@
   line-height: 38px;
 }
 
-.detail button {
-  color: rgba(54, 48, 44, 1);
-  font-size: 1.2rem;
-  font-weight: 500;
-  padding: 10px 20px;
-  max-width: 500px;
-  margin-top: 20px;
-}
-
 .image-wrapper {
   margin-bottom: 20px;
   display: flex;
@@ -87,16 +78,21 @@
   width: 100%;
 }
 
-.form-wrapper input[type=submit] {
+.form-wrapper button {
   background-color: rgba(255, 208, 201, 1);
+  box-shadow:   0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
   border: 0;
-  border-radius: 0;
+  border-radius: 10px;
   color: rgba(54, 48, 44, 1);
-  font-size: 16px;
-  font-weight: 600;
-  height: 51px;
-  text-transform: uppercase;
-  width: 219px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  width: 100%;
+  margin-top: 10px;
+  padding: 25px;
+}
+.form-wrapper button:disabled {
+  background-color: rgb(206, 205, 205);
+  box-shadow: none;
 }
 
 .form-wrapper,
@@ -123,16 +119,6 @@
   margin-bottom: 20px;
   padding: 0 10px;
   width: 100%;
-}
-
-.form-wrapper input[type=submit],
-button {
-  border: 0;
-  color: rgba(54, 48, 44, 1);
-  font-size: 16px;
-  height: 51px;
-  text-transform: uppercase;
-  width: 219px;
 }
 
 .form-wrapper input.ng-invalid.ng-touched:not(form),

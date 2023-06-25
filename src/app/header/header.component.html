@@ -64,7 +64,16 @@
     </nav>
     <div class="header-icons">
       <ul>
-        <li><button mat-menu-item><img src="../../assets/images/cart-icon.png" alt="shopping cart icon" /></button></li>
+        <li>
+          <button
+            [routerLink]="['/', {outlets: {cart: ['checkout']}}]"
+            queryParamsHandling="merge"
+            mat-menu-item
+          >
+            <span class="total-items">{{ totalItems() }}</span>
+            <img src="../../assets/images/cart-icon.png" alt="shopping cart icon" />
+          </button>
+        </li>
       </ul>
     </div>
   </div>

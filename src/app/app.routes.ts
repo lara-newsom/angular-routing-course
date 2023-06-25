@@ -5,6 +5,7 @@ import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { ProductsViewComponent } from './products-view/products-view.component';
 import { productRoutes } from './products-view/products.routes';
+import { CartComponent } from './cart/cart.component';
 
 export enum ROUTER_TOKENS {
   HOME = 'home',
@@ -36,6 +37,11 @@ export const routes: Routes = [
   {
     path: ROUTER_TOKENS.ABOUT,
     component: AboutComponent,
+  },
+  {
+    path: 'checkout',
+    outlet: 'cart',
+    component: CartComponent,
   },
   {
     path: '**',

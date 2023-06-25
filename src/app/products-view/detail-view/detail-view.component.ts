@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { PieService } from '../../services/pie.service';
 import { NgFor, NgIf, AsyncPipe } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   standalone: true,
@@ -16,6 +17,6 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrls: ['./detail-view.component.css']
 })
 export class DetailViewComponent {
-  selectedPie$ = this.pieService.selectedPie$;
-  constructor(private readonly pieService: PieService,){}
+  readonly cartService = inject(CartService)
+  selectedPie = this.cartService.selectedItemPlusQuantity;
 }
