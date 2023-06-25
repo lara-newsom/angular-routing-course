@@ -4,11 +4,12 @@
     class="image-button"
     [routerLink]="[customize ? customizeLink : detailLink]"
     routerLinkActive="active-link"
+    ariaCurrentWhenActive="page"
     [queryParams]="{productId: pie.id}"
   >
     <img
       [src]="pie.thumb"
-      alt="image of person sticking a fork in a piece of pie"
+      [alt]="pie.title"
     />
   </button>
 </div>
