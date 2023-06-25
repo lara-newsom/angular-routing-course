@@ -1,7 +1,5 @@
 <div class="pie-item">
   <button
-    [routerLink]="['/' + ROUTER_TOKENS.SHOP, pie.category, PRODUCT_ROUTER_TOKENS.DETAIL]"
-    [queryParams]="{ productId: pie.id }"
   ><img [src]="pie.image" alt="Delicious Apple Pie" /></button>
   <div class="quantity-selector">
     <button (click)="cartService.decrementCartItem(pie)">-</button>
