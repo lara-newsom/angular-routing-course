@@ -1,0 +1,155 @@
+.detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.detail h3 {
+  text-align: left;
+  color: rgba(54, 48, 44, 1);
+  font-size: 36px;
+  font-weight: 800;
+  margin: 0 0 10px 0;
+  line-height: 38px;
+}
+
+.detail button {
+  color: rgba(54, 48, 44, 1);
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 10px 20px;
+  max-width: 500px;
+  margin-top: 20px;
+}
+
+.image-wrapper {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.image-wrapper img {
+  max-width: 300px;
+  max-height: 300px;
+  min-width: 300px;
+  min-height: 300px;
+  margin-right: 20px;
+  flex-grow: 1;
+}
+
+.description {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  flex-grow: 1;
+}
+
+.description p {
+  font-weight: 200;
+  line-height: 1.8rem;
+  font-size: 1.2rem;
+}
+
+.ingredient {
+  font-weight: 200;
+}
+
+.ingredient::after {
+  content: ', '
+}
+.ingredient:last-of-type::after {
+  content: ''
+}
+
+.description p.price {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.form-wrapper label {
+  color: rgba(54, 48, 44, 1);
+  display: block;
+  font-weight: 600;
+  margin-bottom: 11px;
+  text-transform: uppercase;
+}
+
+.form-wrapper textarea {
+  border: 1px solid rgba(54, 48, 44, 0.3);
+  box-sizing: border-box;
+  display: block;
+  font-size: 20px;
+  height: 147px;
+  margin-bottom: 40px;
+  padding: 10px;
+  width: 100%;
+}
+
+.form-wrapper input[type=submit] {
+  background-color: rgba(255, 208, 201, 1);
+  border: 0;
+  border-radius: 0;
+  color: rgba(54, 48, 44, 1);
+  font-size: 16px;
+  font-weight: 600;
+  height: 51px;
+  text-transform: uppercase;
+  width: 219px;
+}
+
+.form-wrapper,
+.form-wrapper-spinner {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  flex-grow: 1;
+}
+
+.form-wrapper-spinner {
+  align-items: center;
+}
+
+.form-wrapper input {
+  background-color: white;
+  border: 1px solid rgba(54, 48, 44, 0.3);
+  border-radius: 6px;
+  box-sizing: border-box;
+  display: block;
+  font-size: 1.2rem;
+  height: 54px;
+  margin-bottom: 20px;
+  padding: 0 10px;
+  width: 100%;
+}
+
+.form-wrapper input[type=submit],
+button {
+  border: 0;
+  color: rgba(54, 48, 44, 1);
+  font-size: 16px;
+  height: 51px;
+  text-transform: uppercase;
+  width: 219px;
+}
+
+.form-wrapper input.ng-invalid.ng-touched:not(form),
+.form-wrapper textarea.ng-invalid.ng-touched:not(form) {
+  border-left: 10px solid red; /* red */
+}
+
+.form-group {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+fieldset {
+  border: none;
+}
+
+p.price {
+  font-size: 1.4rem;
+  font-weight: 700;
+}

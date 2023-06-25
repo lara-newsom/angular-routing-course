@@ -1,8 +1,10 @@
-<div class="side-nav" *ngIf="selectedPie$ | async as selectedPie">
+<div class="side-nav">
   <button
     *ngFor="let pie of pies$ | async"
     class="image-button"
-    (click)="selectPie(pie.id)"
+    [routerLink]="[customize ? './customize' : './detail']"
+    routerLinkActive="active-link"
+    [queryParams]="{productId: pie.id}"
   >
     <img
       [src]="pie.thumb"

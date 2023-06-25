@@ -1,0 +1,68 @@
+<div class="detail" *ngIf="selectedPie$ | async as selectedPie">
+  <h3>Customized {{ selectedPie.title }}</h3>
+  <p>Tell us how we can customize your order. Additional ingredients will result in an extra charge.</p>
+  <div class="image-wrapper">
+    <img [src]="selectedPie.image" [alt]="selectedPie.title" />
+    <div *ngIf="!submitted; else formSubmitted" class="form-wrapper">
+      <fieldset>
+        <form #contactForm="ngForm">
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              [(ngModel)]="model.phone"
+              value=""
+            />
+          </div>
+          <div class="form-group">
+            <label for="comment">Instructions</label>
+            <textarea
+              id="comment"
+              name="comment"
+              [(ngModel)]="model.comment"
+              required
+              #comment="ngModel"
+            ></textarea>
+            <div
+              *ngIf="comment.invalid && comment.touched"
+              class="alert alert-danger"
+            >Instructions are required
+            </div>
+          </div>
+
+          <p class="price">Price: <span>{{ selectedPie.price }}</span></p>
+
+          <button
+            [disabled]="contactForm.invalid"
+            mat-raised-button
+            type="submit"
+            name="submit"
+            id="submit"
+            (click)="submitForm(model)"
+          >Add To Cart
+          </button>
+        </form>
+      </fieldset>
+    </div>
+  </div>
+</div>
+<ng-template #formSubmitted>
+  <div
+    class="form-wrapper"
+    *ngIf="!loading; else submitting"
+  >
+    <h3>Thank You for Your Order</h3>
+    <p>It may take up to 24 hours for someone to respond.</p>
+    <button mat-raised-button (click)="clearForm()">Order Another</button>
+  </div>
+</ng-template>
+
+<ng-template #submitting>
+  <div
+  class="form-wrapper-spinner"
+>
+  <mat-spinner></mat-spinner>
+</div>
+</ng-template>
