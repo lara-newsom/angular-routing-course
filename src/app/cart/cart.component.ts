@@ -24,8 +24,6 @@ import { ROUTER_TOKENS } from '../app.routes';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent {
-  readonly ROUTER_TOKENS = ROUTER_TOKENS;
-
   readonly cartService = inject(CartService);
   readonly router = inject(Router);
 
