@@ -3,6 +3,8 @@
     Bethany's Pie Shop Shopping Cart
   </span><button
     mat-raised-button
+    [routerLink]="['/', { outlets }]"
+    queryParamsHandling="merge"
   >close</button></div>
   <div class="cart-items-wrapper" *ngIf="!submitted; else formSubmitted">
     <div class="cart-item" *ngFor="let item of cartItemsPlusQuantity()">
@@ -64,7 +66,9 @@
         </div>
         <div class="totals-details-wrapper">
           <button
-          mat-button-raised
+            mat-button-raised
+            [routerLink]="['/', { outlets }]"
+            queryParamsHandling="merge"
           >Close Cart</button>
         </div>
       </div>

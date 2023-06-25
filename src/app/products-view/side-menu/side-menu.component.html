@@ -2,6 +2,9 @@
   <button
     *ngFor="let pie of pies$ | async"
     class="image-button"
+    [routerLink]="[customize ? customizeLink : detailLink]"
+    routerLinkActive="active-link"
+    [queryParams]="{productId: pie.id}"
   >
     <img
       [src]="pie.thumb"

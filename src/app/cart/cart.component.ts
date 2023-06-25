@@ -8,6 +8,7 @@ import { ContactForm } from '../models/contact-form';
 import { FormsModule } from '@angular/forms';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { RouterLink } from '@angular/router';
+import { ROUTER_TOKENS } from '../app.routes';
 
 @Component({
   selector: 'app-cart',
@@ -24,6 +25,9 @@ import { RouterLink } from '@angular/router';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent {
+  readonly ROUTER_TOKENS = ROUTER_TOKENS;
+  readonly outlets = { [ROUTER_TOKENS.CART]: null };
+
   readonly cartService = inject(CartService);
 
   readonly cartItemsPlusQuantity = this.cartService.cartItemsPlusQuantity;

@@ -21,6 +21,7 @@ import { CartService } from '../services/cart.service';
 export class HeaderComponent {
   readonly Category = Category;
   readonly ROUTER_TOKENS = ROUTER_TOKENS;
+  readonly outlets = { [ROUTER_TOKENS.CART]: ROUTER_TOKENS.CHECKOUT };
 
   private readonly cartService = inject(CartService);
 
