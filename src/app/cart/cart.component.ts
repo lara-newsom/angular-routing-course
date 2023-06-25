@@ -7,7 +7,7 @@ import { ReplaySubject, takeUntil } from 'rxjs';
 import { ContactForm } from '../models/contact-form';
 import { FormsModule } from '@angular/forms';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { Router, RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 import { ROUTER_TOKENS } from '../app.routes';
 
 @Component({
@@ -19,7 +19,6 @@ import { ROUTER_TOKENS } from '../app.routes';
     MatButtonModule,
     FormsModule,
     MatProgressSpinnerModule,
-    RouterLink,
   ],
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css']
