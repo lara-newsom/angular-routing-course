@@ -1,7 +1,16 @@
 <section class="main-content">
-  <app-breadcrumbs></app-breadcrumbs>
   <div class="category-wrapper">
     <div class="side-nav-wrapper">
+      <mat-accordion class="side-nav-wrapper">
+        <mat-expansion-panel hideToggle="false" expanded="true">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Shop Pies
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <app-side-menu></app-side-menu>
+        </mat-expansion-panel>
+      </mat-accordion>
       <app-side-menu></app-side-menu>
     </div>
     <div class="detail-wrapper">

@@ -30,8 +30,6 @@
 }
 
 .image-wrapper img {
-  width: 55%;
-  height: 55%;
   max-width: 500px;
   max-height: 500px;
   min-width: 300px;

@@ -7,7 +7,7 @@ import { PIES } from '../models/pie-data.mock';
   providedIn: 'root'
 })
 export class PieService {
-  private readonly selectedCategory = new BehaviorSubject<Category>(Category.ALL);
+  private readonly selectedCategory = new BehaviorSubject<string>(Category.ALL);
   private readonly selectedPie = new BehaviorSubject<number | undefined>(4);
 
   readonly pies$ = of(PIES);
@@ -41,7 +41,7 @@ export class PieService {
     this.selectedPie.next(id);
   }
 
-  setSelectedCategory(category: Category) {
+  setSelectedCategory(category: string) {
     this.selectedCategory.next(category);
   }
 }

@@ -1,24 +1,65 @@
 <header class="site-header">
   <div class="site-header-wrapper">
     <h1>
-      <button mat-menu-item><img src="../../assets/images/logo.png" alt="Bethany's Pie Shop Logo" /></button>
+      <button [routerLink]="['/']" mat-menu-item><img src="../../assets/images/logo.png" alt="Bethany's Pie Shop Logo" /></button>
     </h1>
     <nav>
       <ul>
         <li>
-          <button class="menu-item" mat-button [matMenuTriggerFor]="menu"
+          <button
+            class="menu-item"
+            mat-button
+            [matMenuTriggerFor]="menu"
+            routerLinkActive="active-link"
+            ariaCurrentWhenActive="page"
           >Shop
             <span>&#8964;</span>
             <mat-menu class="menu-dropdown" #menu="matMenu">
-              <button mat-menu-item (click)="changeCategory(Category.SEASONAL_PIE)">Seasonal Pies</button>
-              <button mat-menu-item (click)="changeCategory(Category.FRUIT_PIE)">Fruit Pies</button>
-              <button mat-menu-item (click)="changeCategory(Category.CHEESECAKE)">Cheesecakes</button>
-              <button mat-menu-item (click)="changeCategory(Category.ALL)">All Pies</button>
+              <button
+                mat-menu-item
+                [routerLink]="['./' + ROUTER_TOKENS.SHOP, Category.SEASONAL_PIE]"
+                routerLinkActive="active-link-li"
+                ariaCurrentWhenActive="page"
+              >Seasonal Pies</button>
+              <button
+                mat-menu-item
+                [routerLink]="['./' + ROUTER_TOKENS.SHOP, Category.FRUIT_PIE]"
+                routerLinkActive="active-link-li"
+                ariaCurrentWhenActive="page"
+              >Fruit Pies</button>
+              <button
+                mat-menu-item
+                [routerLink]="['./' + ROUTER_TOKENS.SHOP, Category.CHEESECAKE]"
+                routerLinkActive="active-link-li"
+                ariaCurrentWhenActive="page"
+              >Cheesecakes</button>
+              <button
+                mat-menu-item
+                [routerLink]="['./' + ROUTER_TOKENS.SHOP, Category.ALL]"
+                routerLinkActive="active-link-li"
+                ariaCurrentWhenActive="page"
+              >All Pies</button>
             </mat-menu>
           </button>
         </li>
-        <li><button class="menu-item" mat-button>Contact</button></li>
-        <li><button class="menu-item" mat-button>About</button></li>
+        <li>
+          <button
+            class="menu-item"
+            mat-button
+            [routerLink]="['./' + ROUTER_TOKENS.CONTACT]"
+            routerLinkActive="active-link"
+            ariaCurrentWhenActive="page"
+          >Contact</button>
+        </li>
+        <li>
+          <button
+            class="menu-item"
+            mat-button
+            [routerLink]="['./' + ROUTER_TOKENS.ABOUT]"
+            routerLinkActive="active-link"
+            ariaCurrentWhenActive="page"
+          >About</button>
+        </li>
       </ul>
     </nav>
     <div class="header-icons">

@@ -6,25 +6,19 @@
 
 .category-wrapper {
   display: flex;
-  justify-content: space-around;
 }
 
 .side-nav-wrapper {
-  flex-grow: 1;
   margin-right: 30px;
-  max-width: 250px;
+  width: 30%;
+  min-width: 30%;
+  max-width: 30%;
   max-height: 750px;
-}
-
-.side-nav-wrapper h3 {
-  margin: 10px;
-  font-size: 1.4rem;
-  font-weight: 400;
-  text-align: center;
+  width: 300px;
+  padding: 0;
 }
 
 .detail-wrapper {
-  flex-grow: 2;
-  margin: 10px;
+  margin: 10px 20px 10px 50px;
   max-width: 1000px;
 }
