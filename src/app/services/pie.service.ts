@@ -15,7 +15,7 @@ export class PieService {
   private readonly selectedCategory = new BehaviorSubject<string>(Category.ALL);
   readonly selectedCategory$ = this.selectedCategory.asObservable();
 
-  private readonly selectedPie = new BehaviorSubject<string | undefined>(undefined);
+  private readonly selectedPie = new BehaviorSubject<string | undefined>('5');
 
   readonly filteredPies$ = this.selectedCategory.pipe(
     switchMap((category) => this.pies$.pipe(
