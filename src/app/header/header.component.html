@@ -1,7 +1,10 @@
 <header class="site-header">
   <div class="site-header-wrapper">
     <h1>
-      <button mat-menu-item><img src="../../assets/images/logo.png" alt="Bethany's Pie Shop Logo" /></button>
+      <button
+        [routerLink]="['/']"
+        mat-menu-item
+      ><img src="../../assets/images/logo.png" alt="Bethany's Pie Shop Logo" /></button>
     </h1>
     <nav>
       <ul>
@@ -9,7 +12,7 @@
           <button class="menu-item" mat-button [matMenuTriggerFor]="menu"
           >Shop
             <span>&#8964;</span>
-            <mat-menu class="menu-dropdown" #menu="matMenu">
+            <mat-menu routerLinkActive="active-link" ariaCurrentWhenActive="page" class="menu-dropdown" #menu="matMenu">
               <button
                 [routerLink]="[ROUTER_TOKENS.SHOP]"
                 mat-menu-item
@@ -36,6 +39,8 @@
         <li>
           <button
             [routerLink]="[ROUTER_TOKENS.CONTACT]"
+            routerLinkActive="active-link"
+            ariaCurrentWhenActive="page"
             class="menu-item"
             mat-button
           >Contact</button>
@@ -43,6 +48,8 @@
         <li>
           <button
             [routerLink]="[ROUTER_TOKENS.ABOUT]"
+            routerLinkActive="active-link"
+            ariaCurrentWhenActive="page"
             class="menu-item"
             mat-button
           >About</button>

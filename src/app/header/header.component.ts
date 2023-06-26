@@ -4,7 +4,7 @@ import { PieService } from '../services/pie.service';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { ROUTER_TOKENS } from '../app.routes';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   standalone: true,
@@ -12,6 +12,7 @@ import { RouterLink } from '@angular/router';
     MatMenuModule,
     MatButtonModule,
     RouterLink,
+    RouterLinkActive,
   ],
   selector: 'app-header',
   templateUrl: './header.component.html',
