@@ -12,5 +12,4 @@ import { SubSectionComponent } from './sub-section/sub-section.component';
   templateUrl: './home.component.html',
 })
 export class HomeComponent {
-
 }
