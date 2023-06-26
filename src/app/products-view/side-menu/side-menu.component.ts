@@ -15,7 +15,6 @@ import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 })
 export class SideMenuComponent {
   pies$ = this.pieService.filteredPies$;
-  selectedPie$ = this.pieService.selectedPie$;
 
   constructor(
     private readonly pieService: PieService,

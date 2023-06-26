@@ -26,7 +26,7 @@
   filter: drop-shadow(0 0 0.5rem rgb(33, 18, 16));
 }
 
-.image-button:focus img {
+.active-link img {
   width: 95%;
   height: 95%;
   border: solid 3px white;
