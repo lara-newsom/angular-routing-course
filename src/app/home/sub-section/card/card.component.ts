@@ -1,6 +1,5 @@
 import { Component, Input, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
-import { RouterLink } from '@angular/router';
 import { Pie } from 'src/app/models/pie';
 import { CartService } from 'src/app/services/cart.service';
 
@@ -8,7 +7,6 @@ import { CartService } from 'src/app/services/cart.service';
   standalone: true,
   imports: [
     MatButtonModule,
-    RouterLink,
   ],
   selector: 'app-card',
   templateUrl: './card.component.html',
