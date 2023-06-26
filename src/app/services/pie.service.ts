@@ -15,12 +15,7 @@ export class PieService {
   private readonly selectedCategory = new BehaviorSubject<string>(Category.ALL);
   readonly selectedCategory$ = this.selectedCategory.asObservable();
 
-  private readonly route = inject(ActivatedRoute);
-  private readonly selectedPie = this.route.queryParamMap.pipe(
-    map((params) => {
-      return params.get('productId');
-    })
-  );
+  private readonly selectedPie = new BehaviorSubject<string | undefined>(undefined);
 
   readonly filteredPies$ = this.selectedCategory.pipe(
     switchMap((category) => this.pies$.pipe(
@@ -54,5 +49,9 @@ export class PieService {
 
   setSelectedCategory(category: string) {
     this.selectedCategory.next(category);
+  }
+
+  setSelectedPie(id: string) {
+    this.selectedPie.next(id);
   }
 }

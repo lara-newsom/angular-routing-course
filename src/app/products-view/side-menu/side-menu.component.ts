@@ -21,7 +21,7 @@ export class SideMenuComponent {
     private readonly pieService: PieService,
   ) {}
 
-  selectPie(id: number){
+  selectPie(id: string){
     this.pieService.setSelectedPie(id);
   }
 }
