@@ -1,8 +1,7 @@
-import { Injectable, inject } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { BehaviorSubject, map, of, switchMap, tap } from 'rxjs';
 import { Category, Pie } from '../models/pie';
 import { PIES } from '../models/pie-data.mock';
-import { ActivatedRoute } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
 
 @Injectable({
