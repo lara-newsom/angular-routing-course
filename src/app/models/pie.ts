@@ -6,7 +6,8 @@ export interface Pie {
   description: string;
   ingredients: string[];
   category: Category;
-  id: number;
+  id: string;
+  quantity?: number;
 }
 
 export enum Category {
