@@ -10,15 +10,43 @@
           >Shop
             <span>&#8964;</span>
             <mat-menu class="menu-dropdown" #menu="matMenu">
-              <button mat-menu-item (click)="changeCategory(Category.SEASONAL_PIE)">Seasonal Pies</button>
-              <button mat-menu-item (click)="changeCategory(Category.FRUIT_PIE)">Fruit Pies</button>
-              <button mat-menu-item (click)="changeCategory(Category.CHEESECAKE)">Cheesecakes</button>
-              <button mat-menu-item (click)="changeCategory(Category.ALL)">All Pies</button>
+              <button
+                [routerLink]="[ROUTER_TOKENS.SHOP]"
+                mat-menu-item
+                (click)="changeCategory(Category.SEASONAL_PIE)"
+              >Seasonal Pies</button>
+              <button
+                [routerLink]="[ROUTER_TOKENS.SHOP]"
+                mat-menu-item
+                (click)="changeCategory(Category.FRUIT_PIE)"
+              >Fruit Pies</button>
+              <button
+                [routerLink]="[ROUTER_TOKENS.SHOP]"
+                mat-menu-item
+                (click)="changeCategory(Category.CHEESECAKE)"
+              >Cheesecakes</button>
+              <button
+                [routerLink]="[ROUTER_TOKENS.SHOP]"
+                mat-menu-item
+                (click)="changeCategory(Category.ALL)"
+              >All Pies</button>
             </mat-menu>
           </button>
         </li>
-        <li><button class="menu-item" mat-button>Contact</button></li>
-        <li><button class="menu-item" mat-button>About</button></li>
+        <li>
+          <button
+            [routerLink]="[ROUTER_TOKENS.CONTACT]"
+            class="menu-item"
+            mat-button
+          >Contact</button>
+        </li>
+        <li>
+          <button
+            [routerLink]="[ROUTER_TOKENS.ABOUT]"
+            class="menu-item"
+            mat-button
+          >About</button>
+        </li>
       </ul>
     </nav>
     <div class="header-icons">
