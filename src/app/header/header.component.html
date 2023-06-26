@@ -9,10 +9,10 @@
     <nav>
       <ul>
         <li>
-          <button class="menu-item" mat-button [matMenuTriggerFor]="menu"
+          <button routerLinkActive="active-link" ariaCurrentWhenActive="page" class="menu-item" mat-button [matMenuTriggerFor]="menu"
           >Shop
             <span>&#8964;</span>
-            <mat-menu routerLinkActive="active-link" ariaCurrentWhenActive="page" class="menu-dropdown" #menu="matMenu">
+            <mat-menu class="menu-dropdown" #menu="matMenu">
               <button
                 [routerLink]="[ROUTER_TOKENS.SHOP]"
                 mat-menu-item
@@ -20,6 +20,7 @@
               >Seasonal Pies</button>
               <button
                 [routerLink]="[ROUTER_TOKENS.SHOP]"
+
                 mat-menu-item
                 (click)="changeCategory(Category.FRUIT_PIE)"
               >Fruit Pies</button>
