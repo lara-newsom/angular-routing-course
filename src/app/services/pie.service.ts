@@ -38,7 +38,7 @@ export class PieService {
     this.filteredPies$.pipe(
       map((pies) => {
         if(id){
-          return pies.find((pie) => pie.id === id);
+          return pies.find((pie) => pie.id === id) || pies[0];
         }
 
         return pies[0];
