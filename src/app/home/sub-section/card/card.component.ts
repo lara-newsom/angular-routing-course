@@ -1,7 +1,6 @@
 import { Component, Input, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterLink } from '@angular/router';
-import { ROUTER_TOKENS } from 'src/app/app.routes';
 import { Pie } from 'src/app/models/pie';
 import { CartService } from 'src/app/services/cart.service';
 
@@ -18,5 +17,4 @@ import { CartService } from 'src/app/services/cart.service';
 export class CardComponent {
   @Input() pie!: Pie;
   readonly cartService = inject(CartService);
-  readonly ROUTER_TOKENS = ROUTER_TOKENS;
 }
