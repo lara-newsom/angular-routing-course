@@ -8,8 +8,8 @@ import { first, tap, timer } from 'rxjs';
 export class ContactService {
 
   submitContactForm(model: ContactForm){
-    return timer(3000).pipe(
-      tap(() => console.log('Contact Us Submitted:', model)),
+    return timer(2000).pipe(
+      tap(() => console.log('Request Submitted:', model)),
       first()
     )
   }
