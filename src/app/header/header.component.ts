@@ -21,11 +21,4 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 export class HeaderComponent {
   readonly Category = Category;
   readonly ROUTER_TOKENS = ROUTER_TOKENS;
-
-  private readonly pieService = inject(PieService);
-
-  changeCategory(category: Category){
-    this.pieService.setSelectedCategory(category);
-  }
-
 }

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { PieService } from '../../services/pie.service';
 import { AsyncPipe, NgFor, NgIf } from '@angular/common';
+import { RouterLink, RouterLinkActive } from '@angular/router';
+import { ROUTER_TOKENS } from 'src/app/app.routes';
 
 @Component({
   standalone: true,
@@ -8,6 +10,8 @@ import { AsyncPipe, NgFor, NgIf } from '@angular/common';
     NgFor,
     NgIf,
     AsyncPipe,
+    RouterLink,
+    RouterLinkActive,
   ],
   selector: 'app-side-menu',
   templateUrl: './side-menu.component.html',
@@ -15,6 +19,8 @@ import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 })
 export class SideMenuComponent {
   pies$ = this.pieService.filteredPies$;
+
+  readonly ROUTER_TOKENS = ROUTER_TOKENS;
 
   constructor(
     private readonly pieService: PieService,

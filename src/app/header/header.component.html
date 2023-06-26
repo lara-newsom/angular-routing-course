@@ -14,25 +14,28 @@
             <span>&#8964;</span>
             <mat-menu class="menu-dropdown" #menu="matMenu">
               <button
-                [routerLink]="[ROUTER_TOKENS.SHOP]"
+                [routerLink]="[ROUTER_TOKENS.SHOP, Category.SEASONAL_PIE]"
+                routerLinkActive="active-link-li"
+                ariaCurrentWhenActive="page"
                 mat-menu-item
-                (click)="changeCategory(Category.SEASONAL_PIE)"
               >Seasonal Pies</button>
               <button
-                [routerLink]="[ROUTER_TOKENS.SHOP]"
-
+                [routerLink]="[ROUTER_TOKENS.SHOP, Category.FRUIT_PIE]"
+                routerLinkActive="active-link-li"
+                ariaCurrentWhenActive="page"
                 mat-menu-item
-                (click)="changeCategory(Category.FRUIT_PIE)"
               >Fruit Pies</button>
               <button
-                [routerLink]="[ROUTER_TOKENS.SHOP]"
+                [routerLink]="[ROUTER_TOKENS.SHOP, Category.CHEESECAKE]"
+                routerLinkActive="active-link-li"
+                ariaCurrentWhenActive="page"
                 mat-menu-item
-                (click)="changeCategory(Category.CHEESECAKE)"
               >Cheesecakes</button>
               <button
-                [routerLink]="[ROUTER_TOKENS.SHOP]"
+                [routerLink]="[ROUTER_TOKENS.SHOP, Category.ALL]"
+                routerLinkActive="active-link-li"
+                ariaCurrentWhenActive="page"
                 mat-menu-item
-                (click)="changeCategory(Category.ALL)"
               >All Pies</button>
             </mat-menu>
           </button>
