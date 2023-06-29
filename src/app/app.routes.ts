@@ -29,20 +29,20 @@ export const ROUTES: Routes = [
   {
     path: `${ROUTER_TOKENS.SHOP}/:categoryId` ,
     component: ProductsViewComponent,
-    children: PRODUCT_ROUTES,
+    loadChildren: () => import('./products-view/products.routes').then(m => m.PRODUCT_ROUTES)
   },
   {
     path: ROUTER_TOKENS.CONTACT,
-    component: ContactComponent,
+    loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule),
   },
   {
     path: ROUTER_TOKENS.ABOUT,
-    component: AboutComponent,
+    loadComponent: () => import('./about/about.component').then(m => m.AboutComponent),
   },
   {
     path: ROUTER_TOKENS.CHECKOUT,
     outlet: ROUTER_TOKENS.CART,
-    component: CartComponent,
+    loadComponent: () => import('./cart/cart.component').then(m => m.CartComponent),
   },
   {
     path: '**',
