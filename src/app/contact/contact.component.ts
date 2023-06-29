@@ -1,11 +1,22 @@
 import { Component, OnDestroy, inject } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { takeUntil } from 'rxjs/operators';
 import { ReplaySubject } from 'rxjs';
 import { ContactService } from '../services/contact.service';
 import { ContactForm } from '../models/contact-form';
+import { FormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-contact',
+  standalone: true,
+  imports: [
+    CommonModule,
+    FormsModule,
+    MatProgressSpinnerModule,
+    MatButtonModule,
+  ],
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css']
 })
