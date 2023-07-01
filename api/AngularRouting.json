@@ -1,7 +1,7 @@
 {
   "uuid": "6740440a-4aeb-4f40-81c6-b521a4acc4ff",
   "lastMigration": 27,
-  "name": "AngularRouting (copy)",
+  "name": "Angular Routing Api",
   "endpointPrefix": "",
   "latency": 0,
   "port": 3000,
@@ -11,9 +11,9 @@
     {
       "uuid": "a86c70ab-3270-4dd2-9c9b-cbc57e4911b9",
       "type": "http",
-      "documentation": "This route returns fake feautre flags",
+      "documentation": "This route returns fake feature flags",
       "method": "get",
-      "endpoint": "feature-Flags",
+      "endpoint": "feature-flags",
       "responses": [
         {
           "uuid": "ea9108fb-a50d-4c6f-81dc-529d53e629f8",
@@ -54,7 +54,7 @@
       "type": "http",
       "documentation": "returns fake auth",
       "method": "get",
-      "endpoint": "authentication",
+      "endpoint": "authorization",
       "responses": [
         {
           "uuid": "881e56ba-96b2-447b-ac4c-19fc233174c1",

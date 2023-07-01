@@ -10,7 +10,7 @@ export class AuthService {
   private readonly user = new BehaviorSubject<string | undefined>(undefined);
   readonly user$ = this.user.asObservable();
 
-  authentication = this.http.get<Array<{name: string, permissions: string[]}>>('http://localhost:3000/authentication');
+  authentication = this.http.get<Array<{name: string, permissions: string[]}>>('http://localhost:3000/authorization');
   userAuth = this.user.pipe(
     switchMap((user) => this.authentication.pipe(
       map((auth) => auth.find((userAuth) => userAuth.name.toLowerCase() === user?.toLowerCase())?.permissions) || []
