@@ -1,11 +1,10 @@
-import { Router, Routes, UrlTree } from '@angular/router';
+import { Router, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HomeUpdatedComponent } from './home-updated/home-updated.component';
 import { inject } from '@angular/core';
 import { FeatureFlagService } from './services/feature-flag.service';
 import { map } from 'rxjs';
-import { AuthService } from './services/auth.service';
 import { HelloService } from './services/hello.service';
 import { ContactComponent } from './contact/contact.component';
 import { ContactService } from './services/contact.service';
