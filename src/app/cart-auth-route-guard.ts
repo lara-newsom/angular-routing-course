@@ -5,7 +5,7 @@ import { map } from 'rxjs';
 import { ROUTER_TOKENS } from './app.routes';
 
 
-export function AuthRouteGuard(route: string){
+export function authRouteGuard(route: string){
   return () => {
     const authService = inject(AuthService);
     const router = inject(Router);

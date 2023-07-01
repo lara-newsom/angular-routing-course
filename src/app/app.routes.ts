@@ -8,7 +8,9 @@ import { map } from 'rxjs';
 import { HelloService } from './services/hello.service';
 import { ContactComponent } from './contact/contact.component';
 import { ContactService } from './services/contact.service';
-import { AuthRouteGuard } from './cart-auth-route-guard';
+import { authRouteGuard } from './cart-auth-route-guard';
+import { NotReadyComponent } from './not-ready/not-ready.component';
+import { NotAuthorizedComponent } from './not-authorized/not-authorized.component';
 
 export enum ROUTER_TOKENS {
   HOME = 'home',
@@ -55,7 +57,7 @@ export const ROUTES: Routes = [
 
         return flagService.featureFlags.pipe(map((flag) => !!flag.contact  || router.parseUrl(`/${ROUTER_TOKENS.NOT_READY}`)))
       },
-      AuthRouteGuard(ROUTER_TOKENS.CONTACT)
+      authRouteGuard(ROUTER_TOKENS.CONTACT)
     ],
     resolve: {userHello: () => {
       const helloService = inject(HelloService);
@@ -69,11 +71,11 @@ export const ROUTES: Routes = [
   },
   {
     path: ROUTER_TOKENS.NOT_AUTH,
-    loadComponent: () => import('./not-authorized/not-authorized.component').then(m => m.NotAuthorizedComponent),
+    component: NotAuthorizedComponent,
   },
   {
     path: ROUTER_TOKENS.NOT_READY,
-    loadComponent: () => import('./not-ready/not-ready.component').then(m => m.NotReadyComponent),
+    component: NotReadyComponent,
   },
   {
     path: ROUTER_TOKENS.ABOUT,
@@ -83,7 +85,7 @@ export const ROUTES: Routes = [
     path: ROUTER_TOKENS.CHECKOUT,
     outlet: ROUTER_TOKENS.CART,
     loadComponent: () => import('./cart/cart.component').then(m => m.CartComponent),
-    canActivate: [AuthRouteGuard(ROUTER_TOKENS.CART)]
+    canActivate: [authRouteGuard(ROUTER_TOKENS.CART)]
   },
   {
     path: '**',
