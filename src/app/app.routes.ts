@@ -1,8 +1,6 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { CartComponent } from './cart/cart.component';
-import { ProductsViewComponent } from './products-view/products-view.component';
 
 export enum ROUTER_TOKENS {
   HOME = 'home',
@@ -11,6 +9,8 @@ export enum ROUTER_TOKENS {
   ABOUT = 'about',
   CHECKOUT = 'checkout',
   CART = 'cart',
+  NOT_AUTH = 'not-auth',
+  NOT_READY = 'not-ready'
 }
 
 export const ROUTES: Routes = [
