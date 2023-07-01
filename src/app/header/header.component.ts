@@ -5,6 +5,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { ROUTER_TOKENS } from '../app.routes';
 import { CartService } from '../services/cart.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   standalone: true,
@@ -24,6 +25,8 @@ export class HeaderComponent {
   readonly outlets = { [ROUTER_TOKENS.CART]: ROUTER_TOKENS.CHECKOUT };
 
   private readonly cartService = inject(CartService);
+  readonly authService = inject(AuthService);
+  name = '';
 
   readonly totalItems = this.cartService.totalItems;
 }

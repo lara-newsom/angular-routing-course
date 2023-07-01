@@ -65,6 +65,10 @@
     <div class="header-icons">
       <ul>
         <li>
+          <input (focus)="authService.setUser()"  #name/>
+          <button (click)="authService.setUser(name.value)">Log In</button>
+        </li>
+        <li>
           <button
             [routerLink]="['/', { outlets }]"
             queryParamsHandling="merge"

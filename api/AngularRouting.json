@@ -1,0 +1,136 @@
+{
+  "uuid": "6740440a-4aeb-4f40-81c6-b521a4acc4ff",
+  "lastMigration": 27,
+  "name": "AngularRouting (copy)",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 3000,
+  "hostname": "",
+  "folders": [],
+  "routes": [
+    {
+      "uuid": "a86c70ab-3270-4dd2-9c9b-cbc57e4911b9",
+      "type": "http",
+      "documentation": "This route returns fake feautre flags",
+      "method": "get",
+      "endpoint": "feature-Flags",
+      "responses": [
+        {
+          "uuid": "ea9108fb-a50d-4c6f-81dc-529d53e629f8",
+          "body": "{\n  \"home\": true,\n  \"contact\": true\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Access-Control-Allow-Methods",
+              "value": "GET"
+            },
+            {
+              "key": "Access-Control-Allow-Headers",
+              "value": "Content-Type, Origin, Accept,Authorization,Content-Length, X-Requested-With"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "606d7f1e-1a2c-4d11-97e2-9bcce8053df3",
+      "type": "http",
+      "documentation": "returns fake auth",
+      "method": "get",
+      "endpoint": "authentication",
+      "responses": [
+        {
+          "uuid": "881e56ba-96b2-447b-ac4c-19fc233174c1",
+          "body": "[{\n \"name\": \"Lara\",\n \"permissions\": [\"cart\", \"contact\"]\n},{\n  \"name\": \"Larry\",\n  \"permissions\": [\"contact\"]\n}]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Access-Control-Allow-Methods",
+              "value": "GET"
+            },
+            {
+              "key": "Access-Control-Allow-Headers",
+              "value": "Content-Type, Origin, Accept,Authorization,Content-Length, X-Requested-With"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    }
+  ],
+  "rootChildren": [
+    {
+      "type": "route",
+      "uuid": "a86c70ab-3270-4dd2-9c9b-cbc57e4911b9"
+    },
+    {
+      "type": "route",
+      "uuid": "606d7f1e-1a2c-4d11-97e2-9bcce8053df3"
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "data": []
+}

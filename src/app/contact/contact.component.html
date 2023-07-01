@@ -4,7 +4,7 @@
       <img src="../../assets/images/contact.png" alt="" />
     </div>
     <div *ngIf="!submitted; else formSubmitted" class="form-wrapper">
-      <h3>We'd Love to Hear from You</h3>
+      <h3>{{ userHello }}</h3>
       <p>Please fill out the form below to let us know how we can help.</p>
       <fieldset>
         <form #contactForm="ngForm">

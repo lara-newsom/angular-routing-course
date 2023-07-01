@@ -1,4 +1,4 @@
-import { Component, OnDestroy, inject } from '@angular/core';
+import { Component, Input, OnDestroy, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { takeUntil } from 'rxjs/operators';
 import { ReplaySubject } from 'rxjs';
@@ -21,6 +21,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnDestroy{
+  userHello = '';
   readonly contactService = inject(ContactService);
   destroyed$ = new ReplaySubject<void>(1);
 
