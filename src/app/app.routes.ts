@@ -9,6 +9,7 @@ import { AuthService } from './services/auth.service';
 import { HelloService } from './services/hello.service';
 import { ContactComponent } from './contact/contact.component';
 import { ContactService } from './services/contact.service';
+import { AuthRouteGuard } from './cart-auth-route-guard';
 
 export enum ROUTER_TOKENS {
   HOME = 'home',
@@ -55,13 +56,8 @@ export const ROUTES: Routes = [
 
         return flagService.featureFlags.pipe(map((flag) => !!flag.contact  || router.parseUrl(`/${ROUTER_TOKENS.NOT_READY}`)))
       },
-      () => {
-        const authService = inject(AuthService);
-        const router = inject(Router);
-
-        return authService.userAuth.pipe(
-          map((permissions) => !!permissions?.includes('contact') || router.parseUrl(`/${ROUTER_TOKENS.NOT_AUTH}`)))
-      }],
+      AuthRouteGuard(ROUTER_TOKENS.CONTACT)
+    ],
     resolve: {userHello: () => {
       const helloService = inject(HelloService);
 
@@ -88,14 +84,7 @@ export const ROUTES: Routes = [
     path: ROUTER_TOKENS.CHECKOUT,
     outlet: ROUTER_TOKENS.CART,
     loadComponent: () => import('./cart/cart.component').then(m => m.CartComponent),
-    canActivate: [
-      () => {
-        const authService = inject(AuthService);
-        const router = inject(Router);
-
-        return authService.userAuth.pipe(map((permissions) => !!permissions?.includes('cart') || router.parseUrl(`/${ROUTER_TOKENS.NOT_AUTH}`)))
-      }
-    ]
+    canActivate: [AuthRouteGuard(ROUTER_TOKENS.CART)]
   },
   {
     path: '**',
