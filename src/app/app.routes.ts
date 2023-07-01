@@ -51,11 +51,14 @@ export const ROUTES: Routes = [
     canActivate: [
       () => {
         const flagService = inject(FeatureFlagService);
-        return flagService.featureFlags.pipe(map((flag) => !!flag.contact))
+        const router = inject(Router)
+
+        return flagService.featureFlags.pipe(map((flag) => !!flag.contact  || router.parseUrl(`/${ROUTER_TOKENS.NOT_READY}`)))
       },
       () => {
         const authService = inject(AuthService);
-        const router = inject(Router)
+        const router = inject(Router);
+
         return authService.userAuth.pipe(
           map((permissions) => !!permissions?.includes('contact') || router.parseUrl(`/${ROUTER_TOKENS.NOT_AUTH}`)))
       }],
@@ -74,6 +77,10 @@ export const ROUTES: Routes = [
     loadComponent: () => import('./not-authorized/not-authorized.component').then(m => m.NotAuthorizedComponent),
   },
   {
+    path: ROUTER_TOKENS.NOT_READY,
+    loadComponent: () => import('./not-ready/not-ready.component').then(m => m.NotReadyComponent),
+  },
+  {
     path: ROUTER_TOKENS.ABOUT,
     loadChildren: () => import('./about/about.module').then(m => m.AboutModule),
   },
@@ -84,7 +91,9 @@ export const ROUTES: Routes = [
     canActivate: [
       () => {
         const authService = inject(AuthService);
-        return authService.userAuth.pipe(map((permissions) => !!permissions?.includes('cart')))
+        const router = inject(Router);
+
+        return authService.userAuth.pipe(map((permissions) => !!permissions?.includes('cart') || router.parseUrl(`/${ROUTER_TOKENS.NOT_AUTH}`)))
       }
     ]
   },
