@@ -1,4 +1,4 @@
-import { Routes } from '@angular/router';
+import { Router, Routes, UrlTree } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HomeUpdatedComponent } from './home-updated/home-updated.component';
@@ -7,6 +7,8 @@ import { FeatureFlagService } from './services/feature-flag.service';
 import { map } from 'rxjs';
 import { AuthService } from './services/auth.service';
 import { HelloService } from './services/hello.service';
+import { ContactComponent } from './contact/contact.component';
+import { ContactService } from './services/contact.service';
 
 export enum ROUTER_TOKENS {
   HOME = 'home',
@@ -45,26 +47,27 @@ export const ROUTES: Routes = [
   },
   {
     path: ROUTER_TOKENS.CONTACT,
-    loadComponent: () => import('./contact/contact.component').then(m => m.ContactComponent),
+    component: ContactComponent,
     canActivate: [
       () => {
         const flagService = inject(FeatureFlagService);
         return flagService.featureFlags.pipe(map((flag) => !!flag.contact))
-      }],
-    canMatch: [
+      },
       () => {
         const authService = inject(AuthService);
-        return authService.userAuth.pipe(map((permissions) => !!permissions?.includes('contact')))
+        const router = inject(Router)
+        return authService.userAuth.pipe(
+          map((permissions) => !!permissions?.includes('contact') || router.parseUrl(`/${ROUTER_TOKENS.NOT_AUTH}`)))
       }],
     resolve: {userHello: () => {
       const helloService = inject(HelloService);
 
       return helloService.getUserHello()
-    }}
-  },
-  {
-    path: ROUTER_TOKENS.CONTACT,
-    redirectTo: ROUTER_TOKENS.NOT_AUTH,
+    }},
+    canDeactivate: [() => {
+      const contactService = inject(ContactService);
+      return contactService.canDeactivate();
+    }]
   },
   {
     path: ROUTER_TOKENS.NOT_AUTH,
