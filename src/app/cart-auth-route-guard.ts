@@ -1,8 +1,8 @@
-import { Injectable, inject } from "@angular/core";
-import { CanActivate, Router } from "@angular/router";
-import { AuthService } from "./services/auth.service";
-import { map } from "rxjs";
-import { ROUTER_TOKENS } from "./app.routes";
+import { Injectable, inject } from '@angular/core';
+import { CanActivate, Router } from '@angular/router';
+import { AuthService } from './services/auth.service';
+import { map } from 'rxjs';
+import { ROUTER_TOKENS } from './app.routes';
 
 @Injectable({ providedIn: 'root' })
 export class CartAuthGuard implements CanActivate {
