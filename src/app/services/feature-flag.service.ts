@@ -7,5 +7,5 @@ import { Injectable, inject } from '@angular/core';
 export class FeatureFlagService {
   private readonly http = inject(HttpClient);
 
-  featureFlags = this.http.get<{home: boolean, contact: boolean}>('http://localhost:3000/feature-flags');
+  featureFlags = this.http.get<{home: boolean, contact: boolean, about: boolean}>('http://localhost:3000/feature-flags');
 }

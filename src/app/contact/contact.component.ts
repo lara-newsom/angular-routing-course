@@ -1,4 +1,4 @@
-import { Component, Input, OnDestroy, inject } from '@angular/core';
+import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { takeUntil } from 'rxjs/operators';
 import { ReplaySubject } from 'rxjs';
@@ -20,7 +20,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css']
 })
-export class ContactComponent implements OnDestroy{
+export class ContactComponent implements OnDestroy, OnInit{
   userHello = '';
   readonly contactService = inject(ContactService);
   destroyed$ = new ReplaySubject<void>(1);
@@ -41,11 +41,13 @@ export class ContactComponent implements OnDestroy{
     this.contactService.submitContactForm(model).pipe(
       takeUntil(this.destroyed$)
     ).subscribe(() => {
+      this.contactService.canDeactivate.set(true);
       this.loading = false;
     })
   }
 
   clearForm() {
+    this.contactService.canDeactivate.set(true);
     this.submitted = false;
     this.model = {
       fullName: '',
@@ -53,6 +55,10 @@ export class ContactComponent implements OnDestroy{
       phone: '',
       comment: '',
     }
+  }
+
+  ngOnInit() {
+    this.contactService.canDeactivate.set(false);
   }
 
   ngOnDestroy(): void {
