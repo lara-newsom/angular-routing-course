@@ -26,13 +26,13 @@ import { ROUTER_TOKENS } from '../app-route.constants';
 export class CartComponent {
   readonly cartService = inject(CartService);
   readonly router = inject(Router);
+  readonly contactService = inject(ContactService);
 
   readonly cartItemsPlusQuantity = this.cartService.cartItemsPlusQuantity;
   readonly subtotal = this.cartService.subtotal;
   readonly salesTax = this.cartService.salesTax;
   readonly total = this.cartService.total;
 
-  readonly contactService = inject(ContactService);
   destroyed$ = new ReplaySubject<void>(1);
 
   model: ContactForm = {};

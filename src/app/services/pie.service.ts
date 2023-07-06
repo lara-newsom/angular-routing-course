@@ -21,6 +21,19 @@ export class PieService {
       return params.get('productId');
     })
   );
+  readonly selectedPie$ = this.selectedPie.pipe(
+    switchMap((id) =>
+      this.filteredPies$.pipe(
+        map((pies) => {
+          if(id){
+            return pies.find((pie) => pie.id === id);
+          }
+
+          return undefined;
+        })
+      )
+    )
+  );
 
   readonly filteredPies$ = this.selectedCategory.pipe(
     switchMap((category) => this.pies$.pipe(
@@ -39,17 +52,6 @@ export class PieService {
     map((pies) => [pies[3], pies[6], pies[17]])
   );
   readonly featuredPiesSignal = toSignal(this.featuredPies$, {initialValue: []});
-
-  readonly selectedPie$ = this.selectedPie.pipe(switchMap((id) =>
-    this.filteredPies$.pipe(
-      map((pies) => {
-        if(id){
-          return pies.find((pie) => pie.id === id);
-        }
-
-        return undefined;
-      })
-    )));
   readonly selectedPieSignal = toSignal(this.selectedPie$);
 
   setSelectedCategory(category: string) {
