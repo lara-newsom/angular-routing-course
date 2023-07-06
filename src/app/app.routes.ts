@@ -1,7 +1,6 @@
 import { Router, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { HomeUpdatedComponent } from './home-updated/home-updated.component';
 import { inject } from '@angular/core';
 import { FeatureFlagService } from './services/feature-flag.service';
 import { map } from 'rxjs';
@@ -28,16 +27,6 @@ export const ROUTES: Routes = [
     path: '',
     redirectTo: ROUTER_TOKENS.HOME,
     pathMatch: 'full',
-  },
-  {
-    path: ROUTER_TOKENS.HOME,
-    component: HomeUpdatedComponent,
-    canMatch: [() => {
-      const flagService = inject(FeatureFlagService);
-      return flagService.featureFlags.pipe(map((flag) => {
-        return !!flag.home
-      }))
-    }]
   },
   {
     path: ROUTER_TOKENS.HOME,
