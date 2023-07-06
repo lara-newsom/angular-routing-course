@@ -8,7 +8,7 @@ import { ContactForm } from '../models/contact-form';
 import { FormsModule } from '@angular/forms';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { Router } from '@angular/router';
-import { ROUTER_TOKENS } from '../app.routes';
+import { ROUTER_TOKENS } from '../app-route.constants';
 
 @Component({
   selector: 'app-cart',

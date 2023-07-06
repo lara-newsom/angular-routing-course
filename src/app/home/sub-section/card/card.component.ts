@@ -1,9 +1,9 @@
 import { Component, Input, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterLink } from '@angular/router';
-import { ROUTER_TOKENS } from 'src/app/app.routes';
-import { Pie } from 'src/app/models/pie';
-import { CartService } from 'src/app/services/cart.service';
+import { ROUTER_TOKENS } from '../../../app-route.constants';
+import { Pie } from '../../../models/pie';
+import { CartService } from '../../../services/cart.service';
 
 @Component({
   standalone: true,

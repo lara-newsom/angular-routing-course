@@ -3,7 +3,6 @@ import { PieService } from '../../services/pie.service';
 import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { tap } from 'rxjs';
-import { ROUTER_TOKENS } from 'src/app/app.routes';
 import { PRODUCT_ROUTER_TOKENS } from '../products.routes';
 
 @Component({

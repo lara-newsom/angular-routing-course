@@ -4,7 +4,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { RouterOutlet } from '@angular/router';
-import { ROUTER_TOKENS } from './app.routes';
+import { ROUTER_TOKENS } from './app-route.constants';
 
 @Component({
   standalone: true,

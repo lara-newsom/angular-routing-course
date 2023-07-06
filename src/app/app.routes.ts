@@ -10,17 +10,7 @@ import { ContactService } from './services/contact.service';
 import { authRouteGuard } from './cart-auth-route-guard';
 import { NotReadyComponent } from './not-ready/not-ready.component';
 import { NotAuthorizedComponent } from './not-authorized/not-authorized.component';
-
-export enum ROUTER_TOKENS {
-  HOME = 'home',
-  SHOP = 'shop',
-  CONTACT = 'contact',
-  ABOUT = 'about',
-  CHECKOUT = 'checkout',
-  CART = 'cart',
-  NOT_AUTH = 'not-auth',
-  NOT_READY = 'not-ready'
-}
+import { ROUTER_TOKENS } from './app-route.constants';
 
 export const ROUTES: Routes = [
   {
