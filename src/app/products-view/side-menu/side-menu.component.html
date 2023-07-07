@@ -1,6 +1,7 @@
 <div class="side-nav">
   <button
     *ngFor="let pie of pies$ | async"
+    [attr.data-testId]="(customize ? customizeTestId : detailTestId) + pie.id"
     class="image-button"
     [routerLink]="[customize ? customizeLink : detailLink]"
     routerLinkActive="active-link"

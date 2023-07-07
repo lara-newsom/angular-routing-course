@@ -8,6 +8,7 @@
         <li>
           <button
             class="menu-item"
+            data-testid="Shop"
             mat-button
             [matMenuTriggerFor]="menu"
             routerLinkActive="active-link"
@@ -44,8 +45,9 @@
         </li>
         <li>
           <button
-            class="menu-item"
+            data-testid="Contact"
             mat-button
+            class="menu-item"
             [routerLink]="['./' + ROUTER_TOKENS.CONTACT]"
             routerLinkActive="active-link"
             ariaCurrentWhenActive="page"
@@ -53,8 +55,9 @@
         </li>
         <li>
           <button
-            class="menu-item"
+            data-testid="About"
             mat-button
+            class="menu-item"
             [routerLink]="['./' + ROUTER_TOKENS.ABOUT]"
             routerLinkActive="active-link"
             ariaCurrentWhenActive="page"
