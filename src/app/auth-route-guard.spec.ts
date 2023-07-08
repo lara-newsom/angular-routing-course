@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { authRouteGuard } from './cart-auth-route-guard';
+import { authRouteGuard } from './auth-route-guard';
 import { AuthService } from './services/auth.service';
 import { Router, UrlTree } from '@angular/router';
 import { createSpyFromClass } from 'jest-auto-spies';

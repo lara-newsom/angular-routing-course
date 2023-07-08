@@ -7,7 +7,7 @@ import { map } from 'rxjs';
 import { HelloService } from './services/hello.service';
 import { ContactComponent } from './contact/contact.component';
 import { ContactService } from './services/contact.service';
-import { authRouteGuard } from './cart-auth-route-guard';
+import { authRouteGuard } from './auth-route-guard';
 import { NotReadyComponent } from './not-ready/not-ready.component';
 import { NotAuthorizedComponent } from './not-authorized/not-authorized.component';
 import { ROUTER_TOKENS } from './app-route.constants';
