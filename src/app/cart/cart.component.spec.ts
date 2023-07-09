@@ -19,7 +19,9 @@ describe('CartComponent', () => {
       total: signal(1),
     };
 
-    // mock router service and spy on navigate
+    const mockRouter = createSpyFromClass(Router, {
+      methodsToSpyOn: ['navigate']
+    });
 
     const options = {
       imports: [
@@ -35,7 +37,10 @@ describe('CartComponent', () => {
           provide: CartService,
           useValue: mockCartService,
         },
-        // provide mock router
+        {
+          provide: Router,
+          useValue: mockRouter,
+        }
       ]
     };
 
@@ -43,14 +48,19 @@ describe('CartComponent', () => {
 
     return {
       fixture,
+      mockRouter,
     };
   }
 
   it('calls router.navigate on close', async() => {
-    // setup test
+    const { mockRouter } = await setup();
 
-    // find and click close button
+    const closeButton = screen.getByText('close');
+    fireEvent.click(closeButton);
 
-    // expect router.navigate to have been called
+    expect(mockRouter.navigate).toHaveBeenCalledTimes(1);
+    expect(mockRouter.navigate).toHaveBeenCalledWith([
+      { outlets: { [ROUTER_TOKENS.CART]: null } }],
+      { queryParamsHandling: 'merge' });
   });
 });

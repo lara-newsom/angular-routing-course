@@ -30,14 +30,22 @@ describe('SideMenuComponent', () => {
           provide: PieService,
           useValue: mockPieService
         },
-        // provide location mocks
-        // provide router with mock routes
+        provideLocationMocks(),
+        provideRouter([
+          { path: PRODUCT_ROUTER_TOKENS.CUSTOMIZE, component: DummyComponent },
+          { path: PRODUCT_ROUTER_TOKENS.DETAIL, component: DummyComponent },
+          { path: '**', component: SideMenuComponent},
+        ]),
       ]
     });
-    // implement RouterTestingHardness
-    // get location reference
+    const harness = await RouterTestingHarness.create();
+    const activatedComponent = await harness.navigateByUrl('/', SideMenuComponent);
+    const location = TestBed.inject(Location);
 
     return {
+      activatedComponent,
+      location,
+      harness,
     };
   }
 
@@ -45,22 +53,26 @@ describe('SideMenuComponent', () => {
     const pieId1 = 'pieId1';
     const pie1 = createPie({id: pieId1});
 
-    // setup
+    const { location } = await setup([pie1]);
 
-    // get button and click it
+    const button = screen.getByTestId(`detail-view-${pieId1}`);
+    fireEvent.click(button);
 
-    // expect location to change
+    expect(location.path()).toBe(`/${PRODUCT_ROUTER_TOKENS.DETAIL}?productId=${pieId1}`);
   });
 
   it('navigates to the detail view when customize is true', async() => {
     const pieId1 = 'pieId1';
     const pie1 = createPie({id: pieId1});
 
-    // setup
+    const { location, activatedComponent, harness } = await setup([pie1]);
+    activatedComponent.customize = true;
+    harness.detectChanges();
 
-    // get button and click it
+    const button = screen.getByTestId(`customize-view-${pieId1}`);
+    fireEvent.click(button);
 
-    // expect location to change
+    expect(location.path()).toBe(`/${PRODUCT_ROUTER_TOKENS.CUSTOMIZE}?productId=${pieId1}`);
   });
 
 });
