@@ -2,9 +2,10 @@ import { Component } from '@angular/core';
 import { PieService } from '../../services/pie.service';
 
 @Component({
-  selector: 'app-breadcrumbs',
-  templateUrl: './breadcrumbs.component.html',
-  styleUrls: ['./breadcrumbs.component.css']
+    selector: 'app-breadcrumbs',
+    templateUrl: './breadcrumbs.component.html',
+    styleUrls: ['./breadcrumbs.component.css'],
+    standalone: false
 })
 export class BreadcrumbsComponent {
   selectedCategory$ = this.pieService.selectedCategory$;
