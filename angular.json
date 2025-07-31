@@ -61,10 +61,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "angular-routing-course:build:production"
+              "buildTarget": "angular-routing-course:build:production"
             },
             "development": {
-              "browserTarget": "angular-routing-course:build:development"
+              "buildTarget": "angular-routing-course:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -72,7 +72,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-routing-course:build"
+            "buildTarget": "angular-routing-course:build"
           }
         },
         "test": {
