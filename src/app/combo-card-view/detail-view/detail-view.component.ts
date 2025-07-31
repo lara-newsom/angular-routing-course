@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { PieService } from '../../services/pie.service';
 import { MatButton } from '@angular/material/button';
 import { AsyncPipe } from '@angular/common';
@@ -10,6 +10,7 @@ import { AsyncPipe } from '@angular/common';
     imports: [MatButton, AsyncPipe]
 })
 export class DetailViewComponent {
+  private readonly pieService = inject(PieService);
+
   selectedPie$ = this.pieService.selectedPie$;
-  constructor(private readonly pieService: PieService,){}
 }

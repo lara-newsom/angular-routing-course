@@ -1,16 +1,7 @@
 import { bootstrapApplication } from '@angular/platform-browser';
-import { provideAnimations } from '@angular/platform-browser/animations';
-import { provideRouter } from '@angular/router';
-import { AppComponent } from './app/app.component';
-import { provideBrowserGlobalErrorListeners, provideZonelessChangeDetection } from '@angular/core';
+import { App } from './app/app';
+import { appConfig } from './app/app.config';
 
 
-bootstrapApplication(AppComponent, {
-    providers: [
-      provideBrowserGlobalErrorListeners(),
-      provideZonelessChangeDetection(),
-      provideRouter([]),
-      provideAnimations(),
-    ]
-})
+bootstrapApplication(App, appConfig)
   .catch(err => console.error(err));

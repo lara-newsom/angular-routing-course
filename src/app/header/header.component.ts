@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Category } from '../models/pie';
 import { PieService } from '../services/pie.service';
 import { MatMenuItem, MatMenuTrigger, MatMenu } from '@angular/material/menu';
@@ -11,10 +11,9 @@ import { MatButton } from '@angular/material/button';
     imports: [MatMenuItem, MatButton, MatMenuTrigger, MatMenu]
 })
 export class HeaderComponent {
+  private readonly pieService = inject(PieService);
+
   readonly Category = Category;
-  constructor(
-    private readonly pieService: PieService
-  ){}
 
   changeCategory(category: Category){
     this.pieService.setSelectedCategory(category);

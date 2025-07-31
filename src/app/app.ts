@@ -4,9 +4,9 @@ import { HomeComponent } from './home/home.component';
 
 @Component({
     selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.css'],
+    templateUrl: './app.html',
+    styleUrls: ['./app.css'],
     imports: [HeaderComponent, HomeComponent]
 })
-export class AppComponent {
+export class App {
 }
