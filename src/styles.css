@@ -60,7 +60,7 @@ body {
 }
 
 .carousel button {
-  background: url('~/assets/images/carousel-button-hollow.png') 50% 50% no-repeat;
+  background: url('/assets/images/carousel-button-hollow.png') 50% 50% no-repeat;
   border: none;
   color: black;
   cursor: pointer;
