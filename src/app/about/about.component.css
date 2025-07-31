@@ -1,0 +1,47 @@
+.main-content {
+  margin-top: 20px;
+  padding: 0 20px;
+}
+
+.contact-wrapper {
+  margin-top: 20px;
+  background-color: rgba(253, 246, 246, 1);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 0 51px 51px 51px;
+}
+
+.image-wrapper{
+  width: 40%;
+  margin-right: 20px;
+}
+
+.image-wrapper img{
+  width: 100%;
+}
+
+.form-wrapper {
+  width: 55%;
+  min-width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-wrapper h3 {
+  color: rgba(54, 48, 44, 1);
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0 0 18px 0;
+  line-height: 1.7rem;
+}
+
+.form-wrapper p {
+  color: rgba(54, 48, 44, 1);
+  font-size: 1.2rem;
+  font-weight: 200;
+  margin: 0 0 58px 0;
+  line-height: 1.8rem;
+  width: 75%;
+}
