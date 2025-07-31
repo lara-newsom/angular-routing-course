@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { PieService } from '../../services/pie.service';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
     selector: 'app-side-menu',
     templateUrl: './side-menu.component.html',
     styleUrls: ['./side-menu.component.css'],
-    standalone: false
+    imports: [AsyncPipe]
 })
 export class SideMenuComponent {
   pies$ = this.pieService.filteredPies$;

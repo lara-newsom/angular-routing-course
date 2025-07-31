@@ -20,29 +20,27 @@ import { BreadcrumbsComponent } from './shared-ui/breadcrumbs/breadcrumbs.compon
 import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    ComboCardViewComponent,
-    SideMenuComponent,
-    DetailViewComponent,
-    SubHeroLogoComponent,
-    NotFoundComponent,
-    HeroSectionComponent,
-    SubSectionComponent,
-    CardComponent,
-    HeaderComponent,
-    BreadcrumbsComponent,
-    ContactComponent,
-  ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    RouterModule,
-    MatMenuModule,
-    MatButtonModule,
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [AppComponent],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        RouterModule,
+        MatMenuModule,
+        MatButtonModule,
+        HomeComponent,
+        ComboCardViewComponent,
+        SideMenuComponent,
+        DetailViewComponent,
+        SubHeroLogoComponent,
+        NotFoundComponent,
+        HeroSectionComponent,
+        SubSectionComponent,
+        CardComponent,
+        HeaderComponent,
+        BreadcrumbsComponent,
+        ContactComponent,
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
