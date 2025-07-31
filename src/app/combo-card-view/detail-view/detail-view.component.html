@@ -1,4 +1,4 @@
-@if (selectedPie$ | async; as selectedPie) {
+@if (this.pieService.selectedPie.value(); as selectedPie) {
   <div class="detail">
     <h3>{{ selectedPie.title }}</h3>
     <div class="image-wrapper">

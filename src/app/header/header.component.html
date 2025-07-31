@@ -8,10 +8,10 @@
         <li>
           <button class="menu-item" mat-button [matMenuTriggerFor]="menu">Shop <span>&#8964;</span></button>
           <mat-menu class="menu-dropdown" #menu="matMenu">
-            <button mat-menu-item (click)="changeCategory(Category.SEASONAL_PIE)">Seasonal Pies</button>
-            <button mat-menu-item (click)="changeCategory(Category.FRUIT_PIE)">Fruit Pies</button>
-            <button mat-menu-item (click)="changeCategory(Category.CHEESECAKE)">Cheesecakes</button>
-            <button mat-menu-item (click)="changeCategory(Category.ALL)">All Pies</button>
+            <button mat-menu-item (click)="changeCategory('Seasonal Pies')">Seasonal Pies</button>
+            <button mat-menu-item (click)="changeCategory('Fruit Pies')">Fruit Pies</button>
+            <button mat-menu-item (click)="changeCategory('Cheesecakes')">Cheesecakes</button>
+            <button mat-menu-item (click)="changeCategory('All Pies')">All Pies</button>
           </mat-menu>
         </li>
         <li><button class="menu-item" mat-button>Contact</button></li>

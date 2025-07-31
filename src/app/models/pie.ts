@@ -6,12 +6,19 @@ export interface Pie {
   description: string;
   ingredients: string[];
   category: Category;
-  id: number;
+  id: string;
 }
 
-export enum Category {
-  FRUIT_PIE = 'Fruit Pies',
-  SEASONAL_PIE = 'Seasonal Pies',
-  CHEESECAKE = 'Cheesecakes',
-  ALL = 'All Pies'
-}
+export const FRUIT_PIE = 'Fruit Pies';
+export const SEASONAL_PIE = 'Seasonal Pies';
+export const CHEESECAKE = 'Cheesecakes';
+export const ALL = 'All Pies';
+
+export const CATEGORIES = [
+  FRUIT_PIE,
+  SEASONAL_PIE,
+  CHEESECAKE,
+  ALL
+] as const;
+
+export type Category = (typeof CATEGORIES)[number];

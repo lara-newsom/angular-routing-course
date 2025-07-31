@@ -1,9 +1,11 @@
 import {
   ApplicationConfig,
+  importProvidersFrom,
   provideBrowserGlobalErrorListeners,
   provideZonelessChangeDetection,
 } from '@angular/core';
 import { provideRouter } from '@angular/router';
+import {InMemoryWebApiModule }from 'angular-in-memory-web-api';
 
 import { routes } from './app.routes';
 import { provideAnimations } from '@angular/platform-browser/animations';
@@ -14,5 +16,8 @@ export const appConfig: ApplicationConfig = {
     provideZonelessChangeDetection(),
     provideRouter(routes),
     provideAnimations(),
+    importProvidersFrom(
+      InMemoryWebApiModule.forRoot(AppData, { delay: 150 })
+    ),
   ],
 };

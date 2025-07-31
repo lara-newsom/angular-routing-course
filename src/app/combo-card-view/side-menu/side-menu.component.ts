@@ -1,21 +1,15 @@
 import { Component, inject } from '@angular/core';
 import { PieService } from '../../services/pie.service';
-import { AsyncPipe } from '@angular/common';
 
 @Component({
     selector: 'app-side-menu',
     templateUrl: './side-menu.component.html',
     styleUrls: ['./side-menu.component.css'],
-    imports: [AsyncPipe]
 })
 export class SideMenuComponent {
-  private readonly pieService = inject(PieService);
+  protected readonly pieService = inject(PieService);
 
-  pies$ = this.pieService.filteredPies$;
-  selectedPie$ = this.pieService.selectedPie$;
-
-
-  selectPie(id: number){
+  selectPie(id: string){
     this.pieService.setSelectedPie(id);
   }
 }

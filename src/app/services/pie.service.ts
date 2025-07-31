@@ -1,47 +1,34 @@
-import { Injectable } from '@angular/core';
-import { BehaviorSubject, map, of, switchMap, tap } from 'rxjs';
+import { computed, Injectable, signal } from '@angular/core';
 import { Category, Pie } from '../models/pie';
-import { PIES } from '../models/pie-data.mock';
+import { httpResource } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PieService {
-  private readonly selectedCategory = new BehaviorSubject<Category>(Category.ALL);
-  private readonly selectedPie = new BehaviorSubject<number | undefined>(4);
+  readonly selectedCategory = signal<Category>('All Pies');
+  readonly selectedPieId = signal<string | undefined>(undefined);
 
-  readonly pies$ = of(PIES);
-  readonly selectedCategory$ = this.selectedCategory.asObservable();
+  readonly pies = httpResource<Pie[]>(() => '/api/pies');
 
-  readonly filteredPies$ = this.selectedCategory.pipe(
-    switchMap((category) => this.pies$.pipe(
-      map((pies) => {
-        if(category === Category.ALL) {
-          return pies;
-        }
+  readonly selectedPie = httpResource<Pie | undefined>(() => `/api/pies/${this.selectedPieId()}`);
 
-        return pies.filter((pie: Pie) => pie.category === category);
-      }),
-      tap((pies) => this.setSelectedPie(pies[0].id))
-    ))
-  )
+  readonly filteredPies = computed(() => {
+    const pies = this.pies.value();
+    const category = this.selectedCategory();
+    if (category === 'All Pies') {
+      return pies;
+    }
 
-  readonly selectedPie$ = this.selectedPie.pipe(switchMap((number) =>
-    this.pies$.pipe(
-      map((pies) => {
-        if(number){
-          return pies.find((pie) => pie.id === number);
-        }
+    return pies?.filter((pie: Pie) => pie.category === category) || [];
+  });
 
-        return undefined;
-      })
-    )));
 
-  setSelectedPie(id: number) {
-    this.selectedPie.next(id);
+  setSelectedPie(id: string) {
+    this.selectedPieId.set(id);
   }
 
   setSelectedCategory(category: Category) {
-    this.selectedCategory.next(category);
+    this.selectedCategory.set(category);
   }
 }

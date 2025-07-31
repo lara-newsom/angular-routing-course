@@ -1,15 +1,14 @@
-@if (selectedPie$ | async; as selectedPie) {
-  <div class="side-nav">
-    @for (pie of pies$ | async; track pie) {
-      <button
-        class="image-button"
-        (click)="selectPie(pie.id)"
-        >
-        <img
-          [src]="pie.thumb"
-          alt="image of person sticking a fork in a piece of pie"
-          />
-      </button>
-    }
-  </div>
-}
+<div class="side-nav">
+  @for (pie of this.pieService.pies.value(); track pie) {
+    <button
+      class="image-button"
+      (click)="selectPie(pie.id)"
+      >
+      <img
+        [src]="pie.thumb"
+        alt="image of person sticking a fork in a piece of pie"
+        />
+    </button>
+  }
+</div>
+

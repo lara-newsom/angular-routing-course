@@ -1,9 +1,9 @@
-import { Category, Pie } from "./pie";
+import { Pie } from './pie';
 
 export const PIES: Pie[] = [
   {
-    id: 1,
-    category: Category.CHEESECAKE,
+    id: 'cheesecake-1',
+    category: 'Cheesecakes',
     image: '../../assets/images/cheesecake-1.png',
     thumb: '../../assets/images/cheesecake-1-thumb.png',
     title: 'Original Cheesecake',
@@ -25,8 +25,8 @@ export const PIES: Pie[] = [
     description: 'This deliciously creamy perfectly sweet cheesecake is baked to perfection. A crisp graham cracker crust lines the bottom of the cheesecake. Can be frozen for up to six months, simply defrost to serve!'
   },
   {
-    id: 2,
-    category: Category.CHEESECAKE,
+    id: 'cheesecake-2',
+    category: 'Cheesecakes',
     image: '../../assets/images/cheesecake-2.png',
     thumb: '../../assets/images/cheesecake-2-thumb.png',
     title: 'Strawberry Cheesecake',
@@ -48,8 +48,8 @@ export const PIES: Pie[] = [
 
   },
   {
-    id: 3,
-    category: Category.CHEESECAKE,
+    id: 'cheesecake-3',
+    category: 'Cheesecakes',
     image: '../../assets/images/cheesecake-3.png',
     thumb: '../../assets/images/cheesecake-3-thumb.png',
     title: 'Chocolate Cheesecake',
@@ -73,8 +73,8 @@ export const PIES: Pie[] = [
     description: 'This delightfully chocolate cheesecake is baked to perfection and served with a heaping portion of toasted hazelnuts. A crisp chocolatey cracker crust lines the bottom of the cheesecake. Can be frozen for up to six months, simply defrost to serve!'
   },
   {
-    id: 4,
-    category: Category.CHEESECAKE,
+    id: 'cheesecake-4',
+    category: 'Cheesecakes',
     image: '../../assets/images/cheesecake-4.png',
     thumb: '../../assets/images/cheesecake-4-thumb.png',
     title: 'Birthday Cheesecake',
@@ -97,8 +97,8 @@ export const PIES: Pie[] = [
 
   },
   {
-    id: 5,
-    category: Category.CHEESECAKE,
+    id: 'cheesecake-5',
+    category: 'Cheesecakes',
     image: '../../assets/images/cheesecake-5.png',
     thumb: '../../assets/images/cheesecake-5-thumb.png',
     title: 'Caramel Cheesecake',
@@ -115,8 +115,8 @@ export const PIES: Pie[] = [
     description: 'This crust-less cheese cake is almost flan like in texture. This traditional vanilla flavored cheesecake custard is topped with house-made caramel sauce and sprinkled with kettle corn.'
   },
   {
-    id: 6,
-    category: Category.CHEESECAKE,
+    id: 'cheesecake-6',
+    category: 'Cheesecakes',
     image: '../../assets/images/cheesecake-6.png',
     thumb: '../../assets/images/cheesecake-6-thumb.png',
     title: 'Pistachio Cheesecake',
@@ -140,8 +140,8 @@ export const PIES: Pie[] = [
     description: 'This picnic favorite is a chilled cheesecake. We start with a graham cracker crust then we fill it with delicious pistachio cream filling. It is topped with toasted pistachio nuts.'
   },
   {
-    id: 7,
-    category: Category.FRUIT_PIE,
+    id: 'fruit-pie-1',
+    category: 'Fruit Pies',
     image: '../../assets/images/apple-pie.jpg',
     thumb: '../../assets/images/apple-pie-thumb.jpg',
     title: 'Apple Pie',
@@ -161,8 +161,8 @@ export const PIES: Pie[] = [
     description: 'What could be better than homemade apple pie! This family favorite features tart fresh apples sprinkled with just the right amount of cinnamon and sugar, baked in a flaky lattice top pastry.'
   },
   {
-    id: 8,
-    category: Category.FRUIT_PIE,
+    id: 'fruit-pie-2',
+    category: 'Fruit Pies',
     image: '../../assets/images/strawberry-pie.jpg',
     thumb: '../../assets/images/strawberry-pie-thumb.jpg',
     title: 'Strawberry Pie',
@@ -181,8 +181,8 @@ export const PIES: Pie[] = [
     description: 'What could be better than homemade apple pie! This family favorite features tart fresh apples sprinkled with just the right amount of cinnamon and sugar, baked in a flaky lattice top pastry.'
   },
   {
-    id: 9,
-    category: Category.FRUIT_PIE,
+    id: 'fruit-pie-3',
+    category: 'Fruit Pies',
     image: '../../assets/images/blueberry-pie.jpg',
     thumb: '../../assets/images/blueberry-pie-thumb.jpg',
     title: 'Blueberry Pie',
@@ -201,8 +201,8 @@ export const PIES: Pie[] = [
     description: 'What could be better than homemade apple pie! This family favorite features tart fresh apples sprinkled with just the right amount of cinnamon and sugar, baked in a flaky lattice top pastry.'
   },
   {
-    id: 10,
-    category: Category.FRUIT_PIE,
+    id: 'fruit-pie-4',
+    category: 'Fruit Pies',
     image: '../../assets/images/raspberry-pie.jpg',
     thumb: '../../assets/images/raspberry-pie-thumb.jpg',
     title: 'Raspberry Pie',
@@ -221,8 +221,8 @@ export const PIES: Pie[] = [
     description: 'What could be better than homemade apple pie! This family favorite features tart fresh apples sprinkled with just the right amount of cinnamon and sugar, baked in a flaky lattice top pastry.'
   },
   {
-    id: 11,
-    category: Category.FRUIT_PIE,
+    id: 'fruit-pie-5',
+    category: 'Fruit Pies',
     image: '../../assets/images/peach-pie.jpg',
     thumb: '../../assets/images/peach-pie-thumb.jpg',
     title: 'Peach Pie',
@@ -242,8 +242,8 @@ export const PIES: Pie[] = [
     description: 'What could be better than homemade apple pie! This family favorite features tart fresh apples sprinkled with just the right amount of cinnamon and sugar, baked in a flaky lattice top pastry.'
   },
   {
-    id: 12,
-    category: Category.FRUIT_PIE,
+    id: 'fruit-pie-6',
+    category: 'Fruit Pies',
     image: '../../assets/images/cherry-pie.jpg',
     thumb: '../../assets/images/cherry-pie-thumb.jpg',
     title: 'Cherry Pie',
@@ -262,8 +262,8 @@ export const PIES: Pie[] = [
     description: 'What could be better than homemade apple pie! This family favorite features tart fresh apples sprinkled with just the right amount of cinnamon and sugar, baked in a flaky lattice top pastry.'
   },
   {
-    id: 13,
-    category: Category.SEASONAL_PIE,
+    id: 'seasonal-pie-1',
+    category: 'Seasonal Pies',
     image: '../../assets/images/pumpkin-pie.jpg',
     thumb: '../../assets/images/pumpkin-pie-thumb.jpg',
     title: 'Pumpkin Pie',
@@ -285,8 +285,8 @@ export const PIES: Pie[] = [
     description: 'What could be better than homemade apple pie! This family favorite features tart fresh apples sprinkled with just the right amount of cinnamon and sugar, baked in a flaky lattice top pastry.'
   },
   {
-    id: 14,
-    category: Category.SEASONAL_PIE,
+    id: 'seasonal-pie-2',
+    category: 'Seasonal Pies',
     image: '../../assets/images/pecan-pie.jpg',
     thumb: '../../assets/images/pecan-pie-thumb.jpg',
     title: 'Pecan Pie',
@@ -307,8 +307,8 @@ export const PIES: Pie[] = [
     description: 'What could be better than homemade apple pie! This family favorite features tart fresh apples sprinkled with just the right amount of cinnamon and sugar, baked in a flaky lattice top pastry.'
   },
   {
-    id: 15,
-    category: Category.SEASONAL_PIE,
+    id: 'seasonal-pie-3',
+    category: 'Seasonal Pies',
     image: '../../assets/images/chocolate-cream-pie.jpg',
     thumb: '../../assets/images/chocolate-cream-pie-thumb.jpg',
     title: 'Chocolate Cream Pie',
@@ -330,8 +330,8 @@ export const PIES: Pie[] = [
     description: 'What could be better than homemade apple pie! This family favorite features tart fresh apples sprinkled with just the right amount of cinnamon and sugar, baked in a flaky lattice top pastry.'
   },
   {
-    id: 16,
-    category: Category.SEASONAL_PIE,
+    id: 'seasonal-pie-4',
+    category: 'Seasonal Pies',
     image: '../../assets/images/custard-pie.jpg',
     thumb: '../../assets/images/custard-pie-thumb.jpg',
     title: 'Custard Pie',
@@ -352,8 +352,8 @@ export const PIES: Pie[] = [
     description: 'What could be better than homemade apple pie! This family favorite features tart fresh apples sprinkled with just the right amount of cinnamon and sugar, baked in a flaky lattice top pastry.'
   },
   {
-    id: 17,
-    category: Category.SEASONAL_PIE,
+    id: 'seasonal-pie-5',
+    category: 'Seasonal Pies',
     image: '../../assets/images/fresh-strawberry-pie.jpg',
     thumb: '../../assets/images/fresh-strawberry-pie-thumb.jpg',
     title: 'Fresh Strawberry Pie',
@@ -373,8 +373,8 @@ export const PIES: Pie[] = [
     description: 'What could be better than homemade apple pie! This family favorite features tart fresh apples sprinkled with just the right amount of cinnamon and sugar, baked in a flaky lattice top pastry.'
   },
   {
-    id: 18,
-    category: Category.SEASONAL_PIE,
+    id: 'seasonal-pie-6',
+    category: 'Seasonal Pies',
     image: '../../assets/images/banana-cream-pie.jpg',
     thumb: '../../assets/images/banana-cream-pie-thumb.jpg',
     title: 'Banana Cream Pie',
@@ -397,5 +397,4 @@ export const PIES: Pie[] = [
     ],
     description: 'What could be better than homemade apple pie! This family favorite features tart fresh apples sprinkled with just the right amount of cinnamon and sugar, baked in a flaky lattice top pastry.'
   },
-
 ];

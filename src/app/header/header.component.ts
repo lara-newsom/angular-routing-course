@@ -11,9 +11,7 @@ import { MatButton } from '@angular/material/button';
     imports: [MatMenuItem, MatButton, MatMenuTrigger, MatMenu]
 })
 export class HeaderComponent {
-  private readonly pieService = inject(PieService);
-
-  readonly Category = Category;
+  protected readonly pieService = inject(PieService);
 
   changeCategory(category: Category){
     this.pieService.setSelectedCategory(category);
