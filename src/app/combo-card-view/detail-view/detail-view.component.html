@@ -1,13 +1,16 @@
-<div class="detail" *ngIf="selectedPie$ | async as selectedPie">
-  <h3>{{ selectedPie.title }}</h3>
-  <div class="image-wrapper">
-    <img [src]="selectedPie.image" [alt]="selectedPie.title" />
-    <div class="description">
-      <p>{{ selectedPie.description }}</p>
-      <h4>Ingredients: <span class="ingredient" *ngFor="let ingredient of selectedPie.ingredients">{{ ingredient }}</span></h4>
-      <p class="price">Price: <span>{{ selectedPie.price }}</span></p>
+@if (selectedPie$ | async; as selectedPie) {
+  <div class="detail">
+    <h3>{{ selectedPie.title }}</h3>
+    <div class="image-wrapper">
+      <img [src]="selectedPie.image" [alt]="selectedPie.title" />
+      <div class="description">
+        <p>{{ selectedPie.description }}</p>
+        <h4>Ingredients: @for (ingredient of selectedPie.ingredients; track ingredient) {
+          <span class="ingredient">{{ ingredient }}</span>
+        }</h4>
+        <p class="price">Price: <span>{{ selectedPie.price }}</span></p>
+      </div>
     </div>
+    <button mat-raised-button>Add To Cart</button>
   </div>
-
-  <button mat-raised-button>Add To Cart</button>
-</div>
+}

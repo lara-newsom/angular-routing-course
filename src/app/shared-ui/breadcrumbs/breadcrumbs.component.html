@@ -2,12 +2,12 @@
   <button mat-button>Home</button>
   <span>>></span>
   <button mat-button>Shop</button>
-  <ng-container *ngIf="selectedCategory$ | async as selectedCategory">
+  @if (selectedCategory$ | async; as selectedCategory) {
     <span>>></span>
     <button mat-button>{{ selectedCategory }}</button>
-  </ng-container>
-  <ng-container *ngIf="selectedPie$ | async as selectedPie">
+  }
+  @if (selectedPie$ | async; as selectedPie) {
     <span>>></span>
     <button mat-button>{{ selectedPie.title }}</button>
-  </ng-container>
+  }
 </div>
