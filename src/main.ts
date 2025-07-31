@@ -1,7 +1,16 @@
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { bootstrapApplication } from '@angular/platform-browser';
+import { provideAnimations } from '@angular/platform-browser/animations';
+import { provideRouter } from '@angular/router';
+import { AppComponent } from './app/app.component';
+import { provideBrowserGlobalErrorListeners, provideZonelessChangeDetection } from '@angular/core';
 
-import { AppModule } from './app/app.module';
 
-
-platformBrowserDynamic().bootstrapModule(AppModule)
+bootstrapApplication(AppComponent, {
+    providers: [
+      provideBrowserGlobalErrorListeners(),
+      provideZonelessChangeDetection(),
+      provideRouter([]),
+      provideAnimations(),
+    ]
+})
   .catch(err => console.error(err));
