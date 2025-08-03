@@ -1,9 +1,9 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule, CurrencyPipe } from '@angular/common';
 import { CartService } from '../services/cart.service';
 import { MatButtonModule } from '@angular/material/button';
 import { ContactService } from '../services/contact.service';
-import { ReplaySubject, takeUntil } from 'rxjs';
+import { ReplaySubject, take, takeUntil } from 'rxjs';
 import { ContactForm } from '../models/contact-form';
 import { FormsModule } from '@angular/forms';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
@@ -20,38 +20,31 @@ import { Router } from '@angular/router';
     MatProgressSpinnerModule,
   ],
   templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.css']
+  styleUrls: ['./cart.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CartComponent {
   readonly cartService = inject(CartService);
   readonly router = inject(Router);
   readonly contactService = inject(ContactService);
 
-  readonly cartItemsPlusQuantity = this.cartService.cartItemsPlusQuantity;
-  readonly cartTotals = this.cartService.cartTotals;
-
   destroyed$ = new ReplaySubject<void>(1);
 
   model: ContactForm = {};
-  submitted = false;
-  loading = false;
+  submitted = signal(false);
+  loading = signal(false);
 
   checkout() {
-    this.loading = true;
+    this.loading.set(true);
 
     this.contactService.submitContactForm(this.model).pipe(
+      take(1),
       takeUntil(this.destroyed$)
     ).subscribe(() => {
-      this.submitted = true;
-      this.loading = false;
-      this.cartService.cartItems.set({});
+      this.submitted.set(true);
+      this.loading.set(false);
+      this.cartService.checkout();
     })
-  }
-
-  close() {
-    this.router.navigate([{ outlets: { [ROUTER_TOKENS.CART]: null } }], {
-      queryParamsHandling: 'merge'
-    });
   }
 
   ngOnDestroy(): void {

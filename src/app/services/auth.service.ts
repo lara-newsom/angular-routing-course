@@ -13,7 +13,7 @@ export class AuthService {
   authenticatedUser = httpResource<User>(() => `/users/${this.userId()}`);
 
   userPermissions = computed(() => {
-    return this.authenticatedUser.value()?.permissions || [];
+    return this.userId() ? this.authenticatedUser.value()?.permissions || [] : [];
   });
 
   isAuthorized(requiredPermission: Permission): boolean {
@@ -24,11 +24,13 @@ export class AuthService {
     this.userId.set(userId);
   }
 
-  updateUserCart(cart: Record<string, { quantity: number }>) {
-    const user = this.authenticatedUser.value();
-    if (user) {
-      user.cart = cart;
-      this.authenticatedUser.set(user);
+  updateUserCart(cart: Record<string, { quantity: number }>): void {
+    if(this.userId()){
+      const user = this.authenticatedUser.value();
+      if (user) {
+        user.cart = cart;
+        this.authenticatedUser.set(user);
+      }
     }
   }
 }

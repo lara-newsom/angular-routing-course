@@ -14,7 +14,7 @@
         <p class="price">Price: <span>{{ selectedPie.price }}</span></p>
       </div>
     </div>
-    <button mat-raised-button>Add To Cart</button>
+    <button mat-raised-button (click)="cartService.addCartItem(selectedPie.id)">Add To Cart</button>
   } @else if(loading) {
     <div>
       <h3>Loading...</h3>

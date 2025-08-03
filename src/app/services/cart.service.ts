@@ -1,4 +1,4 @@
-import { Injectable, computed, inject } from '@angular/core';
+import { Injectable, computed, effect, inject, linkedSignal } from '@angular/core';
 import { Pie } from '../models/pie';
 import { PieService } from './pie.service';
 import { AuthService } from './auth.service';
@@ -10,8 +10,12 @@ export class CartService {
   readonly authService = inject(AuthService);
   readonly pieService = inject(PieService);
 
-  readonly userCartItems =
-    this.authService.authenticatedUser.value()?.cart || {};
+  readonly userCartItems = linkedSignal(() => {
+    if(this.authService.userId()){
+      return this.authService.authenticatedUser.value()?.cart ?? {}
+    }
+    return {};
+  });
 
   readonly cartItemsPlusQuantity = computed(() => {
     const cartItems: Record<
@@ -19,7 +23,7 @@ export class CartService {
       {
         quantity: number;
       }
-    > = this.authService.authenticatedUser.value()?.cart || {};
+    > = this.userCartItems();
     return Object.keys(cartItems).reduce((acc, key) => {
       const pie = this.pieService.pies.value()?.find((pie) => pie.id === key);
 
@@ -37,7 +41,7 @@ export class CartService {
   readonly selectedItemPlusQuantity = computed(() => {
     const key = this.pieService.selectedPieId();
 
-    const cartItems: Record<string, { quantity: number;}> = this.authService.authenticatedUser.value()?.cart || {};
+    const cartItems: Record<string, { quantity: number;}> = this.userCartItems();
     return key
       ? ({
           ...this.pieService.selectedPie.value(),
@@ -51,7 +55,7 @@ export class CartService {
     const last = pies.length;
     const middle = Math.floor(last / 2);
 
-    const cartItems: Record<string, { quantity: number;}> = this.authService.authenticatedUser.value()?.cart || {};
+    const cartItems: Record<string, { quantity: number;}> = this.userCartItems();
 
     return [0, middle, last].map((key) => ({
       ...pies[key],
@@ -60,16 +64,15 @@ export class CartService {
   });
 
   readonly cartTotals = computed(() => {
-    const cartItems: Record<string, { quantity: number;}> = this.authService.authenticatedUser.value()?.cart || {};
     const pies = this.pieService.pies.value() || [];
 
     let subtotal = 0;
     let totalCartCount = 0;
 
-    for(const key in Object.keys(cartItems)) {
+    for(const key of Object.keys(this.userCartItems())) {
       const pie = pies.find((pie) => pie.id === key);
       if (pie) {
-        const quantity = cartItems[key].quantity || 0;
+        const quantity = this.userCartItems()[key].quantity || 0;
         subtotal += quantity * pie.price;
         totalCartCount += quantity;
       }
@@ -88,7 +91,17 @@ export class CartService {
   });
 
   addCartItem(id: string) {
-    const cartItems: Record<string, { quantity: number;}> = this.authService.authenticatedUser.value()?.cart || {};
+    const cartItems: Record<string, { quantity: number;}> = this.userCartItems();
+    const updatedCart = {
+      ...cartItems,
+      [id]: {
+        quantity: cartItems[id]?.quantity
+          ? cartItems[id].quantity + 1
+          : 1,
+      },
+    };
+
+    this.userCartItems.set(updatedCart);
 
     this.authService.updateUserCart({
       ...cartItems,
@@ -101,20 +114,21 @@ export class CartService {
   }
 
   decrementCartItem(id: string) {
-    const cartItems: Record<string, { quantity: number;}> = this.authService.authenticatedUser.value()?.cart || {};
+    const cartItems: Record<string, { quantity: number;}> = this.userCartItems();
 
     const updatedQuantity = (cartItems[id].quantity || 0) - 1;
 
     if(updatedQuantity) {
-      this.authService.updateUserCart({
-        ...cartItems,
-        [id]:{
-          quantity: updatedQuantity
-        }
-      });
+      cartItems[id].quantity = updatedQuantity;;
     } else {
       delete cartItems[id];
-      this.authService.updateUserCart({...cartItems});
     }
+
+    this.userCartItems.set({...cartItems});
+    this.authService.updateUserCart({...cartItems});
+  }
+
+  checkout() {
+    this.authService.updateUserCart({});
   }
 }

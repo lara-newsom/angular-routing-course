@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { LogoBannerComponent } from '../../shared-ui/logo-banner/logo-banner.component';
 
 @Component({
     selector: 'app-hero-section',
     templateUrl: './hero-section.component.html',
-    imports: [LogoBannerComponent]
+    imports: [LogoBannerComponent],
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeroSectionComponent {
   images = [

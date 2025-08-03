@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { PieService } from '../../services/pie.service';
 import { MatButton } from '@angular/material/button';
 
@@ -6,7 +6,8 @@ import { MatButton } from '@angular/material/button';
     selector: 'app-breadcrumbs',
     templateUrl: './breadcrumbs.component.html',
     styleUrls: ['./breadcrumbs.component.scss'],
-    imports: [MatButton]
+    imports: [MatButton],
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BreadcrumbsComponent {
   protected readonly pieService = inject(PieService);
