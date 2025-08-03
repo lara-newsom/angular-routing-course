@@ -11,7 +11,7 @@ import { AboutComponent } from "./about/about.component";
     selector: 'app-root',
     templateUrl: './app.html',
     styleUrls: ['./app.scss'],
-    imports: [HeaderComponent, HomeComponent, ProductsComponent, ContactComponent, NotFoundComponent, CartComponent, AboutComponent],
+    imports: [HeaderComponent, HomeComponent],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class App {
