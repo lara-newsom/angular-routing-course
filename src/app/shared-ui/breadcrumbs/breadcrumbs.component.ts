@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, input } from '@angular/core';
 import { PieService } from '../../services/pie.service';
 import { MatButton } from '@angular/material/button';
 
@@ -10,5 +10,6 @@ import { MatButton } from '@angular/material/button';
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BreadcrumbsComponent {
+  readonly route = input.required<string>();
   protected readonly pieService = inject(PieService);
 }

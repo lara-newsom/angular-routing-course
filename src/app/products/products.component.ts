@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { PieService } from '../services/pie.service';
 import { AllComponent } from './all/all.component';
-import { ProductDetailComponent } from "./selected-product/product-detail.component";
+import { ProductDetailComponent } from './detail/product-detail.component';
 
 @Component({
     selector: 'app-products',

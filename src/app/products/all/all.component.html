@@ -1,6 +1,6 @@
 <section class="main-content">
   <div class="category-wrapper">
-    <app-breadcrumbs />
+    <app-breadcrumbs route="Shop" />
     <div class="pie-cards-grid">
       @for (pie of pies(); track pie.id) {
       <button class="pie-card" (click)="selectPie(pie.id)">
