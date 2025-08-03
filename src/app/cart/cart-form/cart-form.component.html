@@ -13,7 +13,7 @@
         </div>
         <div class="cart-item-details-wrapper">
           <p class="cart-item-name">{{ item.title }}</p>
-          <app-cart-button [item]="item"></app-cart-button>
+          <app-cart-button [item]="item" />
         </div>
         <div class="cart-item-price-wrapper">
           <p class="cart-item-price">{{ item.price }}</p>
@@ -50,7 +50,7 @@
           (click)="checkout()">Checkout</button>
         }
         @if (loading()) {
-          <mat-spinner diameter="40"></mat-spinner>
+          <mat-spinner diameter="40" />
         }
       </div>
     </div>
