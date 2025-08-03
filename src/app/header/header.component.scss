@@ -1,0 +1,54 @@
+.site-header-wrapper {
+  background-color: rgba(200, 125, 82, 1);
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 20px 50px;
+
+  h1 {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav {
+    flex-grow: 1;
+    margin: 0;
+    padding: 0;
+
+    ul {
+      display: flex;
+      list-style-type: none;
+
+      li {
+        button {
+          color: white;
+          display: block;
+          font-weight: 600;
+          margin-left: 30px;
+          position: relative;
+          text-transform: uppercase;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  .header-icons {
+    ul {
+      display: flex;
+      list-style-type: none;
+
+      li {
+        margin-left: 30px;
+      }
+    }
+  }
+}
+
+.menu-item {
+  span {
+    position: relative;
+    top: -5px;
+  }
+}

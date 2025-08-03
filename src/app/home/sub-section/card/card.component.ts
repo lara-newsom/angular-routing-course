@@ -4,7 +4,7 @@ import { MatButton } from '@angular/material/button';
 @Component({
     selector: 'app-card',
     templateUrl: './card.component.html',
-    styleUrls: ['./card.component.css'],
+    styleUrls: ['./card.component.scss'],
     imports: [MatButton]
 })
 export class CardComponent {

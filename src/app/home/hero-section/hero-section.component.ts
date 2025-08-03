@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { SubHeroLogoComponent } from '../../shared-ui/sub-hero-logo/sub-hero-logo.component';
+import { LogoBannerComponent } from '../../shared-ui/logo-banner/logo-banner.component';
 
 @Component({
     selector: 'app-hero-section',
     templateUrl: './hero-section.component.html',
-    imports: [SubHeroLogoComponent]
+    imports: [LogoBannerComponent]
 })
 export class HeroSectionComponent {
   images = [

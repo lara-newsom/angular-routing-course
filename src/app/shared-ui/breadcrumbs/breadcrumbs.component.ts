@@ -5,7 +5,7 @@ import { MatButton } from '@angular/material/button';
 @Component({
     selector: 'app-breadcrumbs',
     templateUrl: './breadcrumbs.component.html',
-    styleUrls: ['./breadcrumbs.component.css'],
+    styleUrls: ['./breadcrumbs.component.scss'],
     imports: [MatButton]
 })
 export class BreadcrumbsComponent {

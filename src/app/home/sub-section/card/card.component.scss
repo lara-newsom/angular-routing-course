@@ -1,0 +1,47 @@
+.pie-item {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 450px;
+  padding: 10px;
+  width: 100%;
+  height: auto;
+
+  .pie-info {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.4rem;
+    font-weight: 400;
+    flex-wrap: wrap;
+    margin-top: 20px;
+
+    div {
+      width: 100%;
+      flex-grow: 1;
+      font-size: 1.4rem;
+      font-weight: 400;
+
+      &:last-of-type {
+        font-weight: 800;
+      }
+    }
+  }
+}
+
+.add-to-cart {
+  width: 100%;
+  text-align: center;
+  background-color: rgb(250, 200, 200);
+  border: none;
+  color: black;
+  cursor: pointer;
+  font-size: 1.2rem;
+
+  button {
+    width: 100%;
+    padding: 20px;
+  }
+}

@@ -1,0 +1,31 @@
+.focused-message {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: -90px;
+  .logo {
+    align-items: center;
+    background-image: url('../../../assets/images/badge-logo.png');
+    display: flex;
+    height: 168px;
+    justify-content: center;
+    margin-bottom: 44px;
+    width: 144px;
+  }
+  h2 {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 2.25rem;
+    font-weight: 800;
+    margin: 0 0 18px 0;
+    padding: 0;
+    text-transform: none;
+  }
+  p {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 0;
+  }
+}
+

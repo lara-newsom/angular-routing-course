@@ -5,7 +5,7 @@ import { MatButton } from '@angular/material/button';
 @Component({
     selector: 'app-contact',
     templateUrl: './contact.component.html',
-    styleUrls: ['./contact.component.css'],
+    styleUrls: ['./contact.component.scss'],
     imports: [BreadcrumbsComponent, MatButton]
 })
 export class ContactComponent {

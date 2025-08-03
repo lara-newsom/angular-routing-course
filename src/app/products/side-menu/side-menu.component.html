@@ -1,0 +1,23 @@
+@let pies = this.pieService.pies.value();
+@let error = this.pieService.pies.error();
+
+@if(pies){
+  <div class="side-nav">
+    @for (pie of pies; track pie) {
+      <button
+        class="image-button"
+        (click)="selectPie(pie.id)"
+        >
+        <img
+          [src]="pie.thumb"
+          alt="image of person sticking a fork in a piece of pie"
+          />
+      </button>
+    }
+  </div>
+} @else if(error){
+  <div class="error-message">
+    <p>There was an error loading the pies.</p>
+  </div>
+}
+

@@ -1,0 +1,20 @@
+.pie-grid {
+  display: flex;
+  justify-content: space-around;
+}
+
+.product {
+  margin: 10px;
+}
+
+img {
+  height: auto;
+  width: 100%;
+}
+
+.text-center {
+  h4, p {
+    text-align: center;
+    font-size: 1rem;
+  }
+}
