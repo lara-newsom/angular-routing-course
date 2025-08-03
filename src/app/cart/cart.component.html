@@ -1,0 +1,75 @@
+<div class="cart-wrapper">
+  <div class="cart-header"><span>
+    Bethany's Pie Shop Shopping Cart
+  </span><button
+    mat-raised-button
+    (click)="close()"
+  >close</button></div>
+  <div class="cart-items-wrapper" *ngIf="!submitted; else formSubmitted">
+    <div class="cart-item" *ngFor="let item of cartItemsPlusQuantity()">
+      <div class="cart-item-image-wrapper">
+        <img [src]="item.thumb" [alt]="item.title" />
+      </div>
+      <div class="cart-item-details-wrapper">
+        <p class="cart-item-name">{{ item.title }}</p>
+        <div class="quantity-selector-wrapper">
+          <div class="quantity-selector">
+            <button (click)="cartService.decrementCartItem(item)">-</button>
+            <span>{{ item.quantity }}</span>
+            <button (click)="cartService.addCartItem(item)">+</button>
+          </div>
+        </div>
+      </div>
+      <div class="cart-item-price-wrapper">
+        <p class="cart-item-price">{{ item.price }}</p>
+      </div>
+    </div>
+    <div class="cart-item" *ngIf="!cartItemsPlusQuantity().length">
+      <div class="cart-item-details-wrapper">
+        <p class="cart-item-name">You need pie! Go add some to your cart</p>
+      </div>
+    </div>
+    <div class="totals-item">
+      <div class="totals-details-wrapper">
+        <div>Subtotal</div>
+        <div>{{ subtotal() | currency }}</div>
+      </div>
+      <div class="totals-details-wrapper">
+        <div>Shipping</div>
+        <div>{{ 10 | currency }}</div>
+      </div>
+      <div class="totals-details-wrapper">
+        <div>Sales Tax</div>
+        <div>{{ salesTax() | currency }}</div>
+      </div>
+      <div class="totals-details-wrapper">
+        <div>Total</div>
+        <div>{{ total() | currency }}</div>
+      </div>
+      <div class="totals-details-wrapper">
+        <button *ngIf="!loading" mat-button-raised
+        (click)="checkout()">Checkout</button>
+        <mat-spinner diameter="40" *ngIf="loading"></mat-spinner>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #formSubmitted>
+    <div class="cart-items-wrapper">
+      <div class="totals-item" *ngIf="!loading">
+        <div class="totals-details-wrapper">
+          <div>Thank you for our order!</div>
+        </div>
+        <div class="totals-details-wrapper">
+          <div>Order# 1664</div>
+        </div>
+        <div class="totals-details-wrapper">
+          <button
+            mat-button-raised
+            (click)="close()"
+          >Close Cart</button>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</div>

@@ -1,8 +1,13 @@
-<div class="pie-cards-grid">
-  @for (pie of pies(); track pie.id) {
-    <button class="pie-card" (click)="selectPie(pie.id)">
-      <img [src]="pie.thumb" [alt]="pie.title" class="pie-thumb" />
-      <h3>{{ pie.title }}</h3>
-    </button>
-  }
-</div>
+<section class="main-content">
+  <div class="category-wrapper">
+    <app-breadcrumbs />
+    <div class="pie-cards-grid">
+      @for (pie of pies(); track pie.id) {
+      <button class="pie-card" (click)="selectPie(pie.id)">
+        <img [src]="pie.thumb" [alt]="pie.title" class="pie-thumb" />
+        <h3>{{ pie.title }}</h3>
+      </button>
+      }
+    </div>
+  </div>
+</section>

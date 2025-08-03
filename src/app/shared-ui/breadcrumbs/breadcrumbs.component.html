@@ -6,8 +6,11 @@
     <span>>></span>
     <button mat-button>{{ selectedCategory }}</button>
   }
-  @if (this.pieService.selectedPie.value(); as selectedPie) {
-    <span>>></span>
-    <button mat-button>{{ selectedPie.title }}</button>
+  @if (this.pieService.selectedPieId();) {
+    @let selectedPie = this.pieService.selectedPie.value();
+    @if(selectedPie){
+      <span>>></span>
+      <button mat-button>{{ selectedPie.title }}</button>
+    }
   }
 </div>

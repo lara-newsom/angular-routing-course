@@ -8,5 +8,4 @@ import { SubSectionComponent } from './sub-section/sub-section.component';
     imports: [HeroSectionComponent, SubSectionComponent]
 })
 export class HomeComponent {
-
 }

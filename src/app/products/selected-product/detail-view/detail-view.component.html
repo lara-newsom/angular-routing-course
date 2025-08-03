@@ -1,5 +1,8 @@
-@if (this.pieService.selectedPie.value(); as selectedPie) {
-  <div class="detail">
+<div class="detail">
+  @let selectedPie = this.pieService.selectedPie.value();
+  @let loading = this.pieService.selectedPie.isLoading();
+  @let error = this.pieService.selectedPie.error();
+@if (selectedPie) {
     <h3>{{ selectedPie.title }}</h3>
     <div class="image-wrapper">
       <img [src]="selectedPie.image" [alt]="selectedPie.title" />
@@ -12,5 +15,15 @@
       </div>
     </div>
     <button mat-raised-button>Add To Cart</button>
-  </div>
-}
+  } @else if(loading) {
+    <div>
+      <h3>Loading...</h3>
+      <div class="image-wrapper">Your delicious pie is on the way</div>
+    </div>
+  }@else if(error) {
+    <div>
+      <h3>Uh Oh!</h3>
+      <div class="image-wrapper">The recipe was wrong try again!</div>
+    </div>
+  }
+</div>

@@ -1,28 +1,6 @@
-<section class="main-content">
-  <app-breadcrumbs></app-breadcrumbs>
-  <div class="category-wrapper">
-    @let selectedPie = this.pieService.selectedPie.value();
-    @let error = this.pieService.selectedPie.error();
-    @let loading = this.pieService.selectedPie.isLoading();
-    @if(selectedPie) {
-      <div class="side-nav-wrapper">
-        <app-side-menu></app-side-menu>
-      </div>
-      <div class="detail-wrapper">
-          <app-detail-view></app-detail-view>
-      </div>
-    } @else if(loading) {
-      <div class="loading-message">
-        <p>Loading pies...</p>
-      </div>
-    } @else if(error) {
-      <div class="error-message">
-        <p>There was an error loading the pie details. {{error.message}}</p>
-      </div>
-    } @else {
-      <div class="detail-wrapper">
-        <app-all/>
-      </div>
-    }
-  </div>
-</section>
+@let selectedPieId = this.pieService.selectedPieId();
+@if(selectedPieId) {
+  <app-selected-product/>
+} @else {
+  <app-all/>
+}

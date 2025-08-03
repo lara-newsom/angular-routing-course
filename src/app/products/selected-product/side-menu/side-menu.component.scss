@@ -1,0 +1,35 @@
+.side-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 100%;
+  background-color: rbg(250,200,200);
+}
+
+.image-button {
+  flex-grow: 1;
+  margin: 10px;
+  border-radius: 12px;
+  padding: 0;
+  text-align: center;
+  border: solid 2px rgba(256, 256, 256, 0);
+  max-width: 106px;
+  max-height: 106px;
+  img {
+    margin: auto;
+    border-radius: 12px;
+  }
+  &:hover {
+    background-color: rgba(256, 256, 256, 1);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.75);
+  }
+
+  &:focus {
+    background-color: rgb(241, 131, 131);
+    box-shadow: 6px 6px 4px rgba(0,0,0,0.75);
+    img{
+      width: 95%;
+      height: 95%;
+    }
+  }
+}

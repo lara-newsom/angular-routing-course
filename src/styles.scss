@@ -9,12 +9,21 @@ body {
   max-width: 1486px;
 }
 
-.main-content h2 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 50px;
-  padding: 51px 51px 0 51px;
-  text-transform: uppercase;
+.main-content {
+  margin-top: 20px;
+  padding: 0 20px;
+  h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 50px;
+    padding: 51px 51px 0 51px;
+    text-transform: uppercase;
+  }
+  .category-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
 }
 
 .carousel {
@@ -70,3 +79,4 @@ body {
   width: 20px;
   z-index: 10px;
 }
+
