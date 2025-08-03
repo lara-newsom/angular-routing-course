@@ -5,12 +5,13 @@ import { ProductsComponent } from "./products/products.component";
 import { ContactComponent } from "./contact/contact.component";
 import { NotFoundComponent } from "./not-found/not-found.component";
 import { CartComponent } from "./cart/cart.component";
+import { AboutComponent } from "./about/about.component";
 
 @Component({
     selector: 'app-root',
     templateUrl: './app.html',
     styleUrls: ['./app.scss'],
-    imports: [HeaderComponent, HomeComponent, ProductsComponent, ContactComponent, NotFoundComponent, CartComponent],
+    imports: [HeaderComponent, HomeComponent, ProductsComponent, ContactComponent, NotFoundComponent, CartComponent, AboutComponent],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class App {

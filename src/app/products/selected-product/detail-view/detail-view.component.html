@@ -1,5 +1,5 @@
 <div class="detail">
-  @let selectedPie = this.pieService.selectedPie.value();
+  @let selectedPie = this.cartService.selectedItemPlusQuantity();
   @let loading = this.pieService.selectedPie.isLoading();
   @let error = this.pieService.selectedPie.error();
 @if (selectedPie) {
@@ -8,13 +8,14 @@
       <img [src]="selectedPie.image" [alt]="selectedPie.title" />
       <div class="description">
         <p>{{ selectedPie.description }}</p>
+        <p class="price">Price: <span>{{ selectedPie.price }}</span></p>
+        <p class="price"><app-cart-button [item]="selectedPie"></app-cart-button></p>
         <h4>Ingredients: @for (ingredient of selectedPie.ingredients; track ingredient) {
           <span class="ingredient">{{ ingredient }}</span>
         }</h4>
-        <p class="price">Price: <span>{{ selectedPie.price }}</span></p>
       </div>
     </div>
-    <button mat-raised-button (click)="cartService.addCartItem(selectedPie.id)">Add To Cart</button>
+
   } @else if(loading) {
     <div>
       <h3>Loading...</h3>

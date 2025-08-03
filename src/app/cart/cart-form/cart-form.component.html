@@ -1,0 +1,72 @@
+@let cartTotals = cartService.cartTotals();
+@let cartItems = cartService.cartItemsPlusQuantity();
+<div class="cart-wrapper">
+  <h2 class="cart-header">
+    Bethany's Pie Shop Shopping Cart
+  </h2>
+@if (!submitted()) {
+  <div class="cart-items-wrapper">
+    @for (item of cartItems; track item.id) {
+      <div class="cart-item">
+        <div class="cart-item-image-wrapper">
+          <img [src]="item.thumb" [alt]="item.title" />
+        </div>
+        <div class="cart-item-details-wrapper">
+          <p class="cart-item-name">{{ item.title }}</p>
+          <app-cart-button [item]="item"></app-cart-button>
+        </div>
+        <div class="cart-item-price-wrapper">
+          <p class="cart-item-price">{{ item.price }}</p>
+        </div>
+      </div>
+    }
+    @if (!cartItems.length) {
+      <div class="cart-item">
+        <div class="cart-item-details-wrapper">
+          <p class="cart-item-name">You need pie! Go add some to your cart</p>
+        </div>
+      </div>
+    }
+    <div class="totals-item">
+      <div class="totals-details-wrapper">
+        <div>Subtotal</div>
+        <div>{{ cartTotals.subtotal | currency }}</div>
+      </div>
+      <div class="totals-details-wrapper">
+        <div>Shipping</div>
+        <div>{{ cartTotals.shipping| currency }}</div>
+      </div>
+      <div class="totals-details-wrapper">
+        <div>Sales Tax</div>
+        <div>{{ cartTotals.totalTax| currency }}</div>
+      </div>
+      <div class="totals-details-wrapper">
+        <div>Total</div>
+        <div>{{ cartTotals.total| currency }}</div>
+      </div>
+      <div class="totals-details-wrapper">
+        @if (!loading() && cartItems.length) {
+          <button mat-button-raised
+          (click)="checkout()">Checkout</button>
+        }
+        @if (loading()) {
+          <mat-spinner diameter="40"></mat-spinner>
+        }
+      </div>
+    </div>
+  </div>
+} @else {
+  <div class="cart-items-wrapper">
+    @if (!loading()) {
+      <div class="totals-item">
+        <div class="totals-details-wrapper">
+          <div>Thank you for our order!</div>
+        </div>
+        <div class="totals-details-wrapper">
+          <div>Order# 1664</div>
+        </div>
+      </div>
+    }
+  </div>
+}
+</div>

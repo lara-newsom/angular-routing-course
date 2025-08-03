@@ -1,31 +1,31 @@
 import { Component, inject, signal, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule, CurrencyPipe } from '@angular/common';
-import { CartService } from '../services/cart.service';
+import { CartService } from '../../services/cart.service';
 import { MatButtonModule } from '@angular/material/button';
-import { ContactService } from '../services/contact.service';
+import { ContactService } from '../../services/contact.service';
 import { ReplaySubject, take, takeUntil } from 'rxjs';
-import { ContactForm } from '../models/contact-form';
+import { ContactForm } from '../../models/contact-form';
 import { FormsModule } from '@angular/forms';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { Router } from '@angular/router';
-import { BreadcrumbsComponent } from '../shared-ui/breadcrumbs/breadcrumbs.component';
-import { CartFormComponent } from './cart-form/cart-form.component';
+import { CartButtonComponent } from 'src/app/shared-ui/cart-button/cart-button.component';
 
 @Component({
-  selector: 'app-cart',
+  selector: 'app-cart-form',
   standalone: true,
   imports: [
     CommonModule,
-    BreadcrumbsComponent,
+    CurrencyPipe,
     MatButtonModule,
-    CartFormComponent,
+    FormsModule,
     MatProgressSpinnerModule,
+    CartButtonComponent
   ],
-  templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.scss'],
+  templateUrl: './cart-form.component.html',
+  styleUrls: ['./cart-form.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CartComponent {
+export class CartFormComponent {
   readonly cartService = inject(CartService);
   readonly router = inject(Router);
   readonly contactService = inject(ContactService);

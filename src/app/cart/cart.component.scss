@@ -1,139 +1,29 @@
-.cart-wrapper {
-  position: fixed;
-  top: 116px;
-  right: 0;
-  z-index: 20;
-  background-color: white;
-  padding: 20px;
-  width: 400px;
-  border: solid 1px rgba(54, 48, 44, 0.3);
-  border-radius: 10px;
+.main-content {
+  margin-top: 20px;
+  padding: 0 20px;
 }
 
-.cart-header{
-  font-size: 1.2rem;
-  padding-bottom: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.cart-item {
-  background-color: white;
-  border: 2px solid rgba(54, 48, 44, 0.3);
-  border-radius: 10px;
-  display: flex;
-  margin-bottom: 20px;
-  width: 100%;
-}
-
-.totals-item {
-  flex-grow: 1;
-  background-color: white;
-  border: 2px solid rgba(54, 48, 44, 0.3);
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 20px;
-  width: 100%;
-}
-
-.cart-item-image-wrapper {
-  margin-right: 37px;
-  padding: 17px;
-}
-
-.cart-item-image-wrapper img {
-  width: 100px;
-  height: 100px;
-}
-
-.cart-item-details-wrapper {
-  display: flex;
-  flex-direction: column;
-  padding: 17px;
-}
-
-.cart-item-name {
-  color: rgba(54, 48, 44, 1);
-  font-size: 1rem;
-  font-weight: 400;
-  margin: 0 0 15px 0;
-}
-
-.quantity-selector-wrapper {
-  align-items: center;
-  display: flex;
-}
-
-.quantity-selector {
-  align-items: center;
+.contact-wrapper {
+  margin-top: 20px;
   background-color: rgba(253, 246, 246, 1);
-  border: 2px solid rgba(54, 48, 44, 0.3);
-  border-radius: 10px;
-  box-sizing: border-box;
   display: flex;
-  height: 40px;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 0 51px 51px 51px;
+}
+
+.image-wrapper {
+  width: 40%;
   margin-right: 20px;
-  padding: 0 10px;
-  width: 100px;
+
+  img {
+    width: 100%;
+  }
 }
 
-.quantity-selector button {
-  color: rgba(200, 125, 82, 1);
-  border: 0;
-  background-color: rgba(253, 246, 246, 1);
-}
-
-.quantity-selector span {
-  color: rgba(54, 48, 44, 1);
-  font-size: 18px;
-}
-
-.cart-item-price-wrapper {
-  align-items: center;
+.form-wrapper {
+  width: 55%;
+  min-width: 400px;
   display: flex;
-  font-size: 1rem;
-  font-weight: 700;
-  margin-left: auto;
-  padding-right: 47px;
-}
-
-.totals-details-wrapper {
-  display: flex;
-  justify-content: flex-end;
-  font-size: 1.2rem;
-  font-weight: 500;
-  margin-left: auto;
-  width: 50%;
-  padding-right: 47px;
-  padding: 17px;
-}
-
-.totals-details-wrapper div {
-  flex-shrink: 1;
-  font-size: 1rem;
-  font-weight: 500;
-  margin-left: auto;
-  padding-right: 20px;
-}
-
-.totals-details-wrapper button {
-  background-color: rgba(255, 208, 201, 1);
-  border: 0;
-  border-radius: 10px;
-  box-shadow:   0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
-  color: rgba(54, 48, 44, 1);
-  font-size: 16px;
-  font-weight: 600;
-  height: 51px;
-  margin: 20px 0 0 0;
-  text-transform: uppercase;
-  width: 100%;
-}
-
-.totals-item.spinner {
-  display:flex;
-  justify-content: center;
+  flex-direction: column;
 }

@@ -1,0 +1,29 @@
+.quantity-selector-wrapper {
+  align-items: center;
+  display: flex;
+
+  .quantity-selector {
+    align-items: center;
+    background-color: rgba(253, 246, 246, 1);
+    border: 2px solid rgba(54, 48, 44, 0.3);
+    border-radius: 10px;
+    box-sizing: border-box;
+    display: flex;
+    height: 40px;
+    justify-content: space-between;
+    margin-right: 20px;
+    padding: 0 10px;
+    width: 100px;
+
+    button {
+      color: rgba(200, 125, 82, 1);
+      border: 0;
+      background-color: rgba(253, 246, 246, 1);
+    }
+
+    span {
+      color: rgba(54, 48, 44, 1);
+      font-size: 18px;
+    }
+  }
+}
