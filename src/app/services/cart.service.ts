@@ -52,15 +52,16 @@ export class CartService {
 
   readonly featuredPiesPlusQuantity = computed(() => {
     const pies = this.pieService.pies.value() || [];
-    const last = pies.length;
+    const last = pies.length - 1;
     const middle = Math.floor(last / 2);
 
     const cartItems: Record<string, { quantity: number;}> = this.userCartItems();
 
-    return [0, middle, last].map((key) => ({
+    const feat =  [0, middle, last].map((key) => ({
       ...pies[key],
-      quantity: cartItems[pies[key].id]?.quantity || 0,
+      quantity: cartItems[pies[key]?.id]?.quantity || 0,
     }));
+    return feat;
   });
 
   readonly cartTotals = computed(() => {

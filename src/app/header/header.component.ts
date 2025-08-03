@@ -3,6 +3,7 @@ import { Category } from '../models/pie';
 import { PieService } from '../services/pie.service';
 import { MatMenuItem, MatMenuTrigger, MatMenu } from '@angular/material/menu';
 import { MatButton } from '@angular/material/button';
+import { CartService } from '../services/cart.service';
 
 @Component({
     selector: 'app-header',
@@ -12,9 +13,9 @@ import { MatButton } from '@angular/material/button';
 })
 export class HeaderComponent {
   protected readonly pieService = inject(PieService);
+  protected cartService = inject(CartService);
 
   changeCategory(category: Category){
     this.pieService.setSelectedCategory(category);
   }
-
 }

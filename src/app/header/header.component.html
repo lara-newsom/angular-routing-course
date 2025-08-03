@@ -20,7 +20,11 @@
     </nav>
     <div class="header-icons">
       <ul>
-        <li><button mat-menu-item><img src="../../assets/images/cart-icon.png" alt="shopping cart icon" /></button></li>
+        @let totalItems = this.cartService.cartTotals().totalCartCount;
+        <li><button mat-menu-item>
+          <span class="total-items">{{ totalItems }}</span>
+          <img src="../../assets/images/cart-icon.png" alt="shopping cart icon" />
+        </button></li>
       </ul>
     </div>
   </div>
