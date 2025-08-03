@@ -3,7 +3,7 @@
 
 @if(pies){
   <div class="side-nav">
-    @for (pie of pies; track pie) {
+    @for (pie of pies; track pie.id) {
       <button
         class="image-button"
         (click)="selectPie(pie.id)"
@@ -13,6 +13,8 @@
           alt="image of person sticking a fork in a piece of pie"
           />
       </button>
+    } @empty {
+      <p>Oops! No pies.</p>
     }
   </div>
 } @else if(error){
