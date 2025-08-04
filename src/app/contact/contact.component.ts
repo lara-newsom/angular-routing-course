@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input, OnDestroy, OnInit, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { takeUntil } from 'rxjs/operators';
 import { ReplaySubject } from 'rxjs';
 import { ContactService } from '../services/contact.service';
@@ -12,12 +12,11 @@ import { BreadcrumbsComponent } from '../shared-ui/breadcrumbs/breadcrumbs.compo
 @Component({
   selector: 'app-contact',
   imports: [
-    CommonModule,
     FormsModule,
     MatProgressSpinnerModule,
     MatButtonModule,
-    BreadcrumbsComponent,
-  ],
+    BreadcrumbsComponent
+],
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

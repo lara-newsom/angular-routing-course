@@ -20,10 +20,22 @@
     </nav>
     <div class="header-icons">
       <ul>
+        @let userId = this.authService.userId();
+        <li>
+          <button mat-menu-item class="user-icon">
+          @if(!userId){
+            <span class="log-in">Log In</span>
+            <img src="../../assets/images/user-icon.png" height="35" width="35" alt="user" />
+          } @else {
+            @let user = this.authService.authenticatedUser.value();
+            <span class="log-out">Log Out {{user?.name}}</span>
+            <img src="../../assets/images/user-icon.png" height="35" width="35" alt="user" />
+          }
+        </button></li>
         @let totalItems = this.cartService.cartTotals().totalCartCount;
         <li><button mat-menu-item>
           <span class="total-items">{{ totalItems }}</span>
-          <img src="../../assets/images/cart-icon.png" alt="shopping cart icon" />
+          <img src="../../assets/images/cart-icon.png" alt="" />
         </button></li>
       </ul>
     </div>

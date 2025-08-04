@@ -37,8 +37,8 @@
   .header-icons {
     ul {
       display: flex;
+      justify-content: flex-end;
       list-style-type: none;
-
       li {
         margin-left: 30px;
         .total-items {
@@ -46,6 +46,26 @@
           position: absolute;
           top: 14px;
           left: 0px;
+        }
+        .user-icon{
+          width: 80px;
+          .log-in {
+            color: white;
+            position: absolute;
+            top: 14px;
+            left: 10px;
+          }
+          .log-out {
+            color: white;
+            position: absolute;
+            top: 4px;
+            left: 0px;
+          }
+          img{
+            position: absolute;
+            top:7px;
+            left: 45px;
+          }
         }
       }
     }

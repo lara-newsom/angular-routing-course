@@ -1,5 +1,5 @@
 import { Component, inject, signal, ChangeDetectionStrategy } from '@angular/core';
-import { CommonModule, CurrencyPipe } from '@angular/common';
+import { CurrencyPipe } from '@angular/common';
 import { CartService } from '../services/cart.service';
 import { MatButtonModule } from '@angular/material/button';
 import { ContactService } from '../services/contact.service';
@@ -15,12 +15,11 @@ import { CartFormComponent } from './cart-form/cart-form.component';
   selector: 'app-cart',
   standalone: true,
   imports: [
-    CommonModule,
     BreadcrumbsComponent,
     MatButtonModule,
     CartFormComponent,
-    MatProgressSpinnerModule,
-  ],
+    MatProgressSpinnerModule
+],
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

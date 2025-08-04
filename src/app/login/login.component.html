@@ -1,0 +1,41 @@
+<section class="main-content">
+  <app-breadcrumbs route="Login"/>
+  <div class="contact-wrapper">
+    <div class="image-wrapper">
+      <img src="../../assets/images/contact.png" alt="Login" />
+    </div>
+    <div class="form-wrapper">
+      @let userId = this.authService.userId();
+      @let error = this.authService.loginError();
+      @if(error){
+        <h3>Oopsies!</h3>
+        <p>There was an issue with your login. Please try again.</p>
+        <button mat-raised-button (click)="authService.logOut()">Log Out</button>
+      } @else if (userId) {
+        @let user = this.authService.authenticatedUser.value();
+        @if(user){
+          <h3>Welcome Back, {{ user?.name }}</h3>
+          <p>I hope you're hungry, because you are logged in!</p>
+          <p>Your permissions include:
+            @for(permission of user?.permissions; track permission) {
+              <span class="permission">{{ permission }}</span>
+            }
+          </p>
+          <button mat-raised-button (click)="authService.logOut()">Log Out</button>
+        }
+      } @else {
+      <h3>Welcome Back</h3>
+      <p>Please enter your credentials to log in.</p>
+      <fieldset>
+        <form #loginForm="ngForm">
+          <label for="userName">User Name</label>
+          <input type="text" id="userName" name="userName" [(ngModel)]="model.userName" value="" required #userName="ngModel" />
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" [(ngModel)]="model.password" value="" required #password="ngModel" />
+          <button mat-raised-button type="submit" (click)="logIn(model.userName)">Login</button>
+        </form>
+      </fieldset>
+    }
+    </div>
+  </div>
+</section>
