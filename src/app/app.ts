@@ -1,6 +1,6 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { HeaderComponent } from './header/header.component';
-import { Router, RouterOutlet } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
     selector: 'app-root',
@@ -10,8 +10,4 @@ import { Router, RouterOutlet } from '@angular/router';
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class App {
-  router = inject(Router);
-  constructor() {
-    console.log(this.router)
-  }
 }
