@@ -1,12 +1,12 @@
 <header class="site-header">
   <div class="site-header-wrapper">
     <h1>
-      <button mat-menu-item><img src="../../assets/images/logo.png" alt="Bethany's Pie Shop Logo" /></button>
+      <a mat-menu-item><img src="../../assets/images/logo.png" alt="Bethany's Pie Shop Logo" /></a>
     </h1>
     <nav>
       <ul>
         <li>
-          <button class="menu-item" mat-button [matMenuTriggerFor]="menu">Shop <span>&#8964;</span></button>
+          <a class="menu-item" mat-button [matMenuTriggerFor]="menu">Shop <span>&#8964;</span></a>
           <mat-menu class="menu-dropdown" #menu="matMenu">
             <button mat-menu-item (click)="changeCategory('Seasonal Pies')">Seasonal Pies</button>
             <button mat-menu-item (click)="changeCategory('Fruit Pies')">Fruit Pies</button>
@@ -14,15 +14,15 @@
             <button mat-menu-item (click)="changeCategory('All Pies')">All Pies</button>
           </mat-menu>
         </li>
-        <li><button class="menu-item" mat-button>Contact</button></li>
-        <li><button class="menu-item" mat-button>About</button></li>
+        <li><a class="menu-item" mat-button>Contact</a></li>
+        <li><a class="menu-item" mat-button>About</a></li>
       </ul>
     </nav>
     <div class="header-icons">
       <ul>
         @let userId = this.authService.userId();
         <li>
-          <button mat-menu-item class="user-icon">
+          <a mat-menu-item class="user-icon">
           @if(!userId){
             <span class="log-in">Log In</span>
             <img src="../../assets/images/user-icon.png" height="35" width="35" alt="user" />
@@ -31,12 +31,12 @@
             <span class="log-out">Log Out {{user?.name}}</span>
             <img src="../../assets/images/user-icon.png" height="35" width="35" alt="user" />
           }
-        </button></li>
+        </a></li>
         @let totalItems = this.cartService.cartTotals().totalCartCount;
-        <li><button mat-menu-item>
+        <li><a mat-menu-item>
           <span class="total-items">{{ totalItems }}</span>
           <img src="../../assets/images/cart-icon.png" alt="" />
-        </button></li>
+        </a></li>
       </ul>
     </div>
   </div>

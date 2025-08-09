@@ -39,6 +39,9 @@ export class CartService {
   });
 
   readonly selectedItemPlusQuantity = computed(() => {
+    if(this.pieService.selectedPie.isLoading()) {
+      return undefined;
+    }
     const key = this.pieService.selectedPieId();
 
     const cartItems: Record<string, { quantity: number;}> = this.userCartItems();

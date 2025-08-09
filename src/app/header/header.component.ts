@@ -18,6 +18,7 @@ export class HeaderComponent {
   protected cartService = inject(CartService);
 
   changeCategory(category: Category){
+    this.pieService.clearSelectedPie();
     this.pieService.setSelectedCategory(category);
   }
 }

@@ -28,6 +28,10 @@ export class PieService {
     this.selectedPieId.set(id);
   }
 
+  clearSelectedPie() {
+    this.selectedPieId.set(undefined);
+  }
+
   setSelectedCategory(category: Category) {
     this.selectedCategory.set(category);
   }

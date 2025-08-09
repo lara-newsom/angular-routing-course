@@ -1,0 +1,32 @@
+<div class="detail">
+  @let hasSelectedPie = this.pieService.selectedPie.hasValue();
+  @let loading = this.pieService.selectedPie.isLoading();
+  @let error = this.pieService.selectedPie.error();
+@if (hasSelectedPie) {
+    @let selectedPie = this.cartService.selectedItemPlusQuantity();
+    @if(selectedPie){
+      <h3>{{ selectedPie.title }}</h3>
+      <div class="image-wrapper">
+        <img [src]="selectedPie.image" [alt]="selectedPie.title" />
+        <div class="description">
+          <p>{{ selectedPie.description }}</p>
+          <p class="price">Price: <span>{{ selectedPie.price }}</span></p>
+          <p class="price"><app-cart-button [item]="selectedPie" /></p>
+          <h4>Ingredients: @for (ingredient of selectedPie.ingredients; track ingredient) {
+            <span class="ingredient">{{ ingredient }}</span>
+          }</h4>
+        </div>
+      </div>
+    }
+  } @else if(loading) {
+    <div>
+      <h3>Loading...</h3>
+      <div class="image-wrapper">Your delicious pie is on the way</div>
+    </div>
+  }@else if(error) {
+    <div>
+      <h3>What is your favorite pie?</h3>
+      <div class="image-wrapper">Select from the menu on the left.</div>
+    </div>
+  }
+</div>
