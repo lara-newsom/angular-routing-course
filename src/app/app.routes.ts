@@ -20,11 +20,16 @@ export const routes: Routes = [
   },
   {
     path: 'products',
-    component: AllProductsComponent,
-  },
-  {
-    path: 'detail',
-    component: ProductDetailComponent,
+    children: [
+      {
+        path: '',
+        component: AllProductsComponent,
+      },
+      {
+        path: 'detail',
+        component: ProductDetailComponent,
+      },
+    ]
   },
   {
     path: 'login',
