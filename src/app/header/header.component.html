@@ -6,7 +6,7 @@
     <nav>
       <ul>
         <li>
-          <a class="menu-item" mat-button [matMenuTriggerFor]="menu">Shop <span>&#8964;</span></a>
+          <button class="menu-item" mat-button [matMenuTriggerFor]="menu">Shop <span>&#8964;</span></button>
           <mat-menu class="menu-dropdown" #menu="matMenu">
             <a mat-menu-item (click)="changeCategory('Seasonal Pies')">Seasonal Pies</a>
             <a mat-menu-item (click)="changeCategory('Fruit Pies')">Fruit Pies</a>

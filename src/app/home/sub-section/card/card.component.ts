@@ -1,7 +1,8 @@
 import { CurrencyPipe } from '@angular/common';
-import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, input } from '@angular/core';
 import { Pie } from '../../../models/pie';
 import { CartButtonComponent } from '../../../shared-ui/cart-button/cart-button.component';
+import { PieService } from '../../../services/pie.service';
 
 @Component({
     selector: 'app-card',
@@ -12,4 +13,10 @@ import { CartButtonComponent } from '../../../shared-ui/cart-button/cart-button.
 })
 export class CardComponent {
   readonly pie = input.required<Pie>();
+  private readonly pieService = inject(PieService);
+
+  selectPie(pieId: string) {
+    this.pieService.setSelectedPie(pieId);
+    // route to the detail page
+  }
 }
