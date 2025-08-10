@@ -3,10 +3,10 @@
     <app-breadcrumbs route="Shop" />
     <div class="pie-cards-grid">
       @for (pie of pies(); track pie.id) {
-      <button class="pie-card" (click)="selectPie(pie.id)">
+      <a class="pie-card" (click)="selectPie(pie.id)">
         <img [src]="pie.thumb" [alt]="pie.title" class="pie-thumb" />
         <h3>{{ pie.title }}</h3>
-      </button>
+      </a>
       }
     </div>
   </div>
