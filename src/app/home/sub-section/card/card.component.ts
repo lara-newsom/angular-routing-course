@@ -2,7 +2,6 @@ import { CurrencyPipe } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject, input } from '@angular/core';
 import { Pie } from '../../../models/pie';
 import { CartButtonComponent } from '../../../shared-ui/cart-button/cart-button.component';
-import { PieService } from '../../../services/pie.service';
 import { Router } from '@angular/router';
 import { DETAIL_ROUTE, PRODUCTS_ROUTE } from '../../../app.routes';
 
