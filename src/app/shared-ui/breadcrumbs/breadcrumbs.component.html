@@ -1,17 +1,17 @@
 <div class="button-row">
-  <button mat-button>Home</button>
+  <a mat-button>Home</a>
   <span>>></span>
-  <button mat-button>{{route()}}</button>
+  <a mat-button>{{route()}}</a>
   @if(route() === 'Shop') {
     @if (this.pieService.selectedCategory(); as selectedCategory) {
       <span>>></span>
-      <button mat-button>{{ selectedCategory }}</button>
+      <a mat-button>{{ selectedCategory }}</a>
     }
     @if (this.pieService.selectedPieId();) {
       @let selectedPie = this.pieService.selectedPie.value();
       @if(selectedPie){
         <span>>></span>
-        <button mat-button>{{ selectedPie.title }}</button>
+        <a mat-button>{{ selectedPie.title }}</a>
       }
     }
   }
