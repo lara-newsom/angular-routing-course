@@ -3,6 +3,8 @@ import { ChangeDetectionStrategy, Component, inject, input } from '@angular/core
 import { Pie } from '../../../models/pie';
 import { CartButtonComponent } from '../../../shared-ui/cart-button/cart-button.component';
 import { PieService } from '../../../services/pie.service';
+import { Router } from '@angular/router';
+import { DETAIL_ROUTE, PRODUCTS_ROUTE } from '../../../app.routes';
 
 @Component({
     selector: 'app-card',
@@ -14,9 +16,10 @@ import { PieService } from '../../../services/pie.service';
 export class CardComponent {
   readonly pie = input.required<Pie>();
   private readonly pieService = inject(PieService);
+  private readonly router = inject(Router);
 
   selectPie(pieId: string) {
     this.pieService.setSelectedPie(pieId);
-    // route to the detail page
+    this.router.navigate([PRODUCTS_ROUTE, DETAIL_ROUTE])
   }
 }
