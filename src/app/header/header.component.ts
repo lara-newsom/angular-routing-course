@@ -14,13 +14,13 @@ import {
   CONTACT_ROUTE,
   CART_ROUTE,
 } from '../app.routes';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
     selector: 'app-header',
     templateUrl: './header.component.html',
     styleUrls: ['./header.component.scss'],
-    imports: [MatMenuItem, MatButton, MatMenuTrigger, MatMenu, RouterLink]
+    imports: [MatMenuItem, MatButton, MatMenuTrigger, MatMenu, RouterLink, RouterLinkActive]
 })
 export class HeaderComponent {
   protected readonly pieService = inject(PieService);
