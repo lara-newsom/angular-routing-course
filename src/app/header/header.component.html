@@ -1,28 +1,28 @@
 <header class="site-header">
   <div class="site-header-wrapper">
     <h1>
-      <a mat-menu-item><img src="../../assets/images/logo.png" alt="Bethany's Pie Shop Logo" /></a>
+      <a [routerLink]="HOME_ROUTE" mat-menu-item><img src="../../assets/images/logo.png" alt="Bethany's Pie Shop Logo" /></a>
     </h1>
     <nav>
       <ul>
         <li>
           <button class="menu-item" mat-button [matMenuTriggerFor]="menu">Shop <span>&#8964;</span></button>
           <mat-menu class="menu-dropdown" #menu="matMenu">
-            <a mat-menu-item (click)="changeCategory('Seasonal Pies')">Seasonal Pies</a>
-            <a mat-menu-item (click)="changeCategory('Fruit Pies')">Fruit Pies</a>
-            <a mat-menu-item (click)="changeCategory('Cheesecakes')">Cheesecakes</a>
-            <a mat-menu-item (click)="changeCategory('All Pies')">All Pies</a>
+            <a [routerLink]="PRODUCTS_ROUTE" mat-menu-item (click)="changeCategory('Seasonal Pies')">Seasonal Pies</a>
+            <a [routerLink]="PRODUCTS_ROUTE" mat-menu-item (click)="changeCategory('Fruit Pies')">Fruit Pies</a>
+            <a [routerLink]="PRODUCTS_ROUTE " mat-menu-item (click)="changeCategory('Cheesecakes')">Cheesecakes</a>
+            <a [routerLink]="PRODUCTS_ROUTE" mat-menu-item (click)="changeCategory('All Pies')">All Pies</a>
           </mat-menu>
         </li>
-        <li><a class="menu-item" mat-button>Contact</a></li>
-        <li><a class="menu-item" mat-button>About</a></li>
+        <li><a [routerLink]="CONTACT_ROUTE" class="menu-item" mat-button>Contact</a></li>
+        <li><a [routerLink]="ABOUT_ROUTE" class="menu-item" mat-button>About</a></li>
       </ul>
     </nav>
     <div class="header-icons">
       <ul>
         @let userId = this.authService.userId();
         <li>
-          <a mat-menu-item class="user-icon">
+          <a [routerLink]="LOGIN_ROUTE" mat-menu-item class="user-icon">
           @if(!userId){
             <span class="log-in">Log In</span>
             <img src="../../assets/images/user-icon.png" height="35" width="35" alt="user" />
@@ -33,7 +33,7 @@
           }
         </a></li>
         @let totalItems = this.cartService.cartTotals().totalCartCount;
-        <li><a mat-menu-item>
+        <li><a [routerLink]="CART_ROUTE" mat-menu-item>
           <span class="total-items">{{ totalItems }}</span>
           <img src="../../assets/images/cart-icon.png" alt="" />
         </a></li>
