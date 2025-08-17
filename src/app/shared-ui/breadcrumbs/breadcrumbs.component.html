@@ -1,18 +1,52 @@
 <div class="button-row">
-  <a mat-button>Home</a>
+  <!-- We use absolute routes because the breadcrumbs component appears on many different routes -->
+  <!-- We do not need to style the active link but we still want aria-current to be set for assistive technologies -->
+  <!-- So we don't pass a class to routerLinkActive and provide ariaCurrentWhenActive set to "page" -->
+  <a
+    [routerLink]="['/', HOME_ROUTE]"
+    routerLinkActive
+    ariaCurrentWhenActive="page"
+    mat-button
+    >Home</a
+  >
   <span>>></span>
-  <a mat-button>{{route()}}</a>
   @if(route() === 'Shop') {
-    @if (this.pieService.selectedCategory(); as selectedCategory) {
-      <span>>></span>
-      <a mat-button>{{ selectedCategory }}</a>
-    }
-    @if (this.pieService.selectedPieId();) {
-      @let selectedPie = this.pieService.selectedPie.value();
-      @if(selectedPie){
-        <span>>></span>
-        <a mat-button>{{ selectedPie.title }}</a>
-      }
-    }
+  <!-- Shop is a weird link that isn't a route so we needed to provide an else block and move this element in here -->
+  <a
+    [routerLink]="['/', PRODUCTS_ROUTE]"
+    routerLinkActive
+    ariaCurrentWhenActive="page"
+    mat-button
+    >{{ route() }}</a
+  >
+  @if (this.pieService.selectedCategory(); as selectedCategory) {
+  <span>>></span>
+  <a
+    [routerLink]="['/', PRODUCTS_ROUTE]"
+    routerLinkActive
+    ariaCurrentWhenActive="page"
+    mat-button
+    >{{ selectedCategory }}</a
+  >
+  } @if (this.pieService.selectedPieId();) { @let selectedPie =
+  this.pieService.selectedPie.value(); @if(selectedPie){
+  <span>>></span>
+  <!-- Since we are using absolute routes we have to reproduce the full path -->
+  <a
+    [routerLink]="['/', PRODUCTS_ROUTE, DETAIL_ROUTE]"
+    routerLinkActive
+    ariaCurrentWhenActive="page"
+    mat-button
+    >{{ selectedPie.title }}</a
+  >
+  } } } @else() {
+  <!-- The route signal is title case for display but our routes are lowercase -->
+  <a
+    [routerLink]="['/', route().toLowerCase()]"
+    routerLinkActive
+    ariaCurrentWhenActive="page"
+    mat-button
+    >{{ route() }}</a
+  >
   }
 </div>
