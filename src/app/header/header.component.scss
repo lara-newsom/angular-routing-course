@@ -16,7 +16,8 @@
 
       li {
         padding: 10px;
-       a, button {
+        a,
+        button {
           color: white;
           display: flex;
           font-weight: 600;
@@ -24,7 +25,6 @@
           position: relative;
           text-transform: uppercase;
           text-decoration: none;
-
         }
       }
     }
@@ -43,7 +43,7 @@
           top: 14px;
           left: 0px;
         }
-        .user-icon{
+        .user-icon {
           width: 80px;
           .log-in {
             color: white;
@@ -57,9 +57,9 @@
             top: 4px;
             left: 0px;
           }
-          img{
+          img {
             position: absolute;
-            top:7px;
+            top: 7px;
             left: 45px;
           }
         }
@@ -74,11 +74,21 @@
     top: -5px;
   }
 }
-.active-link {
-  background-color: rgb(211, 143, 104);
-  border-bottom: solid 2px white;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
+li {
+  .active-link {
+    background-color: rgb(211, 143, 104);
+    border-bottom: solid 2px white;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  &.active-link {
+    > button {
+      background-color: rgb(211, 143, 104);
+      border-bottom: solid 2px white;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
 }
 
 h1 {
