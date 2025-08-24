@@ -7,8 +7,10 @@
     >Home</a
   >
   <span>>></span>
+  <!-- We declare selectedCategory so that is can be used in multiple locations -->
   @let selectedCategory = this.pieService.selectedCategory();
   @if(route() === 'Shop') {
+  <!-- The shop link needs the categoryId path segment -->
   <a
     [routerLink]="['/', PRODUCTS_ROUTE, selectedCategory]"
     routerLinkActive
@@ -18,6 +20,7 @@
   >
   @if (selectedCategory) {
   <span>>></span>
+  <!-- The category link needs the categoryId path segment -->
   <a
     [routerLink]="['/', PRODUCTS_ROUTE, selectedCategory]"
     routerLinkActive
