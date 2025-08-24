@@ -10,19 +10,22 @@
     >Home</a
   >
   <span>>></span>
+  <!-- We declare selectedCategory so that is can be used in multiple locations -->
+  @let selectedCategory = this.pieService.selectedCategory();
   @if(route() === 'Shop') {
-  <!-- Shop is a weird link that isn't a route so we needed to provide an else block and move this element in here -->
+  <!-- The shop link needs the categoryId path segment -->
   <a
-    [routerLink]="['/', PRODUCTS_ROUTE]"
+    [routerLink]="['/', PRODUCTS_ROUTE, selectedCategory]"
     routerLinkActive
     ariaCurrentWhenActive="page"
     mat-button
     >{{ route() }}</a
   >
-  @if (this.pieService.selectedCategory(); as selectedCategory) {
+  @if (selectedCategory) {
   <span>>></span>
+  <!-- The category link needs the categoryId path segment -->
   <a
-    [routerLink]="['/', PRODUCTS_ROUTE]"
+    [routerLink]="['/', PRODUCTS_ROUTE, selectedCategory]"
     routerLinkActive
     ariaCurrentWhenActive="page"
     mat-button
@@ -32,8 +35,9 @@
   this.pieService.selectedPie.value(); @if(selectedPie){
   <span>>></span>
   <!-- Since we are using absolute routes we have to reproduce the full path -->
+  <!-- Don't worry that the selected pie is not getting cleared, we will fix that in M2_V4-->
   <a
-    [routerLink]="['/', PRODUCTS_ROUTE, DETAIL_ROUTE]"
+    [routerLink]="['/', PRODUCTS_ROUTE, selectedCategory, DETAIL_ROUTE]"
     routerLinkActive
     ariaCurrentWhenActive="page"
     mat-button

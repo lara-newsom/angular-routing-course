@@ -34,9 +34,4 @@ export class HeaderComponent {
   protected readonly DETAIL_ROUTE = DETAIL_ROUTE;
   protected readonly CONTACT_ROUTE = CONTACT_ROUTE;
   protected readonly CART_ROUTE = CART_ROUTE;
-
-  changeCategory(category: Category){
-    this.pieService.clearSelectedPie();
-    this.pieService.setSelectedCategory(category);
-  }
 }

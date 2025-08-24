@@ -14,27 +14,23 @@
           </button>
           <mat-menu class="menu-dropdown" #menu="matMenu">
             <a
-              [routerLink]="PRODUCTS_ROUTE"
+              [routerLink]="[PRODUCTS_ROUTE, 'Seasonal Pies']"
               mat-menu-item
-              (click)="changeCategory('Seasonal Pies')"
               >Seasonal Pies</a
             >
             <a
-              [routerLink]="PRODUCTS_ROUTE"
+              [routerLink]="[PRODUCTS_ROUTE, 'Fruit Pies']"
               mat-menu-item
-              (click)="changeCategory('Fruit Pies')"
               >Fruit Pies</a
             >
             <a
-              [routerLink]="PRODUCTS_ROUTE"
+              [routerLink]="[PRODUCTS_ROUTE, 'Cheesecakes']"
               mat-menu-item
-              (click)="changeCategory('Cheesecakes')"
               >Cheesecakes</a
             >
             <a
-              [routerLink]="PRODUCTS_ROUTE"
+              [routerLink]="[PRODUCTS_ROUTE, 'All Pies']"
               mat-menu-item
-              (click)="changeCategory('All Pies')"
               >All Pies</a
             >
           </mat-menu>

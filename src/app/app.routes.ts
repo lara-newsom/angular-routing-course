@@ -27,7 +27,7 @@ export const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: PRODUCTS_ROUTE,
+    path: `${PRODUCTS_ROUTE}/:categoryId`,
     children: [
       {
         path: '',

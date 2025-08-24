@@ -20,6 +20,6 @@ export class CardComponent {
 
   selectPie(pieId: string) {
     this.pieService.setSelectedPie(pieId);
-    this.router.navigate([PRODUCTS_ROUTE, DETAIL_ROUTE])
+    this.router.navigate([PRODUCTS_ROUTE, 'All Pies', DETAIL_ROUTE])
   }
 }
