@@ -1,7 +1,4 @@
 <div class="button-row">
-  <!-- We use absolute routes because the breadcrumbs component appears on many different routes -->
-  <!-- We do not need to style the active link but we still want aria-current to be set for assistive technologies -->
-  <!-- So we don't pass a class to routerLinkActive and provide ariaCurrentWhenActive set to "page" -->
   <a
     [routerLink]="['/', HOME_ROUTE]"
     routerLinkActive
@@ -10,10 +7,8 @@
     >Home</a
   >
   <span>>></span>
-  <!-- We declare selectedCategory so that is can be used in multiple locations -->
   @let selectedCategory = this.pieService.selectedCategory();
   @if(route() === 'Shop') {
-  <!-- The shop link needs the categoryId path segment -->
   <a
     [routerLink]="['/', PRODUCTS_ROUTE, selectedCategory]"
     routerLinkActive
@@ -23,7 +18,6 @@
   >
   @if (selectedCategory) {
   <span>>></span>
-  <!-- The category link needs the categoryId path segment -->
   <a
     [routerLink]="['/', PRODUCTS_ROUTE, selectedCategory]"
     routerLinkActive
@@ -31,20 +25,23 @@
     mat-button
     >{{ selectedCategory }}</a
   >
-  } @if (this.pieService.selectedPieId();) { @let selectedPie =
-  this.pieService.selectedPie.value(); @if(selectedPie){
-  <span>>></span>
-  <!-- Since we are using absolute routes we have to reproduce the full path -->
-  <!-- Don't worry that the selected pie is not getting cleared, we will fix that in M2_V4-->
-  <a
-    [routerLink]="['/', PRODUCTS_ROUTE, selectedCategory, DETAIL_ROUTE]"
-    routerLinkActive
-    ariaCurrentWhenActive="page"
-    mat-button
-    >{{ selectedPie.title }}</a
-  >
-  } } } @else() {
-  <!-- The route signal is title case for display but our routes are lowercase -->
+  } @if (this.pieService.selectedPieId();) {
+     @let selectedPie = this.pieService.selectedPie.value();
+     @if(selectedPie){
+      <span>>></span>
+      <!-- Update the routerLink to use the selected pie id to set the query param -->
+      <!-- We don't expect the link to be styled but we want the aria current property-->
+      <a
+        [routerLink]="['/', PRODUCTS_ROUTE, selectedCategory, DETAIL_ROUTE]"
+        [queryParams]="{ pieId: this.pieService.selectedPieId() }"
+        queryParamsHandling="replace"
+        routerLinkActive
+        ariaCurrentWhenActive="page"
+        mat-button
+        >{{ selectedPie.title }}</a
+      >
+      }
+    } } @else() {
   <a
     [routerLink]="['/', route().toLowerCase()]"
     routerLinkActive
