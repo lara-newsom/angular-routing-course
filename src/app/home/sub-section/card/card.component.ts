@@ -15,11 +15,12 @@ import { DETAIL_ROUTE, PRODUCTS_ROUTE } from '../../../app.routes';
 })
 export class CardComponent {
   readonly pie = input.required<Pie>();
-  private readonly pieService = inject(PieService);
   private readonly router = inject(Router);
 
   selectPie(pieId: string) {
-    this.pieService.setSelectedPie(pieId);
-    this.router.navigate([PRODUCTS_ROUTE, 'All Pies', DETAIL_ROUTE])
+    this.router.navigate([PRODUCTS_ROUTE, 'All Pies', DETAIL_ROUTE], {
+      queryParams: { pieId },
+      queryParamsHandling: 'replace',
+    })
   }
 }

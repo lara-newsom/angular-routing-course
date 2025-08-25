@@ -14,14 +14,13 @@ import { DETAIL_ROUTE } from '../../app.routes';
 })
 export class AllProductsComponent {
   readonly pieService = inject(PieService);
-  pies = this.pieService.filteredPies;
-  categoryId = input<Category>('All Pies')
   protected readonly DETAIL_ROUTE = DETAIL_ROUTE;
+  pies = this.pieService.filteredPies;
 
-  selectPie(id: string){
-    this.pieService.setSelectedPie(id);
-  }
+  categoryId = input<Category>('All Pies');
+
   categoryEffect = effect(() => {
     this.pieService.setSelectedCategory(this.categoryId());
-  })
+  });
+
 }
