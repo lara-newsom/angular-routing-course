@@ -1,4 +1,6 @@
 # Angular Routing Course Application
+This is a companion repository for the Pluralsight course - [Angular: Routing and Navigation](https://www.pluralsight.com/courses/angular-routing-navigation)
+Be sure to take the course released in 2025 for the most up to date information!
 
 This is a sample Angular application demonstrating advanced routing and navigation concepts, including lazy loading, route guards, in-memory API, and Material UI integration.
 
