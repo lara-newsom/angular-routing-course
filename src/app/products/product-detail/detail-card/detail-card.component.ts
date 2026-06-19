@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { PieService } from '../../../services/pie.service';
-import { CartService } from 'src/app/services/cart.service';
-import { CartButtonComponent } from 'src/app/shared-ui/cart-button/cart-button.component';
+import { CartButtonComponent } from '../../../shared-ui/cart-button/cart-button.component';
+import { CartService } from '../../../services/cart.service';
 
 @Component({
     selector: 'app-detail-card',

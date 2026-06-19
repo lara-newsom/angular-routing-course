@@ -8,7 +8,7 @@ import { ContactForm } from '../../models/contact-form';
 import { FormsModule } from '@angular/forms';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { Router } from '@angular/router';
-import { CartButtonComponent } from 'src/app/shared-ui/cart-button/cart-button.component';
+import { CartButtonComponent } from '../../shared-ui/cart-button/cart-button.component';
 
 @Component({
   selector: 'app-cart-form',

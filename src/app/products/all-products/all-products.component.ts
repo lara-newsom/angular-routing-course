@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { PieService } from '../../services/pie.service';
-import { BreadcrumbsComponent } from 'src/app/shared-ui/breadcrumbs/breadcrumbs.component';
+import { BreadcrumbsComponent } from '../../shared-ui/breadcrumbs/breadcrumbs.component';
 
 @Component({
   selector: 'app-all-products',
