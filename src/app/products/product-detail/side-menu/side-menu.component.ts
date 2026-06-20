@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { PieService } from '../../../services/pie.service';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { DETAIL_ROUTE, PRODUCTS_ROUTE } from 'src/app/app.routes';
+import { PRODUCTS_ROUTE, DETAIL_ROUTE } from '../../../app.routes';
 
 @Component({
     selector: 'app-side-menu',
