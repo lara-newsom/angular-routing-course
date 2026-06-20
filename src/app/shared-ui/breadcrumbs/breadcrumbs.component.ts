@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, inject, input } from '@angular/core
 import { PieService } from '../../services/pie.service';
 import { MatButton } from '@angular/material/button';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { DETAIL_ROUTE, HOME_ROUTE, PRODUCTS_ROUTE } from 'src/app/app.routes';
+import { PRODUCTS_ROUTE, HOME_ROUTE, DETAIL_ROUTE } from '../../app.routes';
 
 @Component({
     selector: 'app-breadcrumbs',
