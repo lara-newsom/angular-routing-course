@@ -2,6 +2,8 @@ import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { NewHomeComponent } from './home/new-home/new-home.component';
 import { isPizzaEnabledCanActivateGuard } from './is-pizza-enabled-can-activate.guard';
+import { isPizzaEnabledCanMatchGuard } from './is-pizza-enabled-can-match.guard';
+import { isUserAuthenticatedCanMatchGuard } from './is-user-authenticated-can-match.guard';
 
 export const HOME_ROUTE = 'home';
 export const NEW_HOME_ROUTE = 'new-home';
@@ -20,7 +22,8 @@ export const routes: Routes = [
     pathMatch: 'full',
   },
   {
-    path: NEW_HOME_ROUTE,
+    path: HOME_ROUTE,
+    canMatch: [isPizzaEnabledCanMatchGuard],
     component: NewHomeComponent,
   },
   {
@@ -43,6 +46,7 @@ export const routes: Routes = [
     children: [
       {
         path:'',
+        canMatch: [isUserAuthenticatedCanMatchGuard],
         loadComponent: () => import('./pizza/pizza-form/pizza-form.component').then(m => m.PizzaFormComponent),
       },
       {
