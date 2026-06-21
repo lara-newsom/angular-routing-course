@@ -1,9 +1,7 @@
-import { Router, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { NewHomeComponent } from './home/new-home/new-home.component';
-import { inject } from '@angular/core';
-import { FeatureFlagService } from './services/feature-flag.service';
-import { map } from 'rxjs';
+import { isPizzaEnabledCanActivateGuard } from './is-pizza-enabled-can-activate.guard';
 
 export const HOME_ROUTE = 'home';
 export const NEW_HOME_ROUTE = 'new-home';
@@ -40,15 +38,7 @@ export const routes: Routes = [
   },
   {
     path: PIZZA_ROUTE,
-    canActivate: [() => {
-      const router = inject(Router);
-      const flagService = inject(FeatureFlagService)
-      return flagService.isPizzaFeatureEnabled$.pipe(
-        map(isEnabled => {
-          return isEnabled ? true : router.createUrlTree([HOME_ROUTE]);
-        })
-      );
-    }],
+    canActivate: [isPizzaEnabledCanActivateGuard],
     loadComponent: () => import('./pizza/pizza.component').then(m => m.PizzaComponent),
     children: [
       {
