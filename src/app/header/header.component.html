@@ -71,7 +71,11 @@
         </li>
         @let totalItems = this.cartService.cartTotals().totalCartCount;
         <li>
-          <a [routerLink]="CART_ROUTE" routerLinkActive="active-link" ariaCurrentWhenActive="page" mat-menu-item>
+          <a mat-menu-item
+            [routerLink]="[CART_ROUTE]"
+            routerLinkActive="active-link"
+            ariaCurrentWhenActive="page"
+          >
             <span class="total-items">{{ totalItems }}</span>
             <img src="../../assets/images/cart-icon.png" alt="" />
           </a>

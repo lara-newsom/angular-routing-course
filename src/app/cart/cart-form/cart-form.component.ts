@@ -1,7 +1,7 @@
 import { Component, inject, signal, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule, CurrencyPipe } from '@angular/common';
 import { CartService } from '../../services/cart.service';
-import { MatButtonModule } from '@angular/material/button';
+import { MatButton } from '@angular/material/button';
 import { ContactService } from '../../services/contact.service';
 import { ReplaySubject, take, takeUntil } from 'rxjs';
 import { ContactForm } from '../../models/contact-form';
@@ -16,7 +16,7 @@ import { CartButtonComponent } from '../../shared-ui/cart-button/cart-button.com
   imports: [
     CommonModule,
     CurrencyPipe,
-    MatButtonModule,
+    MatButton,
     FormsModule,
     MatProgressSpinnerModule,
     CartButtonComponent

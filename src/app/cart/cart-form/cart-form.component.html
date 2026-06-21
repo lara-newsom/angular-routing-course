@@ -46,7 +46,7 @@
       </div>
       <div class="totals-details-wrapper">
         @if (!loading() && cartItems.length) {
-          <button mat-button-raised
+          <button mat-button
           (click)="checkout()">Checkout</button>
         }
         @if (loading()) {

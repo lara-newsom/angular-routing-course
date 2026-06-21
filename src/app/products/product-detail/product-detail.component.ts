@@ -1,8 +1,9 @@
 import { ChangeDetectionStrategy, Component, effect, inject, input } from '@angular/core';
 import { SideMenuComponent } from './side-menu/side-menu.component';
 import { DetailCardComponent } from './detail-card/detail-card.component';
-import { PieService } from '../../services/pie.service';
 import { Category } from '../../models/pie';
+import { PieService } from '../../services/pie.service';
+
 
 @Component({
   selector: 'app-product-detail',
