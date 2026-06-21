@@ -178,7 +178,7 @@ export const PIES: Pie[] = [
       'leavening',
       'salt',
     ],
-    description: 'What could be better than homemade apple pie! This family favorite features tart fresh apples sprinkled with just the right amount of cinnamon and sugar, baked in a flaky lattice top pastry.'
+    description: 'A classic pie filled with sweet, juicy strawberries and baked in a golden, flaky crust. Perfect for summer gatherings.'
   },
   {
     id: 'fruit-pie-3',
@@ -198,7 +198,7 @@ export const PIES: Pie[] = [
       'leavening',
       'salt',
     ],
-    description: 'What could be better than homemade apple pie! This family favorite features tart fresh apples sprinkled with just the right amount of cinnamon and sugar, baked in a flaky lattice top pastry.'
+    description: 'Bursting with plump blueberries, this pie features a buttery crust and a sweet, tangy filling everyone will love.'
   },
   {
     id: 'fruit-pie-4',
@@ -218,7 +218,7 @@ export const PIES: Pie[] = [
       'leavening',
       'salt',
     ],
-    description: 'What could be better than homemade apple pie! This family favorite features tart fresh apples sprinkled with just the right amount of cinnamon and sugar, baked in a flaky lattice top pastry.'
+    description: 'A vibrant pie packed with fresh raspberries, baked in a flaky pastry for a perfect balance of tart and sweet.'
   },
   {
     id: 'fruit-pie-5',
@@ -239,7 +239,7 @@ export const PIES: Pie[] = [
       'leavening',
       'salt',
     ],
-    description: 'What could be better than homemade apple pie! This family favorite features tart fresh apples sprinkled with just the right amount of cinnamon and sugar, baked in a flaky lattice top pastry.'
+    description: 'Juicy peaches and a hint of cinnamon are baked in a golden crust, making this pie a summertime favorite.'
   },
   {
     id: 'fruit-pie-6',
@@ -259,7 +259,7 @@ export const PIES: Pie[] = [
       'leavening',
       'salt',
     ],
-    description: 'What could be better than homemade apple pie! This family favorite features tart fresh apples sprinkled with just the right amount of cinnamon and sugar, baked in a flaky lattice top pastry.'
+    description: 'Classic cherry pie with tart cherries and a sweet filling, all wrapped in a crisp, buttery lattice crust.'
   },
   {
     id: 'seasonal-pie-1',
@@ -282,7 +282,7 @@ export const PIES: Pie[] = [
       'leavening',
       'salt',
     ],
-    description: 'What could be better than homemade apple pie! This family favorite features tart fresh apples sprinkled with just the right amount of cinnamon and sugar, baked in a flaky lattice top pastry.'
+    description: 'Creamy pumpkin filling spiced with cinnamon and nutmeg, baked in a flaky crust. A holiday classic.'
   },
   {
     id: 'seasonal-pie-2',
@@ -304,7 +304,7 @@ export const PIES: Pie[] = [
       'leavening',
       'salt',
     ],
-    description: 'What could be better than homemade apple pie! This family favorite features tart fresh apples sprinkled with just the right amount of cinnamon and sugar, baked in a flaky lattice top pastry.'
+    description: 'Rich, gooey filling loaded with toasted pecans in a buttery crust. The perfect Southern treat.'
   },
   {
     id: 'seasonal-pie-3',
@@ -327,7 +327,7 @@ export const PIES: Pie[] = [
       'leavening',
       'salt',
     ],
-    description: 'What could be better than homemade apple pie! This family favorite features tart fresh apples sprinkled with just the right amount of cinnamon and sugar, baked in a flaky lattice top pastry.'
+    description: 'Silky chocolate custard in a crisp crust, topped with clouds of whipped cream. A chocolate lover’s dream.'
   },
   {
     id: 'seasonal-pie-4',
@@ -349,7 +349,7 @@ export const PIES: Pie[] = [
       'leavening',
       'salt',
     ],
-    description: 'What could be better than homemade apple pie! This family favorite features tart fresh apples sprinkled with just the right amount of cinnamon and sugar, baked in a flaky lattice top pastry.'
+    description: 'A smooth, creamy custard filling with a hint of nutmeg, baked in a tender, golden crust.'
   },
   {
     id: 'seasonal-pie-5',
@@ -370,7 +370,7 @@ export const PIES: Pie[] = [
       'leavening',
       'salt',
     ],
-    description: 'What could be better than homemade apple pie! This family favorite features tart fresh apples sprinkled with just the right amount of cinnamon and sugar, baked in a flaky lattice top pastry.'
+    description: 'Fresh strawberries in a light glaze, nestled in a flaky crust and topped with whipped cream.'
   },
   {
     id: 'seasonal-pie-6',
@@ -395,6 +395,6 @@ export const PIES: Pie[] = [
       'leavening',
       'salt',
     ],
-    description: 'What could be better than homemade apple pie! This family favorite features tart fresh apples sprinkled with just the right amount of cinnamon and sugar, baked in a flaky lattice top pastry.'
+    description: 'Creamy banana custard layered in a flaky crust, finished with whipped cream and toasted almonds.'
   },
 ];

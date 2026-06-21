@@ -4,11 +4,11 @@ import { ProductDetailComponent } from "./product-detail/product-detail.componen
 
 export const PRODUCTS_ROUTES = [
       {
-        path: '',
+        path: ':categoryId',
         component: AllProductsComponent,
       },
       {
-        path: DETAIL_ROUTE,
+        path: `:categoryId/${DETAIL_ROUTE}`,
         component: ProductDetailComponent,
       },
     ];

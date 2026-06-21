@@ -1,5 +1,5 @@
 .cart-wrapper {
-  position: fixed;
+  position: absolute;
   top: 116px;
   right: 0;
   z-index: 20;
@@ -10,6 +10,7 @@
   border-radius: 10px;
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
   a, button {
     background-color: rgba(255, 208, 201, 1);
     border: 0;

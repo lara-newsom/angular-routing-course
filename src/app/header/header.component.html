@@ -33,6 +33,13 @@
               mat-menu-item
               >All Pies</a
             >
+            @if(flagService.isPizzaFeatureEnabled.value()) {
+              <a
+              [routerLink]="[PIZZA_ROUTE]"
+                mat-menu-item
+                >New! Pizza Pies</a
+              >
+            }
           </mat-menu>
         </li>
         <li>

@@ -17,7 +17,7 @@ export class PieService {
 
   readonly pies = httpResource<Pie[]>(() => '/api/pies');
 
-  readonly selectedPie = httpResource<Pie | undefined>(() => `/api/pies/${this.selectedPieId()}`);
+  readonly selectedPie = httpResource<Pie | undefined>(() => this.selectedPieId() ? `/api/pies/${this.selectedPieId()}` : undefined);
 
   readonly filteredPies = computed(() => {
     const pies = this.pies.value();

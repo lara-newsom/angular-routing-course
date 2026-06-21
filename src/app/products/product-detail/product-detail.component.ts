@@ -4,7 +4,6 @@ import { DetailCardComponent } from './detail-card/detail-card.component';
 import { Category } from '../../models/pie';
 import { PieService } from '../../services/pie.service';
 
-
 @Component({
   selector: 'app-product-detail',
   imports: [SideMenuComponent, DetailCardComponent],

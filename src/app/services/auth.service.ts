@@ -1,7 +1,6 @@
 import { httpResource } from '@angular/common/http';
 import { Injectable, computed, linkedSignal, signal } from '@angular/core';
 import { Permission, User } from '../models/user';
-import { rxResource } from '@angular/core/rxjs-interop';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +11,7 @@ export class AuthService {
 
   allUsers = httpResource<User[]>(() => '/api/users');
 
-  authenticatedUser = httpResource<User>(() => `/api/users/${this.userId()}`);
+  authenticatedUser = httpResource<User>(() => this.userId() ? `/api/users/${this.userId()}` : undefined);
 
   userPermissions = computed(() => {
     return this.userId() ? this.authenticatedUser.value()?.permissions || [] : [];
@@ -27,7 +26,6 @@ export class AuthService {
   }
 
   logIn(userId: string) {
-    console.log(`Logging in user: ${userId}`);
     if (this.validUserIds().includes(userId.toLowerCase())) {
       this.userId.set(userId.toLowerCase());
       this.loginError.set(false);
@@ -41,7 +39,7 @@ export class AuthService {
     this.loginError.set(false);
   }
 
-  updateUserCart(cart: Record<string, { quantity: number }>): void {
+  updateUserCart(cart:  Record<string, { quantity: number;}>): void {
     if(this.userId()){
       const user = this.authenticatedUser.value();
       if (user) {

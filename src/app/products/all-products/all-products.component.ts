@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component, effect, inject, input } from '@angular/core';
 import { PieService } from '../../services/pie.service';
 import { RouterLink } from '@angular/router';
-import { Category } from '../../models/pie';
 import { DETAIL_ROUTE } from '../../app.routes';
+import { Category } from '../../models/pie';
 
 @Component({
   selector: 'app-all-products',

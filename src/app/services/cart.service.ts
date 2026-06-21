@@ -1,7 +1,8 @@
-import { Injectable, computed, effect, inject, linkedSignal } from '@angular/core';
+import { Injectable, computed, inject, linkedSignal } from '@angular/core';
 import { Pie } from '../models/pie';
 import { PieService } from './pie.service';
 import { AuthService } from './auth.service';
+import { PizzaService } from './pizza.service';
 
 @Injectable({
   providedIn: 'root',
@@ -9,10 +10,11 @@ import { AuthService } from './auth.service';
 export class CartService {
   readonly authService = inject(AuthService);
   readonly pieService = inject(PieService);
+  readonly pizzaService = inject(PizzaService);
 
-  readonly userCartItems = linkedSignal(() => {
+  readonly userCartItems = linkedSignal<Record<string, { quantity: number }>>(() => {
     if(this.authService.userId()){
-      return this.authService.authenticatedUser.value()?.cart ?? {}
+      return this.authService.authenticatedUser.value()?.cart ?? {};
     }
     return {};
   });
@@ -26,10 +28,16 @@ export class CartService {
     > = this.userCartItems();
     return Object.keys(cartItems).reduce((acc, key) => {
       const pie = this.pieService.pies.value()?.find((pie) => pie.id === key);
+      const pizza = this.pizzaService.pizzaOrders().find((pizza) => pizza.id === key);
 
       if (pie) {
         acc.push({
           ...pie,
+          quantity: cartItems[key].quantity,
+        });
+      } else if (pizza) {
+        acc.push({
+          ...pizza,
           quantity: cartItems[key].quantity,
         });
       }
@@ -75,9 +83,11 @@ export class CartService {
 
     for(const key of Object.keys(this.userCartItems())) {
       const pie = pies.find((pie) => pie.id === key);
-      if (pie) {
+      const pizza = this.pizzaService.pizzaOrders().find((pizza) => pizza.id === key);
+      const price = pie ? pie.price : pizza ? pizza.price : 0;
+      if (price) {
         const quantity = this.userCartItems()[key].quantity || 0;
-        subtotal += quantity * pie.price;
+        subtotal += quantity * price;
         totalCartCount += quantity;
       }
     }
@@ -134,5 +144,7 @@ export class CartService {
 
   checkout() {
     this.authService.updateUserCart({});
+    this.userCartItems.set({});
   }
 }
+
