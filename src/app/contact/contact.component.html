@@ -5,8 +5,8 @@
       <img src="../../assets/images/contact.png" alt="" />
     </div>
     <div class="form-wrapper">
-      <h3>We'd Love to Hear from You</h3>
-      <p>Please fill out the form below to let us know how we can help.</p>
+      <h3>{{ messageService?.featureHeader || "We'd Love to Hear from You" }}</h3>
+      <p>{{ messageService?.featureSubheader || "Please fill out the form below to let us know how we can help."}}</p>
       <fieldset>
         <form #contactForm="ngForm">
           <div class="form-group">

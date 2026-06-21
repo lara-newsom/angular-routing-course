@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, OnDestroy, OnInit, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnDestroy, inject } from '@angular/core';
 
 import { takeUntil } from 'rxjs/operators';
 import { ReplaySubject } from 'rxjs';
@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { BreadcrumbsComponent } from '../shared-ui/breadcrumbs/breadcrumbs.component';
+import { MESSAGE_SERVICE } from '../services/message.service';
 
 @Component({
   selector: 'app-contact',
@@ -21,8 +22,9 @@ import { BreadcrumbsComponent } from '../shared-ui/breadcrumbs/breadcrumbs.compo
   styleUrls: ['./contact.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ContactComponent implements OnDestroy, OnInit{
-  @Input() userHello = '';
+export class ContactComponent implements OnDestroy{
+  protected readonly messageService = inject(MESSAGE_SERVICE, {optional: true});
+
   readonly contactService = inject(ContactService);
   destroyed$ = new ReplaySubject<void>(1);
 
@@ -42,13 +44,11 @@ export class ContactComponent implements OnDestroy, OnInit{
     this.contactService.submitContactForm(model).pipe(
       takeUntil(this.destroyed$)
     ).subscribe(() => {
-      this.contactService.canDeactivate.set(true);
       this.loading = false;
     })
   }
 
   clearForm() {
-    this.contactService.canDeactivate.set(true);
     this.submitted = false;
     this.model = {
       fullName: '',
@@ -56,10 +56,6 @@ export class ContactComponent implements OnDestroy, OnInit{
       phone: '',
       comment: '',
     }
-  }
-
-  ngOnInit() {
-    this.contactService.canDeactivate.set(false);
   }
 
   ngOnDestroy(): void {

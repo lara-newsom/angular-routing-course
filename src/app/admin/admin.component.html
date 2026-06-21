@@ -1,0 +1,20 @@
+<section class="main-content">
+  <app-breadcrumbs route="Admin" />
+  <div class="contact-wrapper">
+    <div class="image-wrapper">
+      <img src="../../assets/images/admin.png" alt="" />
+    </div>
+    <div class="form-wrapper">
+      @let authUser = user();
+      <h3>Congratulations {{ authUser.name }} Are an Admin!</h3>
+      <p>
+        There really aren't any special admin features yet, but when there are, you will totally be able to use them.
+      </p>
+      <p>Your permissions include:</p>
+      @for(permission of authUser?.permissions; track permission) {
+        <p class="permission">{{ permission }}</p>
+      }
+      <button mat-raised-button (click)="celebrate()">Celebrate</button>
+    </div>
+  </div>
+</section>

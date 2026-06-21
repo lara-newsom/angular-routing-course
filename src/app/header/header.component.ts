@@ -14,6 +14,7 @@ import {
   CONTACT_ROUTE,
   CART_ROUTE,
   PIZZA_ROUTE,
+  ADMIN_ROUTE,
 } from '../app.routes';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { FeatureFlagService } from '../services/feature-flag.service';
@@ -38,4 +39,5 @@ export class HeaderComponent {
   protected readonly CONTACT_ROUTE = CONTACT_ROUTE;
   protected readonly CART_ROUTE = CART_ROUTE;
   protected readonly PIZZA_ROUTE = PIZZA_ROUTE;
+  protected readonly ADMIN_ROUTE = ADMIN_ROUTE;
 }

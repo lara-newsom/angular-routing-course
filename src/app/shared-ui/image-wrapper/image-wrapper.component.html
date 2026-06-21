@@ -1,0 +1,11 @@
+<section class="main-content">
+  <app-breadcrumbs [route]="routePath() | titlecase" />
+  <div class="contact-wrapper">
+    <div class="image-wrapper">
+      <img [src]="imageUrl()" alt="" />
+    </div>
+    <div class="form-wrapper">
+      <ng-container *ngComponentOutlet="component()"/>
+    </div>
+  </div>
+</section>

@@ -15,6 +15,8 @@ export const CONTACT_ROUTE = 'contact';
 export const CART_ROUTE = 'cart';
 export const ABOUT_ROUTE = 'about';
 export const PIZZA_ROUTE = 'pizza';
+export const ADMIN_ROUTE = 'admin';
+export const NOT_ADMIN_ROUTE = 'not-admin';
 
 export const routes: Routes = [
   {
@@ -69,6 +71,14 @@ export const routes: Routes = [
   {
     path: ABOUT_ROUTE,
     loadComponent: () => import('./about/about.component').then(m => m.AboutComponent),
+  },
+  {
+    path: ADMIN_ROUTE,
+    loadComponent: () => import('./admin/admin.component').then(m => m.AdminComponent),
+  },
+  {
+    path: NOT_ADMIN_ROUTE,
+    loadComponent: () => import('./admin/not-admin/not-admin.component').then(m => m.NotAdminComponent),
   },
   {
     path: '**',

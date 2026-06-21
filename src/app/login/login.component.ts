@@ -1,7 +1,8 @@
-import { ChangeDetectionStrategy, Component, inject, model, signal, viewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { BreadcrumbsComponent } from '../shared-ui/breadcrumbs/breadcrumbs.component';
 import { FormsModule } from '@angular/forms';
+import { MESSAGE_SERVICE } from '../services/message.service';
 
 @Component({
   selector: 'app-login',
@@ -15,6 +16,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class LoginComponent {
   protected readonly authService = inject(AuthService);
+  protected readonly messageService = inject(MESSAGE_SERVICE, {optional: true});
 
   model = {
     userName: '',

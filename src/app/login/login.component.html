@@ -14,7 +14,7 @@
       } @else if (userId) {
         @let user = this.authService.authenticatedUser.value();
         @if(user){
-          <h3>Welcome Back, {{ user?.name }}</h3>
+          <h3>{{ (messageService?.featureHeader || "Welcome Back! ") + user?.name }}</h3>
           <p>I hope you're hungry, because you are logged in!</p>
           <p>Your permissions include:
             @for(permission of user?.permissions; track permission) {
@@ -24,8 +24,8 @@
           <button mat-raised-button (click)="authService.logOut()">Log Out</button>
         }
       } @else {
-      <h3>Welcome Back</h3>
-      <p>Please enter your credentials to log in.</p>
+      <h3>{{ messageService?.featureHeader || "Welcome Back!"}}</h3>
+      <p>{{ messageService?.featureSubheader || "Please enter your credentials to log in."}}</p>
       <fieldset>
         <form #loginForm="ngForm">
           <label for="userName">User Name</label>
