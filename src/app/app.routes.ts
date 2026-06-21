@@ -9,6 +9,7 @@ import { AboutComponent } from './about/about.component';
 import { LoginComponent } from './login/login.component';
 import { PizzaComponent } from './pizza/pizza.component';
 import { ContactComponent } from './contact/contact.component';
+import { adminUserResolver } from './admin-user.resolver';
 
 export const HOME_ROUTE = 'home';
 export const NEW_HOME_ROUTE = 'new-home';
@@ -107,6 +108,9 @@ export const routes: Routes = [
   {
     path: ADMIN_ROUTE,
     loadComponent: () => import('./admin/admin.component').then(m => m.AdminComponent),
+    resolve: {
+      user: adminUserResolver
+    }
   },
   {
     path: NOT_ADMIN_ROUTE,
