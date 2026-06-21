@@ -1,4 +1,8 @@
 <div class="cart-wrapper">
-  <button mat-button (click)="close()">close</button>
+  <!-- Don't forget to indicate absolute routing to clear the outlet from the view -->
+  <a mat-button
+    [routerLink]="['/', {outlets: {cartModal: null}}]"
+    queryParamsHandling="merge"
+  >close</a>
   <app-cart-form/>
 </div>

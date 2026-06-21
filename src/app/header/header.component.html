@@ -72,7 +72,8 @@
         @let totalItems = this.cartService.cartTotals().totalCartCount;
         <li>
           <a mat-menu-item
-            [routerLink]="[CART_ROUTE]"
+            [routerLink]="['/', {outlets: {cartModal: CART_ROUTE}}]"
+            queryParamsHandling="merge"
             routerLinkActive="active-link"
             ariaCurrentWhenActive="page"
           >
