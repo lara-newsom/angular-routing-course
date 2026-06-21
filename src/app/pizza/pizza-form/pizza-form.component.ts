@@ -15,11 +15,14 @@ import { Router } from '@angular/router';
 export class PizzaFormComponent {
   private readonly cartService = inject(CartService);
   private readonly pizzaService = inject(PizzaService);
-
-  protected readonly availableToppings = AVAILABLE_TOPPINGS;
-  readonly showLeaveModal = signal(false);
-
   private readonly router = inject(Router);
+  protected readonly availableToppings = AVAILABLE_TOPPINGS;
+
+  readonly showLeaveModal = signal(false);
+  readonly canSubmit = computed(() =>
+    !!this.order().size && this.order().ingredients.length > 0 && !this.loading()
+  );
+
   readonly nextNavigation = signal<string | null>(null);
 
   protected closeLeaveModal() {
@@ -49,9 +52,7 @@ export class PizzaFormComponent {
   protected readonly loading = signal(false);
   protected readonly submitted = signal(false);
 
-  readonly canSubmit = computed(() =>
-    !!this.order().size && this.order().ingredients.length > 0 && !this.loading()
-  );
+
 
   protected submitOrder() {
     const pizzaOrder = createPizzaOrder({

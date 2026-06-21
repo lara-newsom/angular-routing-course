@@ -4,6 +4,7 @@ import { NewHomeComponent } from './home/new-home/new-home.component';
 import { isPizzaEnabledCanActivateGuard } from './is-pizza-enabled-can-activate.guard';
 import { isPizzaEnabledCanMatchGuard } from './is-pizza-enabled-can-match.guard';
 import { isUserAuthenticatedCanMatchGuard } from './is-user-authenticated-can-match.guard';
+import { leavePizzaCanDeactivateGuard } from './leave-pizza-can-deactivate.guard';
 
 export const HOME_ROUTE = 'home';
 export const NEW_HOME_ROUTE = 'new-home';
@@ -47,6 +48,7 @@ export const routes: Routes = [
       {
         path:'',
         canMatch: [isUserAuthenticatedCanMatchGuard],
+        canDeactivate: [leavePizzaCanDeactivateGuard],
         loadComponent: () => import('./pizza/pizza-form/pizza-form.component').then(m => m.PizzaFormComponent),
       },
       {
