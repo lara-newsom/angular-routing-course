@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { PizzaComponent } from './pizza/pizza.component';
 import { ContactComponent } from './contact/contact.component';
 import { adminUserResolver } from './admin-user.resolver';
+import { aboutMessageService, contactMessageService, loginMessageService, MESSAGE_SERVICE } from './services/message.service';
 
 export const HOME_ROUTE = 'home';
 export const NEW_HOME_ROUTE = 'new-home';
@@ -55,6 +56,12 @@ export const routes: Routes = [
       routePath: LOGIN_ROUTE,
       component: LoginComponent,
     },
+    providers: [
+      {
+        provide: MESSAGE_SERVICE,
+        useValue: loginMessageService
+      }
+    ]
   },
   {
     path: PIZZA_ROUTE,
@@ -88,6 +95,12 @@ export const routes: Routes = [
       routePath: CONTACT_ROUTE,
       component: ContactComponent,
     },
+    providers: [
+      {
+        provide: MESSAGE_SERVICE,
+        useValue: contactMessageService
+      }
+    ]
   },
   {
     path: CART_ROUTE,
@@ -104,6 +117,12 @@ export const routes: Routes = [
       routePath: ABOUT_ROUTE,
       component: AboutComponent,
     },
+    providers: [
+      {
+        provide: MESSAGE_SERVICE,
+        useValue: aboutMessageService
+      }
+    ]
   },
   {
     path: ADMIN_ROUTE,
