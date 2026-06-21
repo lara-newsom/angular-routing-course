@@ -1,13 +1,11 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { AuthService } from '../services/auth.service';
-import { BreadcrumbsComponent } from '../shared-ui/breadcrumbs/breadcrumbs.component';
 import { FormsModule } from '@angular/forms';
 import { MESSAGE_SERVICE } from '../services/message.service';
 
 @Component({
   selector: 'app-login',
   imports: [
-    BreadcrumbsComponent,
     FormsModule,
   ],
   templateUrl: './login.component.html',

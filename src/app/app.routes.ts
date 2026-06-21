@@ -5,6 +5,10 @@ import { isPizzaEnabledCanActivateGuard } from './is-pizza-enabled-can-activate.
 import { isPizzaEnabledCanMatchGuard } from './is-pizza-enabled-can-match.guard';
 import { isUserAuthenticatedCanMatchGuard } from './is-user-authenticated-can-match.guard';
 import { leavePizzaCanDeactivateGuard } from './leave-pizza-can-deactivate.guard';
+import { AboutComponent } from './about/about.component';
+import { LoginComponent } from './login/login.component';
+import { PizzaComponent } from './pizza/pizza.component';
+import { ContactComponent } from './contact/contact.component';
 
 export const HOME_ROUTE = 'home';
 export const NEW_HOME_ROUTE = 'new-home';
@@ -43,13 +47,24 @@ export const routes: Routes = [
   },
   {
     path: LOGIN_ROUTE,
-    loadComponent: () => import('./login/login.component').then(m => m.LoginComponent),
     title: 'Bethany\'s - Login',
+    loadComponent: () => import('./shared-ui/image-wrapper/image-wrapper.component').then(m => m.ImageWrapperComponent),
+    data: {
+      imageUrl: '../../assets/images/login.png',
+      routePath: LOGIN_ROUTE,
+      component: LoginComponent,
+    },
   },
   {
     path: PIZZA_ROUTE,
+    title: 'Bethany\'s - Pizza',
     canActivate: [isPizzaEnabledCanActivateGuard],
-    loadComponent: () => import('./pizza/pizza.component').then(m => m.PizzaComponent),
+    loadComponent: () => import('./shared-ui/image-wrapper/image-wrapper.component').then(m => m.ImageWrapperComponent),
+    data: {
+      imageUrl: '../../assets/images/pizza-2.jpg',
+      routePath: PIZZA_ROUTE,
+      component: PizzaComponent,
+    },
     children: [
       {
         path:'',
@@ -62,12 +77,16 @@ export const routes: Routes = [
         loadComponent: () => import('./pizza/pizza-not-found/pizza-not-found.component').then(m => m.PizzaNotFoundComponent),
       },
     ],
-    title: 'Bethany\'s - Pizza',
   },
   {
     path: CONTACT_ROUTE,
-    loadComponent: () => import('./contact/contact.component').then(m => m.ContactComponent),
     title: 'Bethany\'s - Contact',
+    loadComponent: () => import('./shared-ui/image-wrapper/image-wrapper.component').then(m => m.ImageWrapperComponent),
+    data: {
+      imageUrl: '../../assets/images/contact.png',
+      routePath: CONTACT_ROUTE,
+      component: ContactComponent,
+    },
   },
   {
     path: CART_ROUTE,
@@ -77,8 +96,13 @@ export const routes: Routes = [
   },
   {
     path: ABOUT_ROUTE,
-    loadComponent: () => import('./about/about.component').then(m => m.AboutComponent),
     title: 'Bethany\'s - About',
+    loadComponent: () => import('./shared-ui/image-wrapper/image-wrapper.component').then(m => m.ImageWrapperComponent),
+    data: {
+      imageUrl: '../../assets/images/about.png',
+      routePath: ABOUT_ROUTE,
+      component: AboutComponent,
+    },
   },
   {
     path: ADMIN_ROUTE,

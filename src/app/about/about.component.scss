@@ -1,32 +1,3 @@
-.main-content {
-  margin-top: 20px;
-  padding: 0 20px;
-}
-
-.contact-wrapper {
-  margin-top: 20px;
-  background-color: rgba(253, 246, 246, 1);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding: 0 51px 51px 51px;
-}
-
-.image-wrapper {
-  width: 40%;
-  margin-right: 20px;
-
-  img {
-    width: 100%;
-  }
-}
-
-.form-wrapper {
-  width: 55%;
-  min-width: 400px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 
   h3 {
     color: rgba(54, 48, 44, 1);
@@ -44,5 +15,3 @@
     line-height: 1.8rem;
     width: 75%;
   }
-}
-

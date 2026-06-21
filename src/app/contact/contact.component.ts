@@ -7,7 +7,6 @@ import { ContactForm } from '../models/contact-form';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { BreadcrumbsComponent } from '../shared-ui/breadcrumbs/breadcrumbs.component';
 import { MESSAGE_SERVICE } from '../services/message.service';
 
 @Component({
@@ -16,7 +15,6 @@ import { MESSAGE_SERVICE } from '../services/message.service';
     FormsModule,
     MatProgressSpinnerModule,
     MatButtonModule,
-    BreadcrumbsComponent
 ],
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss'],
